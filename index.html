@@ -31,6 +31,35 @@
             padding: 20px;
         }
     </style>
+
+    <style>
+   .dropdown:hover .dropdown-content {
+      display: block;
+   }
+   .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 160px;
+      z-index: 1;
+   }
+   .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+   }
+</style>
+
+<div class="dropdown">
+   <a href="services.html">Services</a>
+   <div class="dropdown-content">
+      <a href="web-design.html">Web Design</a>
+      <a href="seo.html">SEO</a>
+   </div>
+</div>
+
+    
 </head>
 <body>
     <header>
@@ -44,10 +73,7 @@
             </ul>
         </nav>
     </header>
-<form action="/search" method="get">
-   <input type="text" name="query" placeholder="Search...">
-   <button type="submit">Search</button>
-</form>
+
     <section id="about">
         <h2>What is Heavy Machinery?</h2>
         <p>Welcome to the world of heavy machinery. Heavy machinery refers to large, powerful equipment used in construction, mining, and other industrial applications. These machines are designed to perform tasks that require significant strength and precision.</p>
@@ -112,5 +138,10 @@
         </ul>
         <p>Each type of machinery plays a critical role in the efficiency and effectiveness of construction and industrial projects. These machines are essential for large-scale projects, helping to increase efficiency and safety in challenging environments.</p>
     </section>
+<form action="/search" method="get">
+   <input type="text" name="query" placeholder="Search...">
+   <button type="submit">Search</button>
+</form>
+    
 </body>
 </html>
