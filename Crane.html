@@ -152,7 +152,7 @@
 </div>
 
     <section id="about">
-        <h1>Crane</h1>
+        <h1>About</h1>
         <p>Cranes are vital pieces of heavy machinery used for lifting, moving, and positioning heavy loads in various construction, manufacturing, and shipping applications. They come in several types, each designed for specific tasks and environments.</p>
 
         <h2>Key Features:</h2>
@@ -171,7 +171,7 @@
             <li><strong>Maintenance:</strong> Used for tasks like installing or maintaining tall structures, such as communication towers.</li>
         </ul>
 
-        <h2>Types of Cranes:</h2>
+        <h2>Types:</h2>
         <ul>
             <li>
                 <h3>1. Mobile Cranes</h3>
@@ -258,5 +258,63 @@
 
         <p>Cranes are essential for increasing efficiency and safety in construction and industrial operations, making them indispensable in many projects.</p>
     </section>
+
+     <style>
+   /* Back to Top Button Styling */
+   .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 12px 20px;
+      background-color: #333;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 50px;
+      display: none; /* Initially hidden */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      opacity: 0;
+      font-size: 16px;
+      z-index: 1000;
+   }
+
+   /* Show button with fade-in effect */
+   .back-to-top.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+   }
+
+   /* Button Hover Effect */
+   .back-to-top:hover {
+      background-color: #555;
+      transform: scale(1.1);
+   }
+
+   /* Smooth Scrolling */
+   html {
+      scroll-behavior: smooth;
+   }
+</style>
+</head>
+<body id="top">
+
+<!-- Back to Top Button -->
+<a href="#top" class="back-to-top">Back to Top</a>
+
+<script>
+   // Select the Back to Top button
+   const backToTopButton = document.querySelector('.back-to-top');
+
+   // Show or hide the button based on scroll position
+   window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+         backToTopButton.classList.add('show');
+      } else {
+         backToTopButton.classList.remove('show');
+      }
+   });
+</script>
 </body>
 </html>
