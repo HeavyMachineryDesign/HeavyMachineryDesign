@@ -1,20 +1,155 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heavy Machinery Design</title>
+    <title>Compactor</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        html {
+            scroll-behavior: smooth; /* Enable smooth scrolling */
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        section {
+            padding: 20px;
+        }
+        img {
+            width: 400px; /* Set all images to a width of 400px */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Heavy Machinery Design</h1>
+        <h1>Compactor</h1>
         <nav>
             <ul>
-                <!-- Navigation links can be added here -->
+                <li><a href="#about">About</a></li>
+                <li><a href="#Key-features">Key Features</a></li>
+                <li><a href="#common-uses">Common Uses</a></li>
+                <li><a href="#types">Types</a></li>
+                <li><a href="#history">History</a></li>
             </ul>
         </nav>
     </header>
+
+    
+<style>
+   /* Container for the dropdown */
+   .dropdown {
+      position: relative;
+      display: inline-block;
+   }
+
+   /* Style for the main dropdown button */
+   .dropdown > a {
+      color: #fff;
+      background-color: #4CAF50;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+   }
+
+   /* Hover effect for dropdown button */
+   .dropdown > a:hover {
+      background-color: #45a049;
+   }
+
+   /* Dropdown content styling */
+   .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 200px;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+   }
+
+   /* Display dropdown content on hover */
+   .dropdown:hover .dropdown-content {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+   }
+
+   /* Styling for list items within the dropdown */
+   .dropdown-content ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+   }
+
+   /* Style for individual links */
+   .dropdown-content li a {
+      color: #fff;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+   }
+
+   /* Hover effect for links */
+   .dropdown-content li a:hover {
+      background-color: #575757;
+      transform: translateX(5px);
+   }
+
+   /* Responsive adjustments */
+   @media (max-width: 600px) {
+      .dropdown-content {
+         min-width: 160px;
+      }
+   }
+</style>
+
+<!-- Dropdown HTML structure -->
+<div class="dropdown">
+   <a href="services.html">Pages</a>
+   <div class="dropdown-content">
+      <ul>
+         <li><a href="Index.html">Home</a></li>
+         <li><a href="Excavator.html">Excavator</a></li>
+         <li><a href="Bulldozer.html">Bulldozer</a></li>
+         <li><a href="Crane.html">Crane</a></li>
+         <li><a href="Haul Truck.html">Haul Truck</a></li>
+         <li><a href="Loader.html">Loader</a></li>
+         <li><a href="Backhoe.html">Backhoe</a></li>
+         <li><a href="Forklift.html">Forklift</a></li>
+         <li><a href="Grader.html">Grader</a></li>
+         <li><a href="Compactor.html">Compactor</a></li>
+         <li><a href="Paver.html">Paver</a></li>
+         <li><a href="Scraper.html">Scraper</a></li>
+         <li><a href="Drilling rig.html">Drilling Rig</a></li>
+      </ul>
+   </div>
+</div>
 <section id="about">
 <p><head>
 </head>
@@ -76,7 +211,63 @@
         <h2>Conclusion</h2>
         <p>Compactors are indispensable tools in the construction and engineering industries. Their ability to efficiently compress materials leads to improved stability, drainage, and overall project success. As technology advances, compactors continue to evolve, incorporating features that enhance performance and ease of use. Whether in road construction, site preparation, or landscaping, compactors play a crucial role in creating durable and reliable surfaces that withstand the test of time.</p>
     </section>
+ <style>
+   /* Back to Top Button Styling */
+   .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 12px 20px;
+      background-color: #333;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 50px;
+      display: none; /* Initially hidden */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      opacity: 0;
+      font-size: 16px;
+      z-index: 1000;
+   }
 
+   /* Show button with fade-in effect */
+   .back-to-top.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+   }
+
+   /* Button Hover Effect */
+   .back-to-top:hover {
+      background-color: #555;
+      transform: scale(1.1);
+   }
+
+   /* Smooth Scrolling */
+   html {
+      scroll-behavior: smooth;
+   }
+</style>
+</head>
+<body id="top">
+
+<!-- Back to Top Button -->
+<a href="#top" class="back-to-top">Back to Top</a>
+
+<script>
+   // Select the Back to Top button
+   const backToTopButton = document.querySelector('.back-to-top');
+
+   // Show or hide the button based on scroll position
+   window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+         backToTopButton.classList.add('show');
+      } else {
+         backToTopButton.classList.remove('show');
+      }
+   });
+</script>
 </body>
 </html>
 
