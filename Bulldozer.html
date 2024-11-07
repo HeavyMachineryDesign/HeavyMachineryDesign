@@ -50,20 +50,120 @@
         </nav>
     </header>
 
+    
+<style>
+   /* Container for the dropdown */
+   .dropdown {
+      position: relative;
+      display: inline-block;
+   }
+
+   /* Style for the main dropdown button */
+   .dropdown > a {
+      color: #fff;
+      background-color: #4CAF50;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+   }
+
+   /* Hover effect for dropdown button */
+   .dropdown > a:hover {
+      background-color: #45a049;
+   }
+
+   /* Dropdown content styling */
+   .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 200px;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+   }
+
+   /* Display dropdown content on hover */
+   .dropdown:hover .dropdown-content {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+   }
+
+   /* Styling for list items within the dropdown */
+   .dropdown-content ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+   }
+
+   /* Style for individual links */
+   .dropdown-content li a {
+      color: #fff;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+   }
+
+   /* Hover effect for links */
+   .dropdown-content li a:hover {
+      background-color: #575757;
+      transform: translateX(5px);
+   }
+
+   /* Responsive adjustments */
+   @media (max-width: 600px) {
+      .dropdown-content {
+         min-width: 160px;
+      }
+   }
+</style>
+
+<!-- Dropdown HTML structure -->
+<div class="dropdown">
+   <a href="services.html">Pages</a>
+   <div class="dropdown-content">
+      <ul>
+         <li><a href="Index.html">Home</a></li>
+         <li><a href="Excavator.html">Excavator</a></li>
+         <li><a href="Bulldozer.html">Bulldozer</a></li>
+         <li><a href="Crane.html">Crane</a></li>
+         <li><a href="Haul Truck.html">Haul Truck</a></li>
+         <li><a href="Loader.html">Loader</a></li>
+         <li><a href="Backhoe.html">Backhoe</a></li>
+         <li><a href="Forklift.html">Forklift</a></li>
+         <li><a href="Grader.html">Grader</a></li>
+         <li><a href="Compactor.html">Compactor</a></li>
+         <li><a href="Paver.html">Paver</a></li>
+         <li><a href="Scraper.html">Scraper</a></li>
+         <li><a href="Drilling rig.html">Drilling Rig</a></li>
+      </ul>
+   </div>
+</div>
+
+
     <section id="about">
-        <h1></h1>
-        <section id="About">
-            <h3>About</h3>
+
+            <h2>About</h2>
             <p>A bulldozer is a powerful piece of heavy machinery used primarily for moving large quantities of soil, debris, or other materials. It features a broad, flat blade attached to the front and is typically equipped with tracks for stability and traction on uneven terrain.</p>
         </section>
 
         <section id="Key Features">
-            <h3>Key Features:</h3>
+            <h2>Key Features:</h2>
             <ul>
                 <li>
-                    <h4>Blade:</h4>
+                    <h3>Blade:</h3>
                     <p>A heavy, wide metal plate used for pushing soil and other materials, adjustable for angle and height.</p>
-                    <h5>Types of Bulldozer Blades</h5>
+                    <h4>Types of Bulldozer Blades</h4>
                     <ul>
                         <li>
                             <strong>Straight Blade (S-Blade):</strong>
@@ -96,13 +196,13 @@
                             <img src="combo.jpg" alt="combo">
                         </li>
                     </ul>
-                    <h5>Additional Features</h5>
+                    <h4>Additional Features</h4>
                     <ul>
                         <li><strong>Reinforcement:</strong> Many blades come with reinforcement plates for increased durability.</li>
                         <li><strong>Cutting Edges:</strong> Equipped with replaceable cutting edges to maintain performance.</li>
                         <li><strong>Wear Plates:</strong> Protect against wear from side loading during operations.</li>
                     </ul>
-                    <h5>Applications</h5>
+                    <h4>Applications</h4>
                     <ul>
                         <li>Land clearing</li>
                         <li>Grading and leveling</li>
@@ -112,9 +212,9 @@
                     </ul>
                 </li>
                 <li>
-                    <h4>Tracks:</h4>
+                    <h3>Tracks:</h3>
                     <p>Provide better traction on soft or uneven terrain, distributing weight evenly to reduce ground pressure.</p>
-                    <h5>Key Features</h5>
+                    <h4>Key Features</h4>
                     <ul>
                         <li><strong>Design:</strong> Made from steel, rubber, or a combination, tracks consist of links forming a continuous loop with a tread pattern for grip.</li>
                         <li><strong>Weight Distribution:</strong> Distribute the bulldozer's weight over a larger surface area to prevent sinking.</li>
@@ -132,9 +232,9 @@
                     </ul>
                 </li>
                 <li>
-                    <h4>Ripper:</h4>
+                    <h3>Ripper:</h3>
                     <p>A ripper is an attachment used at the rear of a bulldozer to break up hard soil, rock, or other dense materials. It is essential for preparing the ground for further work.</p>
-                    <h5>Key Features</h5>
+                    <h4>Key Features</h4>
                     <ul>
                         <li><strong>Design:</strong> Typically consists of one or more sharp, heavy-duty tines that penetrate the ground.</li>
                         <li><strong>Types:</strong>
@@ -146,14 +246,14 @@
                         <li><strong>Hydraulic Operation:</strong> Many rippers are hydraulically operated for precise control.</li>
                         <li><strong>Adjustability:</strong> Some rippers can be adjusted for angle and depth, making them versatile for different tasks.</li>
                     </ul>
-                    <h5>Applications</h5>
+                    <h4>Applications</h4>
                     <ul>
                         <li><strong>Soil Preparation:</strong> Ideal for breaking up hard ground before grading or excavation.</li>
                         <li><strong>Rock Removal:</strong> Used in mining and construction to loosen rock for removal.</li>
                         <li><strong>Land Clearing:</strong> Effective for clearing land by breaking up roots and tough vegetation.</li>
                         <li><strong>Trenching:</strong> Can be used to create trenches for drainage or utility lines.</li>
                     </ul>
-                    <h5>Advantages</h5>
+                    <h4>Advantages</h4>
                     <ul>
                         <li><strong>Increased Efficiency:</strong> Allows bulldozers to perform more tasks, enhancing productivity.</li>
                         <li><strong>Cost-Effective:</strong> Eliminates the need for multiple machines for different tasks.</li>
@@ -161,34 +261,34 @@
                     </ul>
                 </li>
                 <li>
-                    <h4>Cab:</h4>
+                    <h3>Cab:</h3>
                     <p>Designed for comfort and visibility, featuring controls for operating the blade and ripper.</p>
                 </li>
                 <li>
-                    <h4>Hydraulic System:</h4>
+                    <h3>Hydraulic System:</h3>
                     <p>Allows smooth and precise operation of the blade and ripper.</p>
                 </li>
                 <li>
-                    <h4>Weight and Stability:</h4>
+                    <h3>Weight and Stability:</h3>
                     <p>Heavy machines that provide stability on slopes and uneven ground.</p>
                 </li>
                 <li>
-                    <h4>Versatility:</h4>
+                    <h3>Versatility:</h3>
                     <p>Can be equipped with various attachments for tasks beyond pushing dirt.</p>
                 </li>
                 <li>
-                    <h4>Durability:</h4>
+                    <h3>Durability:</h3>
                     <p>Built from high-strength materials to withstand tough conditions.</p>
                 </li>
                 <li>
-                    <h4>Engine Power:</h4>
+                    <h3>Engine Power:</h3>
                     <p>Equipped with powerful engines for efficient performance in demanding environments.</p>
                 </li>
             </ul>
         </section>
 
         <section id="Common Uses">
-            <h3>Common Uses:</h3>
+            <h2>Common Uses:</h2>
             <ul>
                 <li>
                     <strong>Earthmoving:</strong> <p>Ideal for clearing land, grading surfaces, and moving soil or rubble.</p>
@@ -210,7 +310,7 @@
         </section>
 
         <section id="Types">
-            <h3>Types:</h3>
+            <h2>Types:</h2>
             <ul>
                 <li>
                     <strong>Crawler Bulldozers:</strong>
@@ -246,29 +346,29 @@
         </section>
 
         <section id="History">
-            <h3>History</h3>
+            <h2>History</h2>
             <ul>
                 <li>
-                    <h4>Early Development</h4>
+                    <h3>Early Development</h3>
                     <p><strong>Late 19th Century:</strong> The concept of using a tractor with a blade for earthmoving began to emerge. Steam-powered tractors were among the first machines to perform similar functions, but they were limited in efficiency and power.</p>
                 </li>
                 <li>
-                    <h4>1920s: The Birth of the Bulldozer</h4>
+                    <h3>1920s: The Birth of the Bulldozer</h3>
                     <p><strong>1923:</strong> The term "bulldozer" became widely used, referring specifically to a tractor fitted with a large, heavy blade. The first true bulldozer was developed when a detachable blade was added to a tractor, enabling it to push earth and debris.</p>
                     <p><strong>Caterpillar:</strong> In 1925, Caterpillar introduced the first modern bulldozer by attaching a blade to its crawler tractors, enhancing their utility in construction and agriculture.</p>
                 </li>
                 <li>
-                    <h4>1930s-1940s: Expansion and Innovation</h4>
+                    <h3>1930s-1940s: Expansion and Innovation</h3>
                     <p><strong>World War II:</strong> The demand for bulldozers surged during the war for military construction projects, such as building airfields and roads. This period saw significant advancements in bulldozer technology.</p>
                     <p><strong>Post-War Era:</strong> After the war, bulldozers became essential for infrastructure development, urbanization, and agricultural practices, leading to increased production and innovation in design.</p>
                 </li>
                 <li>
-                    <h4>1950s-1970s: Advancements in Technology</h4>
+                    <h3>1950s-1970s: Advancements in Technology</h3>
                     <p><strong>Hydraulic Systems:</strong> The introduction of hydraulic systems revolutionized bulldozer operations, allowing for more precise control of the blade and attachments.</p>
                     <p><strong>Increased Size and Power:</strong> Manufacturers began producing larger and more powerful models, catering to heavier earthmoving tasks.</p>
                 </li>
                 <li>
-                    <h4>1980s-Present: Modernization and Automation</h4>
+                    <h3>1980s-Present: Modernization and Automation</h3>
                     <p><strong>Computerization:</strong> The use of electronic controls and computer systems improved efficiency and accuracy, enabling features like GPS-guided grading.</p>
                     <p><strong>Environmental Concerns:</strong> Modern bulldozers are designed to be more fuel-efficient and to meet stricter emissions regulations.</p>
                     <p><strong>Technological Integration:</strong> Today’s bulldozers often come equipped with advanced technology, including remote control capabilities and automated systems, enhancing their versatility and safety.</p>
@@ -277,7 +377,7 @@
         </section>
 
         <section id="Conclusion">
-            <h3>Conclusion</h3>
+            <h2>Conclusion</h2>
             <p>From their humble beginnings as steam-powered machines to the highly advanced hydraulic and computerized systems of today, bulldozers have played a crucial role in shaping the construction and earthmoving industries. They continue to evolve, adapting to the needs of modern construction and environmental standards.</p>
         </section>
     </section>
