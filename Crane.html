@@ -53,102 +53,65 @@
 
     
 <style>
-   /* Container for the dropdown */
-   .dropdown {
-      position: relative;
-      display: inline-block;
+   /* Toolbar styling */
+   .toolbar {
+      background-color: #333; /* Dark grey background for contrast */
+      padding: 10px 0; /* Reduced height */
+      display: flex;
+      justify-content: center; /* Center align the toolbar */
+      gap: 15px;
    }
 
-   /* Style for the main dropdown button */
-   .dropdown > a {
-      color: #fff;
-      background-color: #4CAF50;
-      padding: 10px 20px;
+   /* Style for toolbar links */
+   .toolbar a {
+      color: #f0f0f0;
       text-decoration: none;
-      border-radius: 5px;
+      padding: 8px 16px; /* Reduced padding for a sleeker look */
+      background-color: #6A9FB5; /* Muted blue */
+      border-radius: 6px;
+      font-family: 'Verdana', sans-serif; /* Cleaner font */
       font-weight: bold;
-      transition: background-color 0.3s ease;
-   }
-
-   /* Hover effect for dropdown button */
-   .dropdown > a:hover {
-      background-color: #45a049;
-   }
-
-   /* Dropdown content styling */
-   .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #333;
-      min-width: 200px;
-      padding: 10px;
-      border-radius: 8px;
-      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-      z-index: 1;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
-   }
-
-   /* Display dropdown content on hover */
-   .dropdown:hover .dropdown-content {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-   }
-
-   /* Styling for list items within the dropdown */
-   .dropdown-content ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-   }
-
-   /* Style for individual links */
-   .dropdown-content li a {
-      color: #fff;
-      padding: 10px 16px;
-      text-decoration: none;
-      display: block;
-      font-weight: bold;
-      border-radius: 5px;
+      font-size: 15px; /* Slightly larger font size for readability */
+      letter-spacing: 0.5px;
       transition: background-color 0.3s ease, transform 0.2s ease;
    }
 
-   /* Hover effect for links */
-   .dropdown-content li a:hover {
-      background-color: #575757;
-      transform: translateX(5px);
+   /* Hover effect for toolbar links */
+   .toolbar a:hover {
+      background-color: #5C8A9A; /* Slightly darker blue on hover */
+      color: #ffffff;
+      transform: scale(1.05); /* Slight enlargement on hover */
    }
 
-   /* Responsive adjustments */
+   /* Responsive adjustments for mobile screens */
    @media (max-width: 600px) {
-      .dropdown-content {
-         min-width: 160px;
+      .toolbar {
+         flex-direction: column;
+         align-items: center;
+         gap: 10px;
+      }
+      .toolbar a {
+         padding: 10px 20px; /* More padding for better touch accessibility on mobile */
+         font-size: 16px; /* Slightly larger font on smaller screens */
       }
    }
 </style>
 
-<!-- Dropdown HTML structure -->
-<div class="dropdown">
-   <a href="services.html">Pages</a>
-   <div class="dropdown-content">
-      <ul>
-         <li><a href="Index.html">Home</a></li>
-         <li><a href="Excavator.html">Excavator</a></li>
-         <li><a href="Bulldozer.html">Bulldozer</a></li>
-         <li><a href="Crane.html">Crane</a></li>
-         <li><a href="Haul Truck.html">Haul Truck</a></li>
-         <li><a href="Loader.html">Loader</a></li>
-         <li><a href="Backhoe.html">Backhoe</a></li>
-         <li><a href="Forklift.html">Forklift</a></li>
-         <li><a href="Grader.html">Grader</a></li>
-         <li><a href="Compactor.html">Compactor</a></li>
-         <li><a href="Paver.html">Paver</a></li>
-         <li><a href="Scraper.html">Scraper</a></li>
-         <li><a href="Drilling rig.html">Drilling Rig</a></li>
-      </ul>
-   </div>
+<!-- Toolbar HTML structure -->
+<div class="toolbar">
+   <a href="Index.html">Home</a>
+   <a href="Excavator.html">Excavator</a>
+   <a href="Bulldozer.html">Bulldozer</a>
+   <a href="Crane.html">Crane</a>
+   <a href="Haul Truck.html">Haul Truck</a>
+   <a href="Loader.html">Loader</a>
+   <a href="Backhoe.html">Backhoe</a>
+   <a href="Forklift.html">Forklift</a>
+   <a href="Grader.html">Grader</a>
+   <a href="Compactor.html">Compactor</a>
+   <a href="Paver.html">Paver</a>
+   <a href="Scraper.html">Scraper</a>
+   <a href="Drilling rig.html">Drilling Rig</a>
 </div>
 
     <section id="about">
