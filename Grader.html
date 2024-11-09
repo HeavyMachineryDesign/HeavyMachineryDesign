@@ -122,5 +122,22 @@
         <p>Graders are vital tools in the construction industry, contributing to the efficient and precise execution of grading tasks. Their ability to adapt to various applications, from road construction to landscaping, underscores their importance in infrastructure development. As technology continues to advance, graders will likely evolve further, enhancing their capabilities and reinforcing their role as essential machinery in modern construction.</p>
     </section>
 
+<!-- Back to Top Button -->
+<a href="#top" class="back-to-top">Back to Top</a>
+
+<script>
+   // Select the Back to Top button
+   const backToTopButton = document.querySelector('.back-to-top');
+
+   // Show or hide the button based on scroll position
+   window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+         backToTopButton.classList.add('show');
+      } else {
+         backToTopButton.classList.remove('show');
+      }
+   });
+</script>
+    
 </body>
 </html>
