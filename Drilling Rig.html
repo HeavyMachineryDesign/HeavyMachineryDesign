@@ -15,44 +15,32 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-        
-       /* Header Styling */
+        }
+
+        /* Header Styling */
         header {
             background: #333;
             position: fixed;
             color: #fff;
             padding: 10px;
             text-align: center;
-            position: relative;
-        }
-/* Back Button Styling */
-.back-button {
-    color: #fff; /* White text */
-    font-size: 16px; /* Adjust font size */
-    padding: 10px 20px;
-    text-decoration: none; /* Remove underline */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    border-radius: 5px; /* Rounded corners */
-    margin-right: 20px; /* Space between the back button and other elements */
-}
-
-.back-button:hover {
-    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
-}
-        .title {
-            font-size: 36px;
-            font-weight: bold;
-            margin: 0;
+            width: 100%;
+            z-index: 1000;
         }
 
-        /* Home Icon Styling */
-        .home-icon {
-            position: absolute;
-            left: 15px;
-            top: 15px;
-            font-size: 1.5rem;
+        /* Back Button Styling */
+        .back-button {
             color: #fff;
+            font-size: 16px;
+            padding: 10px 20px;
             text-decoration: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+
+        .back-button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
         }
 
         .title {
@@ -60,8 +48,6 @@
             font-weight: bold;
             margin: 0;
         }
-
-    }
 
         /* Back to Top Button */
         .back-to-top {
@@ -88,71 +74,45 @@
             transform: translateY(0);
         }
 
+        .back-to-top:hover {
+            background-color: #555;
+            transform: scale(1.1);
+        }
+
         /* Responsive Styling */
         @media (max-width: 768px) {
-            .toolbar, .content-nav {
-                display: none; /* Hidden by default on mobile */
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+                display: flex;
                 flex-direction: column;
+                align-items: center;
             }
 
-            .dropdown-btn {
-                display: block;
+            nav ul li {
+                margin: 10px 0;
             }
+        }
 
-            .content-nav a, .toolbar a {
-                width: 100%;
-                text-align: center;
-            }
-
-        .home-icon {
-            position: absolute;
-            left: 15px;
-            top: 15px;
-            font-size: 1.5rem;
-            color: #fff;
-            text-decoration: none;
-        }
-        
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
         section {
             padding: 20px;
+            margin-top: 80px; /* Offset for fixed header */
+        }
+
+        /* Images in Lists */
+        section ul li img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            max-width: 400px;
         }
     </style>
-
-   
 </head>
-<body>
+<body id="top">
     <header>
-            <a href="javascript:window.history.back();" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
-        <h1>Drill Rig</h1>
-        <nav>
-            <ul>
-               
-            </ul>
-        </nav>
+        <a href="javascript:window.history.back();" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+        <h1 class="title">Drill Rig</h1>
     </header>
-
-
-<style>
-   
-   /* Responsive adjustments for mobile screens */
-   @media (max-width: 600px) {
-      .toolbar {
-         flex-direction: column;
-         align-items: center;
-         gap: 10px;
-      }
-      
-   
-</style>
-
 
     <section id="about">
         <h1>Drilling Rig</h1>
@@ -178,25 +138,25 @@
         <ul>
             <li>
                 <h3>1. Land Rigs</h3>
-                <img src="land-rig.jpg" alt="Land Drilling Rig" style="width: 400px; height: 300px; object-fit: cover;">
+                <img src="land-rig.jpg" alt="Land Drilling Rig">
                 <p>Designed for drilling on land, these rigs are often mobile and can be moved from one location to another.</p>
             </li>
 
             <li>
                 <h3>2. Offshore Rigs</h3>
-                <img src="offshore-rig.jpg" alt="Offshore Drilling Rig" style="width: 400px; height: 300px; object-fit: cover;">
+                <img src="offshore-rig.jpg" alt="Offshore Drilling Rig">
                 <p>Used for drilling in ocean waters, these rigs are designed to withstand harsh marine conditions.</p>
             </li>
 
             <li>
                 <h3>3. Portable Rigs</h3>
-                <img src="portable-rig.jpg" alt="Portable Drilling Rig" style="width: 400px; height: 300px; object-fit: cover;">
+                <img src="portable-rig.jpg" alt="Portable Drilling Rig">
                 <p>Compact and lightweight, these rigs are suitable for small drilling operations and are easy to transport.</p>
             </li>
 
             <li>
                 <h3>4. Rotary Rigs</h3>
-                <img src="rotary-rig.jpg" alt="Rotary Drilling Rig" style="width: 400px; height: 300px; object-fit: cover;">
+                <img src="rotary-rig.jpg" alt="Rotary Drilling Rig">
                 <p>Utilize a rotating drill bit to bore through the earth and are widely used in oil and gas drilling.</p>
             </li>
         </ul>
@@ -204,62 +164,21 @@
         <p>Drilling rigs play a crucial role in resource extraction and exploration, contributing to energy production and water supply across the globe.</p>
     </section>
 
-     <style>
-   /* Back to Top Button Styling */
-   .back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      padding: 12px 20px;
-      background-color: #333;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 50px;
-      display: none; /* Initially hidden */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      opacity: 0;
-      font-size: 16px;
-      z-index: 1000;
-   }
+    <!-- Back to Top Button -->
+    <a href="#top" class="back-to-top">Back to Top</a>
 
-   /* Show button with fade-in effect */
-   .back-to-top.show {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-   }
+    <script>
+        // Select the Back to Top button
+        const backToTopButton = document.querySelector('.back-to-top');
 
-   /* Button Hover Effect */
-   .back-to-top:hover {
-      background-color: #555;
-      transform: scale(1.1);
-   }
-
-   /* Smooth Scrolling */
-   html {
-      scroll-behavior: smooth;
-   }
-</style>
-</head>
-<body id="top">
-
-<!-- Back to Top Button -->
-<a href="#top" class="back-to-top">Back to Top</a>
-
-<script>
-   // Select the Back to Top button
-   const backToTopButton = document.querySelector('.back-to-top');
-
-   // Show or hide the button based on scroll position
-   window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-         backToTopButton.classList.add('show');
-      } else {
-         backToTopButton.classList.remove('show');
-      }
-   });
-</script>
+        // Show or hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 </html>
