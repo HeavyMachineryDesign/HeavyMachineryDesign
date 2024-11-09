@@ -256,8 +256,22 @@
     <p>Haul trucks are essential for industries that require large-scale material movement. With their power, durability, and growing technological advancements, haul trucks contribute greatly to the efficiency and safety of mining, construction, and quarrying operations. As sustainability becomes a priority, developments in electric and autonomous haul trucks are paving the way toward a more environmentally conscious future in heavy industry.</p>
 </section>
 
+<!-- Back to Top Button -->
+<a href="#top" class="back-to-top">Back to Top</a>
 
-</div>
- <a href="#top" class="back-to-top">Back to Top</a>
+<script>
+   // Select the Back to Top button
+   const backToTopButton = document.querySelector('.back-to-top');
+
+   // Show or hide the button based on scroll position
+   window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+         backToTopButton.classList.add('show');
+      } else {
+         backToTopButton.classList.remove('show');
+      }
+   });
+</script>
+    
 </body>
 </html>
