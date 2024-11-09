@@ -114,5 +114,22 @@
 
         <p>Loaders are crucial for improving efficiency and productivity in various industries. If you need more detailed information about specific types or models, feel free to ask!
     
+<!-- Back to Top Button -->
+<a href="#top" class="back-to-top">Back to Top</a>
+
+<script>
+   // Select the Back to Top button
+   const backToTopButton = document.querySelector('.back-to-top');
+
+   // Show or hide the button based on scroll position
+   window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+         backToTopButton.classList.add('show');
+      } else {
+         backToTopButton.classList.remove('show');
+      }
+   });
+</script>
+    
 </body>
 </html>
