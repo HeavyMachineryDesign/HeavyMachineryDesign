@@ -132,5 +132,22 @@
         <p>Pavers are an essential component of modern construction and landscaping, providing durability, versatility, and aesthetic appeal. With various types available, they can cater to a wide range of applications and styles. Their ability to withstand environmental factors while offering low maintenance and easy installation makes pavers a preferred choice for both homeowners and contractors. As trends in outdoor design continue to evolve, pavers will remain a fundamental element in creating functional and beautiful outdoor spaces.</p>
     </section>
 
+<!-- Back to Top Button -->
+<a href="#top" class="back-to-top">Back to Top</a>
+
+<script>
+   // Select the Back to Top button
+   const backToTopButton = document.querySelector('.back-to-top');
+
+   // Show or hide the button based on scroll position
+   window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+         backToTopButton.classList.add('show');
+      } else {
+         backToTopButton.classList.remove('show');
+      }
+   });
+</script>
+    
 </body>
 </html>
