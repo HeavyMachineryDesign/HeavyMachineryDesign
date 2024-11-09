@@ -7,132 +7,154 @@
     <!-- Add Font Awesome CDN link -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
     <style>
-    /* Smooth scrolling */
-    html {
-        scroll-behavior: smooth;
-    }
-
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-
-    /* Header Styling */
-    header {
-        background: #333;
-        color: #fff;
-        padding: 10px;
-        text-align: center; /* Center the title */
-    }
-
-    /* Title Styling */
-    .title {
-        font-size: 36px; /* Larger title size */
-        font-weight: bold;
-        margin-bottom: 0px; /* Space between title and menu */
-    }
-
-    /* Main Navigation Menu Below the Header */
- 
-
-    /* Content Navigation Menu */
-    .content-nav {
-        background-color: #333; /* Slightly darker background for section nav */
-        display: flex;
-        justify-content: center;
-        gap: 5px;
-        padding: 0px 0;
-        font-style: italic; /* Content nav links are italicized */
-    }
-
-    .content-nav a {
-        color: #f0f0f0;
-        text-decoration: none;
-        padding: 5px 10px;
-        font-size: 14px;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .content-nav a:hover {
-        background-color: rgba(92, 138, 154, 0.8);
-        color: #ffffff;
-        transform: scale(1.05);
-    }
-
-   .toolbar {
-        background-color: #444;
-        display: flex;
-        justify-content: center;
-        gap: 5px 10px;
-        padding: 5px;
-    }
-
-    .toolbar a {
-        color: #f0f0f0;
-        text-decoration: none;
-        padding: 5px 10px;
-        font-size: 14px;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-
-    }
-
-    .toolbar a:hover {
-        background-color: rgba(92, 138, 154, 0.8);
-        color: #ffffff;
-        transform: scale(1.05);
-    }
-
-    /* Media query for small screens */
-    @media (max-width: 600px) {
-        .toolbar, .content-nav {
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
         }
-    }
 
-    /* Back to Top Button Styling */
-    .back-to-top {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        padding: 12px 20px;
-        background-color: #333;
-        color: white;
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 50px;
-        display: none;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        opacity: 0;
-        font-size: 16px;
-        z-index: 1000;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-    .back-to-top.show {
-        display: block;
-        opacity: 1;
-        transform: translateY(0);
-    }
+        /* Header Styling */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
 
-    .back-to-top:hover {
-        background-color: #555;
-        transform: scale(1.1);
-    }
-</style>
+        .title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+        }
 
+        /* Main Navigation Menu */
+        .content-nav {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px 0;
+            font-style: italic;
+        }
+
+        .content-nav a {
+            color: #f0f0f0;
+            text-decoration: none;
+            padding: 8px 12px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .content-nav a:hover {
+            background-color: rgba(92, 138, 154, 0.8);
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+
+        /* Toolbar */
+        .toolbar {
+            background-color: #444;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5px 10px;
+            padding: 10px;
+        }
+
+        .toolbar a {
+            color: #f0f0f0;
+            text-decoration: none;
+            padding: 5px 10px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .toolbar a:hover {
+            background-color: rgba(92, 138, 154, 0.8);
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 20px;
+        }
+
+        section h1 {
+            font-size: 1.5rem;
+        }
+
+        section h2 {
+            font-size: 1.25rem;
+        }
+
+        /* Back to Top Button Styling */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 16px;
+            background-color: #333;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            display: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            opacity: 0;
+            font-size: 16px;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background-color: #555;
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .title {
+                font-size: 1.8rem;
+            }
+
+            .content-nav, .toolbar {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+                padding: 8px;
+            }
+
+            .content-nav a, .toolbar a {
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+
+            .back-to-top {
+                padding: 12px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
 <body id="top">
-
-    <!-- Header with Page Title -->
     <header>
-        <div class="title">Backhoe</div> <!-- Title centered -->
+        <div class="title">Backhoe</div>
     </header>
 
-    <!-- Content Section Navigation Menu -->
     <div class="content-nav">
         <a href="#about">About</a>
         <a href="#key-features">Key Features</a>
@@ -141,9 +163,7 @@
         <a href="#advantages">Advantages</a>
     </div>
 
-    <!-- Main Navigation Menu Below the Header -->
     <div class="toolbar">
-     
         <a href="Excavator.html">Excavator</a>
         <a href="Bulldozer.html">Bulldozer</a>
         <a href="Crane.html">Crane</a>
@@ -157,7 +177,6 @@
         <a href="Scraper.html">Scraper</a>
         <a href="Drilling rig.html">Drilling Rig</a>
     </div>
-
 
 
 
