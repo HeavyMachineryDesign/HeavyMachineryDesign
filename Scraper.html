@@ -15,14 +15,25 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-         /* Header Styling */
-        header {
-            background: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            position: relative;
-        }
+        
+        /* Header Styling */
+header {
+    background: transparent; /* Makes the header transparent */
+    color: #fff; /* Text color */
+    padding: 10px;
+    text-align: center;
+    position: fixed; /* Fixes the header at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure it stretches across the screen */
+    z-index: 1000; /* Ensure it stays above other content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add a shadow for visual effect */
+}
+
+/* Adjust the content to avoid overlap with fixed header */
+body {
+    padding-top: 60px; /* Adjust based on the header's height */
+}
 
         .title {
             font-size: 36px;
@@ -30,7 +41,7 @@
             margin: 0;
         }
 
-        /* Home Icon Styling */
+    
         .home-icon {
             position: absolute;
             left: 15px;
@@ -39,7 +50,7 @@
             color: #fff;
             text-decoration: none;
         }
-        }
+        
         nav ul {
             list-style-type: none;
             padding: 0;
