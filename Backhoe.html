@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Backhoe</title>
-    <!-- Add Font Awesome CDN link -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
     <style>
-        /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
@@ -33,18 +30,30 @@
             margin: 0;
         }
 
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: #fff;
+            background: none;
+            border: none;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+        }
+
         /* Main Navigation Menu */
-        .content-nav {
+        .content-nav, .toolbar {
             background-color: #333;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
             gap: 10px;
             padding: 10px 0;
             font-style: italic;
         }
 
-        .content-nav a {
+        .content-nav a, .toolbar a {
             color: #f0f0f0;
             text-decoration: none;
             padding: 8px 12px;
@@ -52,47 +61,10 @@
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
-        .content-nav a:hover {
+        .content-nav a:hover, .toolbar a:hover {
             background-color: rgba(92, 138, 154, 0.8);
             color: #ffffff;
             transform: scale(1.05);
-        }
-
-        /* Toolbar */
-        .toolbar {
-            background-color: #444;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 5px 10px;
-            padding: 10px;
-        }
-
-        .toolbar a {
-            color: #f0f0f0;
-            text-decoration: none;
-            padding: 5px 10px;
-            font-size: 1rem;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .toolbar a:hover {
-            background-color: rgba(92, 138, 154, 0.8);
-            color: #ffffff;
-            transform: scale(1.05);
-        }
-
-        /* Section Styling */
-        section {
-            padding: 20px;
-        }
-
-        section h1 {
-            font-size: 1.5rem;
-        }
-
-        section h2 {
-            font-size: 1.25rem;
         }
 
         /* Back to Top Button Styling */
@@ -120,22 +92,25 @@
             transform: translateY(0);
         }
 
-        .back-to-top:hover {
-            background-color: #555;
-            transform: scale(1.1);
-        }
-
         /* Responsive Design */
         @media (max-width: 600px) {
-            .title {
-                font-size: 1.8rem;
+            /* Show Hamburger Menu on Small Screens */
+            .menu-toggle {
+                display: block;
             }
 
+            /* Hide Navigation Menus by Default */
             .content-nav, .toolbar {
+                display: none;
                 flex-direction: column;
                 gap: 10px;
                 align-items: center;
                 padding: 8px;
+            }
+
+            /* Show Menu when Active */
+            .content-nav.active, .toolbar.active {
+                display: flex;
             }
 
             .content-nav a, .toolbar a {
@@ -152,10 +127,13 @@
 </head>
 <body id="top">
     <header>
+        <button class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
         <div class="title">Backhoe</div>
     </header>
 
-    <div class="content-nav">
+    <div class="content-nav" id="contentNav">
         <a href="#about">About</a>
         <a href="#key-features">Key Features</a>
         <a href="#common-uses">Common Uses</a>
@@ -163,7 +141,7 @@
         <a href="#advantages">Advantages</a>
     </div>
 
-    <div class="toolbar">
+    <div class="toolbar" id="toolbar">
         <a href="Excavator.html">Excavator</a>
         <a href="Bulldozer.html">Bulldozer</a>
         <a href="Crane.html">Crane</a>
