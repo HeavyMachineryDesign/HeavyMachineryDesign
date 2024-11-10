@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,41 +8,40 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         html {
-            scroll-behavior: smooth; /* Enable smooth scrolling */
+            scroll-behavior: smooth;
         }
         
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-        
-       /* Header Styling */
+        }
+
+        /* Header Styling */
         header {
             background: #333;
-            position: fixed;
             color: #fff;
             padding: 10px;
             text-align: center;
-            position: relative;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
-/* Back Button Styling */
-.back-button {
-    color: #fff; /* White text */
-    font-size: 16px; /* Adjust font size */
-    padding: 10px 20px;
-    text-decoration: none; /* Remove underline */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    border-radius: 5px; /* Rounded corners */
-    margin-right: 20px; /* Space between the back button and other elements */
-}
 
-.back-button:hover {
-    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
-}
-        .title {
-            font-size: 36px;
-            font-weight: bold;
-            margin: 0;
+        /* Back Button Styling */
+        .back-button {
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+
+        .back-button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
         }
 
         /* Home Icon Styling */
@@ -61,8 +59,6 @@
             font-weight: bold;
             margin: 0;
         }
-
-    }
 
         /* Back to Top Button */
         .back-to-top {
@@ -92,7 +88,7 @@
         /* Responsive Styling */
         @media (max-width: 768px) {
             .toolbar, .content-nav {
-                display: none; /* Hidden by default on mobile */
+                display: none;
                 flex-direction: column;
             }
 
@@ -104,42 +100,32 @@
                 width: 100%;
                 text-align: center;
             }
-
-        .home-icon {
-            position: absolute;
-            left: 15px;
-            top: 15px;
-            font-size: 1.5rem;
-            color: #fff;
-            text-decoration: none;
         }
-        
+
         nav ul {
             list-style-type: none;
             padding: 0;
         }
+
         nav ul li {
             display: inline;
             margin-right: 20px;
         }
+
         section {
             padding: 20px;
+            margin-top: 70px; /* To account for fixed header */
         }
     </style>
-
-   
 </head>
 <body>
     <header>
-         <a href="javascript:window.history.back();" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+        <a href="javascript:window.history.back();" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
         <h1 class="title">Drilling Rig</h1>
         <nav>
-            <ul>
-               
-            </ul>
+            <ul></ul>
         </nav>
     </header>
-
 
     <section id="about">
         <h1>Drilling Rig</h1>
@@ -168,19 +154,16 @@
                 <img src="land-rig.jpg" alt="Land Drilling Rig">
                 <p>Designed for drilling on land, these rigs are often mobile and can be moved from one location to another.</p>
             </li>
-
             <li>
                 <h3>2. Offshore Rigs</h3>
                 <img src="offshore-rig.jpg" alt="Offshore Drilling Rig">
                 <p>Used for drilling in ocean waters, these rigs are designed to withstand harsh marine conditions.</p>
             </li>
-
             <li>
                 <h3>3. Portable Rigs</h3>
                 <img src="portable-rig.jpg" alt="Portable Drilling Rig">
                 <p>Compact and lightweight, these rigs are suitable for small drilling operations and are easy to transport.</p>
             </li>
-
             <li>
                 <h3>4. Rotary Rigs</h3>
                 <img src="rotary-rig.jpg" alt="Rotary Drilling Rig">
