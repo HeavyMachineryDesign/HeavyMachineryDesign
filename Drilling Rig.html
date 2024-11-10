@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <title>Drill Rig</title>
+    <title>Drilling Rig</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         html {
@@ -15,32 +16,44 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-        }
-
-        /* Header Styling */
+        
+       /* Header Styling */
         header {
             background: #333;
             position: fixed;
             color: #fff;
             padding: 10px;
             text-align: center;
-            width: 100%;
-            z-index: 1000;
+            position: relative;
+        }
+/* Back Button Styling */
+.back-button {
+    color: #fff; /* White text */
+    font-size: 16px; /* Adjust font size */
+    padding: 10px 20px;
+    text-decoration: none; /* Remove underline */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 5px; /* Rounded corners */
+    margin-right: 20px; /* Space between the back button and other elements */
+}
+
+.back-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+}
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
         }
 
-        /* Back Button Styling */
-        .back-button {
+        /* Home Icon Styling */
+        .home-icon {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            font-size: 1.5rem;
             color: #fff;
-            font-size: 16px;
-            padding: 10px 20px;
             text-decoration: none;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 5px;
-            margin-right: 20px;
-        }
-
-        .back-button:hover {
-            background-color: rgba(0, 0, 0, 0.7);
         }
 
         .title {
@@ -48,6 +61,8 @@
             font-weight: bold;
             margin: 0;
         }
+
+    }
 
         /* Back to Top Button */
         .back-to-top {
@@ -74,45 +89,57 @@
             transform: translateY(0);
         }
 
-        .back-to-top:hover {
-            background-color: #555;
-            transform: scale(1.1);
-        }
-
         /* Responsive Styling */
         @media (max-width: 768px) {
-            nav ul {
-                list-style-type: none;
-                padding: 0;
-                display: flex;
+            .toolbar, .content-nav {
+                display: none; /* Hidden by default on mobile */
                 flex-direction: column;
-                align-items: center;
             }
 
-            nav ul li {
-                margin: 10px 0;
+            .dropdown-btn {
+                display: block;
             }
+
+            .content-nav a, .toolbar a {
+                width: 100%;
+                text-align: center;
+            }
+
+        .home-icon {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
         }
-
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
         section {
             padding: 20px;
-            margin-top: 80px; /* Offset for fixed header */
-        }
-
-        /* Images in Lists */
-        section ul li img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            max-width: 400px;
         }
     </style>
+
+   
 </head>
-<body id="top">
+<body>
     <header>
-        <a href="javascript:window.history.back();" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
-        <h1 class="title">Drill Rig</h1>
+         <a href="javascript:window.history.back();" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+        <h1 class="title">Drilling Rig</h1>
+        <nav>
+            <ul>
+               
+            </ul>
+        </nav>
     </header>
+
 
     <section id="about">
         <h1>Drilling Rig</h1>
