@@ -6,42 +6,43 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>Drilling Rig</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
+   <style>
         html {
-            scroll-behavior: smooth;
+            scroll-behavior: smooth; /* Enable smooth scrolling */
         }
         
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-        }
-
-        /* Header Styling */
+        
+       /* Header Styling */
         header {
             background: #333;
+            position: fixed;
             color: #fff;
             padding: 10px;
             text-align: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+            position: relative;
         }
+/* Back Button Styling */
+.back-button {
+    color: #fff; /* White text */
+    font-size: 16px; /* Adjust font size */
+    padding: 10px 20px;
+    text-decoration: none; /* Remove underline */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 5px; /* Rounded corners */
+    margin-right: 20px; /* Space between the back button and other elements */
+}
 
-        /* Back Button Styling */
-        .back-button {
-            color: #fff;
-            font-size: 16px;
-            padding: 10px 20px;
-            text-decoration: none;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 5px;
-            margin-right: 20px;
-        }
-
-        .back-button:hover {
-            background-color: rgba(0, 0, 0, 0.7);
+.back-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+}
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
         }
 
         /* Home Icon Styling */
@@ -59,6 +60,8 @@
             font-weight: bold;
             margin: 0;
         }
+
+    }
 
         /* Back to Top Button */
         .back-to-top {
@@ -88,7 +91,7 @@
         /* Responsive Styling */
         @media (max-width: 768px) {
             .toolbar, .content-nav {
-                display: none;
+                display: none; /* Hidden by default on mobile */
                 flex-direction: column;
             }
 
@@ -100,23 +103,29 @@
                 width: 100%;
                 text-align: center;
             }
-        }
 
+        .home-icon {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+        }
+        
         nav ul {
             list-style-type: none;
             padding: 0;
         }
-
         nav ul li {
             display: inline;
             margin-right: 20px;
         }
-
         section {
             padding: 20px;
-            margin-top: 70px; /* To account for fixed header */
         }
     </style>
+
 </head>
 <body>
     <header>
