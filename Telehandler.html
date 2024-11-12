@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>Telehandler</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        html {
+            scroll-behavior: smooth; /* Enable smooth scrolling */
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        
+       /* Header Styling */
+        header {
+            background: #333;
+            position: fixed;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+/* Back Button Styling */
+.back-button {
+    color: #fff; /* White text */
+    font-size: 16px; /* Adjust font size */
+    padding: 10px 20px;
+    text-decoration: none; /* Remove underline */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 5px; /* Rounded corners */
+    margin-right: 20px; /* Space between the back button and other elements */
+}
+
+.back-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+}
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* Home Icon Styling */
+        .home-icon {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+    }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            background-color: #333;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            display: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            opacity: 0;
+            font-size: 16px;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .toolbar, .content-nav {
+                display: none; /* Hidden by default on mobile */
+                flex-direction: column;
+            }
+
+            .dropdown-btn {
+                display: block;
+            }
+
+            .content-nav a, .toolbar a {
+                width: 100%;
+                text-align: center;
+            }
+
+        .home-icon {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        section {
+            padding: 20px;
+        }
+    </style>      
+    
+</head>
+<body>
+    <header>
+        <h1>Telehandler</h1>
+        <nav>
+            <ul>
+               
+            </ul>
+        </nav>
+    </header>
+
+ </style>
+
+<body>
+    <h1>Telehandler Overview</h1>
+
+    <div class="content-section">
+        <h2>Definition</h2>
+        <p>A <strong>telehandler</strong>, also known as a <strong>telescopic handler</strong> or <strong>telehandler forklift</strong>, is a versatile lifting machine equipped with a telescopic boom that can extend and retract to provide extended reach and height. It combines the capabilities of a forklift, crane, and aerial work platform, and is widely used in construction, agriculture, and industrial settings to lift, place, and move materials to hard-to-reach places.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Key Features</h2>
+        <ul>
+            <li><strong>Telescopic Boom</strong>: The adjustable boom provides reach and height, allowing operators to access difficult-to-reach places.</li>
+            <li><strong>Lifting Capacity</strong>: Telehandlers can lift heavy loads, typically between 4,000 lbs to 12,000 lbs (1,800 kg to 5,443 kg), depending on the model.</li>
+            <li><strong>Variable Attachments</strong>: Can be fitted with different attachments such as pallet forks, buckets, lifting platforms, etc., for multiple tasks.</li>
+            <li><strong>Maneuverability</strong>: Features four-wheel drive and various steering options, allowing easy movement in rough terrains.</li>
+            <li><strong>Height and Reach</strong>: Commonly reaches heights up to 40 feet (12 meters), enabling operators to place materials at significant heights.</li>
+            <li><strong>Stability</strong>: Optional stabilizer systems provide additional stability when lifting at extended heights.</li>
+            <li><strong>Off-Road Capability</strong>: Often designed for rugged terrain, with larger tires to handle uneven surfaces.</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>Types of Telehandlers</h2>
+        <ul>
+            <li><strong>Fixed Telehandler</strong>: Has a stationary boom that requires the operator to move the machine to reposition the load.</li>
+            <li><strong>Rotating Telehandler</strong>: Features a rotating boom that allows 360-degree rotation of the load, increasing flexibility and reach.</li>
+            <li><strong>Heavy-Duty Telehandler</strong>: Designed for lifting heavy loads, often used in large construction or industrial applications.</li>
+            <li><strong>Compact Telehandler</strong>: A smaller version, ideal for confined spaces and lighter tasks, commonly used in agriculture.</li>
+            <li><strong>Agricultural Telehandler</strong>: Specifically designed for agricultural applications, with attachments for handling bales, fertilizers, and other materials.</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>Applications of Telehandlers</h2>
+        <ul>
+            <li><strong>Construction</strong>: Used for lifting and placing materials like bricks, timber, and steel beams at heights on construction sites.</li>
+            <li><strong>Agriculture</strong>: Used for handling feed, fertilizers, hay bales, and other materials on farms and agricultural settings.</li>
+            <li><strong>Warehouse and Distribution</strong>: Used to load and unload materials, and place items on high shelves in warehouses.</li>
+            <li><strong>Mining and Industrial Applications</strong>: Used for handling and transporting materials in rugged environments, such as mining sites.</li>
+            <li><strong>Landscaping and Forestry</strong>: Used in forestry for tree removal, planting, and moving materials such as logs and rocks.</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>History of Telehandlers</h2>
+        <p>The telehandler was introduced in the <strong>1970s</strong> in Europe, initially for use in the agricultural sector. The need for a more versatile machine to lift and move materials at greater heights led to the development of the telehandler, which could reach places traditional forklifts or cranes couldn’t access. Over the decades, the design of telehandlers evolved with improvements in lifting capacities, stability, and attachments.</p>
+        <p>In the <strong>1980s</strong>, rotating telehandlers were introduced, allowing operators to rotate the boom 360 degrees for increased flexibility and precision. By the <strong>1990s and 2000s</strong>, telehandlers became common across various industries, with manufacturers adding enhanced features like advanced controls, better fuel efficiency, and safety technologies. Today, telehandlers continue to be a crucial piece of machinery in industries like construction, agriculture, and logistics.</p>
+    </div>
+
+</body>
+</html>
