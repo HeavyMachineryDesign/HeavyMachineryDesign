@@ -43,9 +43,55 @@
         section {
             padding: 20px;
         }
-    </style>
-
    
+/* Back to Top Button Styling */
+   .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 12px 20px;
+      background-color: #333;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 50px;
+      display: none; /* Initially hidden */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      opacity: 0;
+      font-size: 16px;
+      z-index: 1000;
+   }
+
+   /* Show button with fade-in effect */
+   .back-to-top.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+   }
+
+   /* Button Hover Effect */
+   .back-to-top:hover {
+      background-color: #555;
+      transform: scale(1.1);
+   }
+
+   /* Smooth Scrolling */
+   html {
+      scroll-behavior: smooth;
+   }
+
+
+
+/* Responsive adjustments for mobile screens */
+   @media (max-width: 600px) {
+      .toolbar {
+         flex-direction: column;
+         align-items: center;
+         gap: 10px;
+      }
+      
+    
 </head>
 <body>
     <header>
@@ -57,19 +103,7 @@
         </nav>
     </header>
 
-
-<style>
-   
-   /* Responsive adjustments for mobile screens */
-   @media (max-width: 600px) {
-      .toolbar {
-         flex-direction: column;
-         align-items: center;
-         gap: 10px;
-      }
-      
-   
-</style>
+ </style>
     
     <section id="about">
         <h2>What is Heavy Machinery?</h2>
@@ -127,7 +161,7 @@
             <li><strong><a href="Bulldozer.html">Bulldozer</a></strong>: Ideal for pushing large quantities of soil or rubble.</li>
             <li><strong><a href="Loader.html">Loader</a></strong>: For loading materials into trucks or moving materials around sites.</li>
             <li><strong><a href="Backhoe.html">Backhoe</a></strong>: Versatile for both digging and loading.</li>
-            <li><strong>Motor Graders</strong>: Used for creating a flat surface, especially in road construction.</li>
+            <li><strong><a href="Grader.html">Grader</a></strong>: Used for creating a flat surface, especially in road construction.</li>
             <li><strong><a href="Scraper.html">Scraper</a></strong>: Specialized for earthmoving and leveling large areas.</li>
         </ul>
     </div>
@@ -190,8 +224,8 @@
         <h3>6. Mining Equipment</h3>
  <ul>
         <li><strong>Excavators</strong>: Large machines used for digging and removing overburden or minerals.</li>
-        <li><strong>Drill Rigs</strong>: Used to create boreholes in the earth for exploration, blasting, and extracting minerals.</li>
-        <li><strong>Haul Trucks</strong>: Heavy-duty trucks designed to transport mined materials like ore, coal, or overburden.</li>
+        <li><strong><a href="Drilling Rig.html">Drilling Rig</a></strong>: Used to create boreholes in the earth for exploration, blasting, and extracting minerals.</li>
+        <li><strong><a href="Haul Truck.html">Haul Truck</a></strong>: Heavy-duty trucks designed to transport mined materials like ore, coal, or overburden.</li>
         <li><strong>Draglines</strong>: Large machines that remove overburden in open-pit mining, with a long boom and dragline bucket.</li>
         <li><strong>Continuous Miners</strong>: Machines used for extracting materials in underground mining without the need for drilling and blasting.</li>
         <li><strong>Blasting Tools</strong>: Equipment used for controlled explosions to break down hard rock for easier extraction.</li>
@@ -249,12 +283,7 @@
         <h2>List of Heavy Machineries</h2>
         <p>Common types of heavy machinery include:</p>
         <ul>
-            <li><strong><a href="Excavator.html">Excavator</a></strong></li>
-            <li><strong><a href="Bulldozer.html">Bulldozer</a></strong></li>
-            <li><strong><a href="Crane.html">Crane</a></strong></li>
-            <li><strong><a href="Haul Truck.html">Haul Truck</a></strong></li>
-            <li><strong><a href="Loader.html">Loader</a></strong></li>
-            <li><strong><a href="Backhoe.html">Backhoe</a></strong></li>
+          
             <li><strong><a href="Forklift.html">Forklift</a></strong></li>
             <li><strong><a href="Grader.html">Grader</a></strong></li>
             <li><strong><a href="Compactor.html">Compactor</a></strong></li>
@@ -265,44 +294,7 @@
         </ul>
         <p>Each type of machinery plays a critical role in the efficiency and effectiveness of construction and industrial projects. These machines are essential for large-scale projects, helping to increase efficiency and safety in challenging environments.</p>
     </section>
- <style>
-   /* Back to Top Button Styling */
-   .back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      padding: 12px 20px;
-      background-color: #333;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 50px;
-      display: none; /* Initially hidden */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      opacity: 0;
-      font-size: 16px;
-      z-index: 1000;
-   }
 
-   /* Show button with fade-in effect */
-   .back-to-top.show {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-   }
-
-   /* Button Hover Effect */
-   .back-to-top:hover {
-      background-color: #555;
-      transform: scale(1.1);
-   }
-
-   /* Smooth Scrolling */
-   html {
-      scroll-behavior: smooth;
-   }
-</style>
 </head>
 <body id="top">
 
