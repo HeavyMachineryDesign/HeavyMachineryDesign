@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>Concrete Mixers</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        html {
+            scroll-behavior: smooth; /* Enable smooth scrolling */
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        
+       /* Header Styling */
+        header {
+            background: #333;
+            position: fixed;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+/* Back Button Styling */
+.back-button {
+    color: #fff; /* White text */
+    font-size: 16px; /* Adjust font size */
+    padding: 10px 20px;
+    text-decoration: none; /* Remove underline */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 5px; /* Rounded corners */
+    margin-right: 20px; /* Space between the back button and other elements */
+}
+
+.back-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+}
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* Home Icon Styling */
+        .home-icon {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+    }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            background-color: #333;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            display: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            opacity: 0;
+            font-size: 16px;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .toolbar, .content-nav {
+                display: none; /* Hidden by default on mobile */
+                flex-direction: column;
+            }
+
+            .dropdown-btn {
+                display: block;
+            }
+
+            .content-nav a, .toolbar a {
+                width: 100%;
+                text-align: center;
+            }
+
+        .home-icon {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        section {
+            padding: 20px;
+        }
+    </style>
+
+
+</head>
+<body>
+    <header>
+        <a href="javascript:window.history.back();" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+        <h1>Concrete Mixers</h1>
+    </header>
+
+    <section id="About" style="padding-top: 70px;">
+        <h1>About</h1>
+        <p>Concrete mixers, also known as cement mixers, are machines that combine cement, aggregates (such as sand or gravel), and water to create concrete. The mixer thoroughly blends these ingredients to produce a homogenous concrete mixture, which is essential for strength, durability, and quality in construction projects. They come in various types, designed to cater to different project sizes and mixing needs.</p>
+    </section>
+
+    <section id="types">
+        <h2>Key Types of Concrete Mixers</h2>
+
+        <h3>1. Drum Mixers</h3>
+        <p>These are the most common type. They have a rotating drum where ingredients are mixed. Different models include:</p>
+        <ul>
+            <li><strong>Tilting Drum Mixers:</strong> The drum tilts to discharge the concrete, making it easy to pour and suitable for small to medium projects.</li>
+            <li><strong>Non-Tilting Drum Mixers:</strong> The drum remains in a fixed position, and the concrete is discharged by a chute. This type is used in continuous mixing applications.</li>
+            <li><strong>Reversing Drum Mixers:</strong> These mixers reverse the drum's rotation to discharge concrete, ensuring thorough mixing and suitable for medium to large projects.</li>
+        </ul>
+
+        <h3>2. Pan Mixers</h3>
+        <p>A type of mixer with a stationary pan and rotating blades. These mixers are typically used in precast concrete production, where uniform mixing is essential.</p>
+
+        <h3>3. Continuous Mixers</h3>
+        <p>Designed for large-scale projects, continuous mixers add materials and mix continuously, ideal for tasks requiring a constant flow of fresh concrete.</p>
+
+        <h3>4. Truck-Mounted Mixers (Transit Mixers)</h3>
+        <p>Mounted on trucks, these mixers are used for transporting concrete over long distances. They mix the concrete in transit, ensuring freshness and quality upon arrival.</p>
+
+        <h3>5. Volumetric Mixers</h3>
+        <p>These mixers carry ingredients separately and only mix them on-site. This allows for precise control over the concrete mix and reduces waste by only creating what is needed.</p>
+
+        <h3>6. Self-Loading Mixers</h3>
+        <p>A combination of mixer, loader, and vehicle in one. The operator can load materials, mix them, and transport the concrete to the site, making it ideal for remote projects.</p>
+    </section>
+
+    <section id="importance">
+        <h2>Why Concrete Mixers are Important</h2>
+        <p>Concrete mixers are essential for:</p>
+        <ul>
+            <li><strong>Consistency:</strong> Mixing concrete by hand can lead to inconsistencies. Mixers ensure a uniform mixture, crucial for strength and stability.</li>
+            <li><strong>Efficiency:</strong> They save time and effort, especially for large volumes.</li>
+            <li><strong>Quality Control:</strong> The ability to control the mix ratio and ingredients precisely helps produce concrete that meets specific structural and durability requirements.</li>
+        </ul>
+        <p>Concrete mixers are vital equipment in construction, used across industries for buildings, infrastructure, roadwork, and more.</p>
+    </section>
+
+    <!-- Back to Top Button -->
+    <a href="#introduction" class="back-to-top">Back to Top</a>
+
+    <script>
+       // Back to Top button functionality
+       const backToTopButton = document.querySelector('.back-to-top');
+
+       // Show or hide the button based on scroll position
+       window.addEventListener('scroll', () => {
+          if (window.scrollY > 300) {
+             backToTopButton.classList.add('show');
+          } else {
+             backToTopButton.classList.remove('show');
+          }
+       });
+    </script>
+</body>
+</html>
