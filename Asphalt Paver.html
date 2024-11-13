@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>Asphalt Paver</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        html {
+            scroll-behavior: smooth; /* Enable smooth scrolling */
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        
+       /* Header Styling */
+        header {
+            background: #333;
+            position: fixed;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+/* Back Button Styling */
+.back-button {
+    color: #fff; /* White text */
+    font-size: 16px; /* Adjust font size */
+    padding: 10px 20px;
+    text-decoration: none; /* Remove underline */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 5px; /* Rounded corners */
+    margin-right: 20px; /* Space between the back button and other elements */
+}
+
+.back-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+}
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* Home Icon Styling */
+        .home-icon {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+    }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            background-color: #333;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            display: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            opacity: 0;
+            font-size: 16px;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .toolbar, .content-nav {
+                display: none; /* Hidden by default on mobile */
+                flex-direction: column;
+            }
+
+            .dropdown-btn {
+                display: block;
+            }
+
+            .content-nav a, .toolbar a {
+                width: 100%;
+                text-align: center;
+            }
+
+        .home-icon {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        section {
+            padding: 20px;
+        }
+    </style>
+
+   
+</head>
+<body>
+    <header>
+            <a href="javascript:window.history.back();" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+        <h1>Asphalt Paver</h1>
+        <nav>
+            <ul>
+               
+            </ul>
+        </nav>
+    </header>
+
+
+        <section>
+        <h2>About</h2>
+        <p>An <strong>asphalt paver</strong> (also known as a paver finisher or paving machine) is heavy construction equipment used to lay asphalt on roads, bridges, parking lots, and other surfaces. The machine spreads and levels asphalt evenly over the surface, creating a foundation ready for compaction and smoothing. It is an essential tool in road construction and repair, known for its precision in creating smooth, flat surfaces.</p>
+    </section>
+
+    <section>
+        <h2>Key Features</h2>
+        <ul class="feature-list">
+            <li><strong>Screed</strong>: Smooths, levels, and provides the desired thickness to the asphalt layer, often heated to prevent sticking.</li>
+            <li><strong>Hopper</strong>: Holds asphalt as it is fed into the machine, with conveyor belts moving it to the screed.</li>
+            <li><strong>Augers</strong>: Evenly distribute asphalt material across the paver’s width.</li>
+            <li><strong>Conveyor System</strong>: Moves asphalt from the hopper to the augers for consistent flow.</li>
+            <li><strong>Operator Controls</strong>: Provides speed, screed angle, width, and thickness adjustments.</li>
+            <li><strong>Heating System</strong>: Keeps asphalt warm for smoother application.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Types</h2>
+        <ul class="type-list">
+            <li><strong>Tracked Asphalt Pavers</strong>: Equipped with rubber or steel tracks, ideal for uneven terrain and larger projects, providing a smoother finish.</li>
+            <li><strong>Wheeled Asphalt Pavers</strong>: Fitted with tires, making them more maneuverable and ideal for medium-sized projects.</li>
+            <li><strong>Mini or Compact Pavers</strong>: Smaller pavers suitable for narrow spaces like sidewalks and bike paths.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Applications</h2>
+        <ul class="application-list">
+            <li><strong>Road Construction and Maintenance</strong>: Used for constructing and repairing road surfaces, highways, and bridges.</li>
+            <li><strong>Parking Lots and Driveways</strong>: Suitable for commercial and residential parking lots and driveways.</li>
+            <li><strong>Airports</strong>: Lays smooth surfaces on runways, taxiways, and aprons.</li>
+            <li><strong>Recreational Pathways</strong>: Mini pavers create paths for parks, walkways, and bike lanes.</li>
+            <li><strong>Resurfacing and Overlays</strong>: Adds new asphalt layers on top of old surfaces to improve durability.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>History</h2>
+        <p>The concept of asphalt pavers began in the <strong>1930s</strong> when basic machines replaced manual asphalt spreading on roadways.</p>
+        <p>In the <strong>1940s–1950s</strong>, pavers evolved to include conveyor belts, screeds, and heating features, improving efficiency. The <strong>modern era</strong> brought advanced features like electronic controls and GPS, making pavers more accurate and efficient. Today, they are essential in infrastructure projects worldwide.</p>
+    </section>
+<!-- Back to Top Button -->
+<a href="#top" class="back-to-top">Back to Top</a>
+
+<script>
+   // Select the Back to Top button
+   const backToTopButton = document.querySelector('.back-to-top');
+
+   // Show or hide the button based on scroll position
+   window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+         backToTopButton.classList.add('show');
+      } else {
+         backToTopButton.classList.remove('show');
+      }
+   });
+</script>
+    
+</body>
+</html>
