@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conveyors</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styling */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* Home Icon Styling */
+        .home-icon {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Toolbar & Dropdown Styling */
+        .toolbar, .content-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px;
+            background-color: #444;
+        }
+
+        .toolbar a, .content-nav a {
+            color: #f0f0f0;
+            text-decoration: none;
+            padding: 5px 10px;
+            font-size: 12px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .toolbar a:hover, .content-nav a:hover {
+            background-color: rgba(92, 138, 154, 0.8);
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+
+        /* Dropdown Button for Mobile */
+        .dropdown-btn {
+            display: none;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 18px;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            background-color: #333;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            display: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            opacity: 0;
+            font-size: 16px;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .toolbar, .content-nav {
+                display: none; /* Hidden by default on mobile */
+                flex-direction: column;
+            }
+
+            .dropdown-btn {
+                display: block;
+            }
+
+            .content-nav a, .toolbar a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body id="top">
+
+    <header>
+        <a href="#top" class="home-icon"><i class="fas fa-home"></i></a>
+        <div class="title">Conveyors</div>
+    </header>
+
+    <button class="dropdown-btn" onclick="toggleMenu('contentNav')">Content Menu</button>
+    <div class="content-nav" id="contentNav">
+        <a href="#about">About</a>
+        <a href="#key-features">Key Features</a>
+        <a href="#common-uses">Common Uses</a>
+        <a href="#types">Types</a>
+        <a href="#advantages">Advantages</a>
+    </div>
+
+    <button class="dropdown-btn" onclick="toggleMenu('toolbar')">Toolbar Menu</button>
+    <div class="toolbar" id="toolbar">
+        <a href="Excavator.html">Excavator</a>
+        <a href="Bulldozer.html">Bulldozer</a>
+        <a href="Crane.html">Crane</a>
+        <a href="Haul Truck.html">Haul Truck</a>
+        <a href="Loader.html">Loader</a>
+        <a href="Backhoe.html">Backhoe</a>
+        <a href="Forklift.html">Forklift</a>
+        <a href="Grader.html">Grader</a>
+        <a href="Compactor.html">Compactor</a>
+        <a href="Paver.html">Paver</a>
+        <a href="Scraper.html">Scraper</a>
+        <a href="Drilling rig.html">Drilling Rig</a>
+    </div>
+
+   
+     <section>
+        <h2>Overview</h2>
+        <p>A <strong>conveyor</strong> is a mechanical system designed to transport materials across a set path, primarily used in industries like mining, construction, manufacturing, and logistics. Conveyors efficiently move materials over short to long distances, reducing manual labor and speeding up workflow.</p>
+    </section>
+
+    <section>
+        <h2>Key Features</h2>
+        <ul class="feature-list">
+            <li><strong>Belts</strong>: The primary component, typically made of rubber, fabric, or metal, that moves materials along the conveyor's length.</li>
+            <li><strong>Rollers</strong>: Support the belt and help it move smoothly, often positioned at intervals along the conveyor frame.</li>
+            <li><strong>Motors and Drives</strong>: Power the conveyor belt and regulate its speed and direction.</li>
+            <li><strong>Frame Structure</strong>: The main body that supports the belt, rollers, and motor.</li>
+            <li><strong>Safety Features</strong>: Emergency stop buttons, guards, and sensors to ensure safe operation.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Types of Conveyors</h2>
+        <ul class="type-list">
+            <li><strong>Belt Conveyors</strong>: Most common type, used for bulk materials like sand, gravel, and ores.</li>
+            <li><strong>Roller Conveyors</strong>: Use rollers for moving heavy items, often seen in warehousing.</li>
+            <li><strong>Screw Conveyors</strong>: Use a rotating helical screw inside a tube for transporting semi-liquid materials, like food or sludge.</li>
+            <li><strong>Chain Conveyors</strong>: Use chains to move heavy items, ideal for automotive assembly.</li>
+            <li><strong>Pneumatic Conveyors</strong>: Use air pressure to move granular materials through enclosed pipelines, suitable for powders.</li>
+            <li><strong>Vibrating Conveyors</strong>: Use vibration to move materials along, often used for food processing and scrap removal.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Applications of Conveyors</h2>
+        <ul class="application-list">
+            <li><strong>Mining</strong>: Transports raw materials from extraction points to processing plants.</li>
+            <li><strong>Manufacturing</strong>: Moves products and components between assembly stations.</li>
+            <li><strong>Construction</strong>: Transfers construction materials like sand, gravel, and cement.</li>
+            <li><strong>Warehousing and Distribution</strong>: Moves packages and goods for sorting and shipping.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>History of Conveyors</h2>
+        <p>Conveyors date back to the late <strong>19th century</strong>, initially used in mining and agricultural settings. In the <strong>20th century</strong>, belt conveyors were widely adopted, with technological advancements introducing automation, safety systems, and specialized designs. Today, conveyors are integral to efficient material handling in almost every industry.</p>
+    </section>
+
+    <!-- Back to Top Button -->
+    <a href="#top" class="back-to-top" id="back-to-top">Back to Top</a>
+
+    <script>
+        // Back to Top Button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        };
+    </script>
+</body>
+</html>
+
+    <!-- Back to Top Button -->
+    <a href="#top" class="back-to-top" id="back-to-top">Back to Top</a>
+
+    <script>
+        const backToTopButton = document.getElementById('back-to-top');
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        };
+
+        function toggleMenu(menuId) {
+            const menu = document.getElementById(menuId);
+            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+        }
+    </script>
+</body>
+</html>
