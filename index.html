@@ -1,48 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>Heavy Machinery Design</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
-html {
-   scroll-behavior: smooth;
-}  
-<body>
+
+<body id="top">
     <header>
         <h1>Heavy Machinery Design</h1>
         <nav>
             <ul>
-             <nav class="toolbar" role="navigation">
-  
+                <li><a href="#about">About</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="#key-elements">Key Elements</a></li>
+                <li><a href="#design-considerations">Design Considerations</a></li>
+                <li><a href="#key-equipment-groups">Key Equipment Groups</a></li>
+            </ul>
+        </nav>
+        <nav class="toolbar" role="navigation">
+            <button class="menu-toggle" id="menuToggle">☰ Menu</button>
+            <ul class="menu" id="menu">
+                <li><a href="#home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#services" class="dropdown-toggle">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#history">History</a></li>
+                        <li><a href="#key-elements">Key Elements</a></li>
+                        <li><a href="#design-considerations">Design Considerations</a></li>
+                        <li><a href="#key-equipment-groups">Key Equipment Groups</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#about" class="dropdown-toggle">About Us</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-             <nav class="toolbar" role="navigation">
-        <button class="menu-toggle" id="menuToggle">☰ Menu</button>
-        <ul class="menu" id="menu">
-            <li><a href="#home">Home</a></li>
-            <li class="dropdown">
-                <a href="#services" class="dropdown-toggle">Services</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#web-design">Web Design</a></li>
-                    <li><a href="#seo">SEO</a></li>
-                    <li><a href="#marketing">Marketing</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#about" class="dropdown-toggle">About Us</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#team">Our Team</a></li>
-                    <li><a href="#careers">Careers</a></li>
-                </ul>
-            </li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
    
     <section id="about">
         <h2>What is Heavy Machinery?</h2>
@@ -77,7 +86,7 @@ html {
         <p>Overall, heavy machinery has evolved over thousands of years, shaped by technological advancements and the needs of various industries.</p>
     </section>
 
-    <section id="key elements">
+    <section id="key-elements">
         <h2>Key elements in Heavy Machineries</h2>
         <p>Heavy equipment usually comprises five equipment systems:</p>
         <ul>
@@ -89,7 +98,7 @@ html {
         </ul>
     </section>
 
-    <section id="Design Considerations">
+    <section id="Design-Considerations">
     
     <h2>Design Considerations</h2>
 <p>Designing heavy machinery involves a range of technical, environmental, and safety considerations to ensure the equipment can operate efficiently and safely in demanding conditions. Here are the key considerations:
@@ -156,7 +165,7 @@ html {
         </ul>
 </section>
     
- <section id="key equipment groups">
+ <section id="key-equipment-groups">
      <h2>Key Equipment Groups</h2>
 <p>Heavy machinery equipment can be broadly categorized into several key groups, each designed for specific tasks across industries like construction, mining, agriculture, and logistics. Here’s an overview of the main equipment groups:</p>
 
