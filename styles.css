@@ -3,10 +3,40 @@ html {
 }
 
 body {
+    padding-top: 100px; /* Adjust based on header height */
+}
+
+section {
+    scroll-margin-top: 80px; /* Offset for smooth scroll to sections */
+}
+
+.toolbar a:focus + .dropdown-menu,
+.dropdown-menu a:focus {
+    display: block; /* Show dropdown on keyboard focus */
+}
+
+.dropdown.active .dropdown-menu {
+    display: block; /* Show dropdown on click in mobile */
+}
+
+body {
     font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
+}
+
+.toolbar a.active {
+    color: #007BFF; /* Match hover color for consistency */
+    font-weight: bold;
+    border-bottom: 2px solid #007BFF;
+}
+
+.toolbar a {
+    will-change: color, background-color; /* Optimize for hover transitions */
+}
+.dropdown-menu {
+    will-change: transform, opacity; /* Optimize dropdown animation */
 }
 
 /* Header Styling */
