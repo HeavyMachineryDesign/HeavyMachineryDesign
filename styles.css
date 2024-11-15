@@ -80,18 +80,97 @@ header {
     transform: translateY(0);
 }
 
-/* Navigation Styling */
-nav ul {
-    list-style-type: none;
-    padding: 0;
+/* Toolbar Styling */
+.toolbar {
+    background: #444;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    align-items: center;
+}
+
+.menu {
+    list-style: none;
     margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
+.menu li {
+    position: relative;
 }
 
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+.menu li a:hover {
+    background: #555;
+}
+
+/* Dropdown Menu Styling */
+.dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    background: #555;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+}
+
+.dropdown .dropdown-menu li {
+    width: 200px;
+}
+
+.dropdown .dropdown-menu li a {
+    padding: 10px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Collapsible Menu (Mobile) */
+.menu-toggle {
+    background: #333;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu.collapsed {
+    display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu.collapsed {
+        display: flex;
+    }
+}
 /* Section Styling */
 section {
     padding: 20px;
