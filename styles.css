@@ -180,6 +180,49 @@ header {
     text-align: center;
 }
 
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* Hide the menu by default */
+        flex-direction: column; /* Stack the menu items vertically */
+        background-color: #333;
+        position: absolute;
+        top: 50px;
+        width: 100%;
+        left: 0;
+        text-align: center;
+    }
+
+    .nav-menu.show {
+        display: flex; /* Show the menu when 'show' class is added */
+    }
+
+    .nav-menu ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .menu-container {
+        position: relative;
+    }
+
+    .menu-icon {
+        position: absolute;
+        left: 20px;
+        top: 10px;
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+    }
+}
+
+/* Additional Styling for Hamburger Icon */
+.menu-icon i {
+    font-size: 30px;
+}
+    
 /* Section Styling */
 section {
     padding: 20px;
