@@ -16,7 +16,7 @@ header {
     color: #fff;
     padding: 10px 20px;
     text-align: center;
-    position: fixed; /* Fixed position for header */
+    position: fixed & center; /* Fixed position for header */
     width: 100%; /* Ensure full width */
     top: 0;
     z-index: 1000;
@@ -98,7 +98,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-}
+   }
 
 .menu li {
     position: relative;
@@ -108,7 +108,7 @@ header {
 
 .menu li a {
     color: #fff;
-    text-decoration: none;
+    text-decoration: italics;
     padding: 10px 20px;
     display: block;
 }
@@ -146,7 +146,7 @@ header {
     background: #333;
     color: #fff;
     border: none;
-    font-size: 20px;
+    font-size: 12px;
     padding: 10px 20px;
     cursor: pointer;
     display: none;
@@ -155,10 +155,12 @@ header {
 .menu.collapsed {
     display: none;
     flex-direction: column;
+    position: center;
 }
 
 .menu.collapsed.show {
     display: flex;
+    position: center;
 }
 
 /* Section Styling */
