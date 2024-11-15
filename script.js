@@ -1,8 +1,8 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menuToggle');
-    const menu = document.getElementById('menu');
+// JavaScript to toggle the collapsible menu
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
 
-    menuToggle.addEventListener('click', () => {
-        menu.classList.toggle('collapsed');
-    });
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('expanded');
+    navMenu.classList.toggle('collapsed');
 });
