@@ -95,43 +95,87 @@ header {
     transform: translateY(0);
 }
 
-/* Toolbar Styling */
-.toolbar {
-    background: #535f60;
-    color: #fff;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px 20px;
-    align-items: center;
-}
+/* Toolbar Container */
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
 
-/* Menu Styling */
-.menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-   }
+        /* Toolbar Items */
+        .toolbar-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
 
-.menu li {
-    position: relative;
-    display: inline-block;
-    margin: 0 10px;
-}
+        .toolbar-item:hover {
+            color: #FFD700; /* Gold color */
+        }
 
-.menu li a {
-    color: #fff;
-    text-decoration: italics;
-    padding: 10px 20px;
-    display: block;
-}
+        /* Toolbar Logo */
+        .toolbar-logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
 
-.menu li a:hover {
-    background: #555;
-}
+        /* Toolbar Menu */
+        .toolbar-menu {
+            display: flex;
+            gap: 20px;
+        }
 
+        /* Toolbar Dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            min-width: 150px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Responsive Toolbar */
+        @media (max-width: 768px) {
+            .toolbar-menu {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
 /* Dropdown Menu Styling */
 .dropdown .dropdown-menu {
     display: none;
