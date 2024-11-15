@@ -127,6 +127,7 @@ header {
     padding: 0;
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .dropdown .dropdown-menu li {
@@ -161,6 +162,7 @@ header {
 .menu.collapsed.show {
     display: flex;
     position: center;
+    text-align: center;
 }
 
 /* Section Styling */
