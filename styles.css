@@ -30,6 +30,24 @@ header {
     z-index: 1000;
 }
 
+@keyframes bounce {
+    0% { transform: translateY(-10px); }
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(0); }
+}
+
+header h1 {
+    animation: bounce 1s ease infinite; /* Apply bounce animation */
+}
+
+
+header {
+    background: linear-gradient(45deg, #333, #555); /* Gradient background */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
 /* Back Button Styling */
 .back-button {
     color: #fff; /* White text */
