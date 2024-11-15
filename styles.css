@@ -1,6 +1,6 @@
 /* General Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -8,12 +8,12 @@ body {
 
 /* Header Styling */
 header {
-    background: linear-gradient(45deg, #333, #555); /* Gradient background */
+    background: linear-gradient(90deg, #1a1a2e, #16213e); /* Gradient background */
     color: #fff;
-    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
     position: fixed;
     width: 100%;
     top: 0;
@@ -22,133 +22,118 @@ header {
 }
 
 /* Logo */
-header .logo {
+.logo {
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
-    color: #fff;
+    color: #FFD700; /* Gold color */
     text-decoration: none;
 }
 
-/* Desktop Menu */
+/* Collapsible Menu Toggle Button */
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    display: none; /* Hidden on desktop */
+}
+
+/* Toolbar Menu */
 .nav-menu {
     display: flex;
-    gap: 20px;
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-.nav-menu li {
-    position: relative;
+    gap: 20px;
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease;
 }
 
 .nav-menu a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
+    font-family: 'Poppins', sans-serif;
     padding: 10px 15px;
+    border-radius: 5px;
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .nav-menu a:hover {
-    background-color: #FFD700; /* Gold background */
-    color: #333; /* Dark text */
-    border-radius: 5px;
+    background-color: #FFD700; /* Gold on hover */
+    color: #16213e; /* Dark text on hover */
+}
+
+/* Collapsible Menu (Mobile View) */
+.nav-menu.collapsed {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    flex-direction: column;
+    background-color: #1a1a2e;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 5px 5px;
+}
+
+.nav-menu.expanded {
+    max-height: 300px;
+    opacity: 1;
 }
 
 /* Dropdown Menu */
+.nav-menu .dropdown {
+    position: relative;
+}
+
 .nav-menu .dropdown-content {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #444;
-    min-width: 150px;
+    background-color: #16213e;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     overflow: hidden;
-    z-index: 1000;
 }
 
 .nav-menu .dropdown-content a {
     padding: 10px 15px;
-    font-size: 16px;
-    display: block;
     color: #fff;
+    display: block;
+    transition: background-color 0.3s ease;
 }
 
 .nav-menu .dropdown-content a:hover {
-    background-color: #555;
+    background-color: #FFD700;
+    color: #16213e;
 }
 
-/* Show Dropdown on Hover */
-.nav-menu li:hover .dropdown-content {
+.nav-menu .dropdown:hover .dropdown-content {
     display: block;
-    animation: fadeIn 0.3s ease-in-out;
 }
 
-/* Animation for Dropdown */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Mobile-specific Styles */
-.menu-toggle {
-    display: none; /* Hidden by default */
-    background: #15d2e5;
-    color: #fff;
-    font-size: 24px;
-    border: none;
-    cursor: pointer;
-    padding: 10px 15px;
-    border-radius: 5px;
-}
-
-.menu-toggle i {
-    font-size: 24px;
-}
-
-/* Responsive Styles */
+/* Responsive Design */
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show toggle button */
+    }
+
     .nav-menu {
-        display: none;
-        flex-direction: column;
-        background-color: #333;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        padding: 20px 0;
+        display: none; /* Hidden by default */
     }
 
-    .nav-menu.show {
+    .nav-menu.expanded {
         display: flex;
-        animation: slideIn 0.3s ease-in-out;
-    }
-
-    @keyframes slideIn {
-        from {
-            transform: translateY(-100%);
-        }
-        to {
-            transform: translateY(0);
-        }
     }
 
     .nav-menu a {
-        padding: 15px 0;
-    }
-
-    .menu-toggle {
-        display: block;
+        text-align: center;
+        padding: 10px 20px;
     }
 }
