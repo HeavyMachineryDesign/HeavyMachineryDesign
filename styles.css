@@ -9,32 +9,26 @@ body {
     padding: 0;
     line-height: 1.6; /* Improve line spacing for better readability */
 }
+
 /* Target all images within the section */
 section img {
     width: 100%; /* Make images responsive to container width */
-    max-width: 300px; /* Maximum width for the images, adjust as needed */
-    height: auto; /* Maintain the aspect ratio */
-    object-fit: cover; /* Ensure images cover the space without distortion */
+    max-width: 300px; /* Maximum width for the images */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure images cover space without distortion */
     margin-bottom: 20px; /* Add some space below each image */
 }
 
 /* Header Styling */
 header {
-    background: #333;
+    background: linear-gradient(45deg, #333, #555); /* Gradient background */
     color: #fff;
     padding: 10px 20px;
     text-align: center;
-    position: fixed & center; /* Fixed position for header */
-    width: 100%; /* Ensure full width */
+    position: fixed; /* Fixed header position */
+    width: 100%; /* Full width */
     top: 0;
     z-index: 1000;
-
-
-header {
-    background: linear-gradient(45deg, #333, #555); /* Gradient background */
-    color: #fff;
-    padding: 20px;
-    text-align: center;
 }
 
 /* Back Button Styling */
@@ -45,7 +39,7 @@ header {
     text-decoration: none; /* Remove underline */
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     border-radius: 5px; /* Rounded corners */
-    margin-right: 20px; /* Space between the back button and other elements */
+    margin-right: 20px; /* Space between the button and other elements */
 }
 
 .back-button:hover {
@@ -96,112 +90,88 @@ header {
 }
 
 /* Toolbar Container */
-        .toolbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
-        /* Toolbar Items */
-        .toolbar-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-            transition: color 0.3s ease;
-        }
+/* Toolbar Items */
+.toolbar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.3s ease;
+}
 
-        .toolbar-item:hover {
-            color: #FFD700; /* Gold color */
-        }
+.toolbar-item:hover {
+    color: #FFD700; /* Gold color */
+}
 
-        /* Toolbar Logo */
-        .toolbar-logo {
-            font-size: 24px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
+/* Toolbar Logo */
+.toolbar-logo {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
-        /* Toolbar Menu */
-        .toolbar-menu {
-            display: flex;
-            gap: 20px;
-        }
+/* Toolbar Menu */
+.toolbar-menu {
+    display: flex;
+    gap: 15px;
+}
 
-        /* Toolbar Dropdown */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
+/* Toolbar Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #444;
-            min-width: 150px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            border-radius: 5px;
-        }
-
-        .dropdown-content a {
-            color: #fff;
-            padding: 10px 15px;
-            text-decoration: none;
-            display: block;
-            font-size: 16px;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #555;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Responsive Toolbar */
-        @media (max-width: 768px) {
-            .toolbar-menu {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-/* Dropdown Menu Styling */
-.dropdown .dropdown-menu {
+.dropdown-content {
     display: none;
     position: absolute;
-    background: #337154;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    min-width: 150px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
 }
 
-.dropdown .dropdown-menu li {
-    width: 200px;
+.dropdown-content a {
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 12px;
 }
 
-.dropdown .dropdown-menu li a {
-    padding: 8px;
+.dropdown-content a:hover {
+    background-color: #555;
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* Responsive Dropdown Menu */
+/* Responsive Toolbar */
+@media (max-width: 768px) {
+    .toolbar-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Dropdown Menu Styling */
 .menu-toggle {
     background: #15d2e5;
     color: #fff;
@@ -209,26 +179,24 @@ header {
     font-size: 12px;
     padding: 10px 20px;
     cursor: pointer;
-    display: none;
+    display: none; /* Hidden by default */
 }
 
 .menu.collapsed {
     display: none;
     flex-direction: column;
-    position: center;
 }
 
 .menu.collapsed.show {
     display: flex;
-    position: center;
     text-align: center;
 }
 
 /* Mobile-specific styles */
 @media (max-width: 768px) {
     .nav-menu {
-        display: none; /* Hide the menu by default */
-        flex-direction: column; /* Stack the menu items vertically */
+        display: none; /* Hidden by default */
+        flex-direction: column;
         background-color: #333;
         position: absolute;
         top: 50px;
@@ -238,18 +206,7 @@ header {
     }
 
     .nav-menu.show {
-        display: flex; /* Show the menu when 'show' class is added */
-    }
-
-    .nav-menu ul {
         display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 0;
-    }
-
-    .menu-container {
-        position: relative;
     }
 
     .menu-icon {
@@ -266,30 +223,9 @@ header {
 .menu-icon i {
     font-size: 30px;
 }
-    
+
 /* Section Styling */
 section {
     padding: 20px;
-    line-height: 1.8; /* Improve readability of content within sections */
-}
-
-/* Responsive Styling */
-@media (max-width: 768px) {
-    .menu {
-        display: none;
-        flex-direction: column;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .menu.collapsed {
-        display: flex;
-    }
-
-    .home-icon {
-        left: 10px; /* Adjust for smaller screens */
-        top: 10px;
-    }
+    line-height: 1.8; /* Improve readability */
 }
