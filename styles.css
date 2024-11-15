@@ -28,17 +28,6 @@ header {
     width: 100%; /* Ensure full width */
     top: 0;
     z-index: 1000;
-}
-
-@keyframes bounce {
-    0% { transform: translateY(-10px); }
-    50% { transform: translateY(10px); }
-    100% { transform: translateY(0); }
-}
-
-header h1 {
-    animation: bounce 1s ease infinite; /* Apply bounce animation */
-}
 
 
 header {
