@@ -7,18 +7,23 @@ body {
     font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    padding-top: 100px; /* Adjust based on header height */
-    line-height: 1.6;
+    padding-top: 150px; /* Adjust based on header height */
+    line-height: 2;
+    margin: 0 auto; /* Center horizontally */
+    width: 100%; 
 }
 
+       
+
 section {
-    scroll-margin-top: 80px; /* Offset for smooth scroll to sections */
+    scroll-margin-top: 150px; /* Offset for smooth scroll to sections */
+    width: 90%; /* Occupies 95% of the parent width */
+    margin: 5px; /* Centers with 20px top/bottom margin */
 }
 
 /* Header Styling */
 header {
-    background: linear-gradient(90deg, #1a1a2e, #16213e); /* Gradient background */
-    color: #fff;
+    background: linear-gradient(90deg, #141e30, #243b55); /* Gradient background */
     display: flex;
     flex-direction: column; /* Center align title and menu */
     align-items: center;
@@ -43,35 +48,35 @@ header h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
-    padding: 0;
+    margin-top: 0px; /* index the lines properly*/
+    padding: 50;
     list-style: none;
-    background-color: #333;
+    background-color: linear-gradient(90deg, #141e30, #243b55);
     width: 100%;
 }
 
 .toolbar li {
     position: relative;
-    margin: 0 15px;
+    margin: 0 5px;
 }
 
 .toolbar a {
     text-decoration: none;
-    color: #fff;
-    font-size: 1.1em;
+    color: #fcf3cf;
+    font-size: 1em;
     padding: 10px 15px;
     transition: color 0.3s ease, background-color 0.3s ease;
     will-change: color, background-color; /* Optimize for hover transitions */
 }
 
 .toolbar a:hover {
-    color: #007BFF;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
+    color: #40E0D0;
+    background-color: 092c42;
+    border-radius: 10px;
 }
 
 .toolbar a.active {
-    color: #007BFF; /* Match hover color for consistency */
+    color: #40E0D0; /* Match hover color for consistency */
     font-weight: bold;
     border-bottom: 2px solid #007BFF;
 }
@@ -82,30 +87,30 @@ header h1 {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #444;
+    background-color: #283747;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     list-style: none;
-    padding: 10px 0;
+    padding: 20px 0;
     z-index: 1000;
     min-width: 200px;
-    border-radius: 5px;
+    border-radius: 10px;
     will-change: transform, opacity; /* Optimize dropdown animation */
 }
 
 .dropdown-menu li {
-    margin: 0;
+    margin:0;
 }
 
 .dropdown-menu a {
     display: block;
-    color: #fff;
+    color: #fcf3cf;
     padding: 8px 15px;
     white-space: nowrap;
     transition: background-color 0.3s ease;
 }
 
 .dropdown-menu a:hover {
-    background-color: #555;
+    background-color: #092c42;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -134,7 +139,7 @@ header h1 {
 }
 
 /* Responsive Styling */
-@media (max-width: 768px) {
+@media (max-width: 300px) {
     .menu-toggle {
         display: block;
     }
