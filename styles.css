@@ -1,123 +1,105 @@
 /* General Styling */
-html {
-    scroll-behavior: smooth; /* Enable smooth scrolling */
-}
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6; /* Improve line spacing for better readability */
 }
 
-/* Header Styling */
 header {
     background: #333;
     color: #fff;
     padding: 10px 20px;
     text-align: center;
-    position: fixed; /* Fixed position for header */
-    width: 100%; /* Ensure full width */
-    top: 0;
-    z-index: 1000;
 }
 
-/* Back Button Styling */
-.back-button {
-    color: #fff; /* White text */
-    font-size: 16px; /* Adjust font size */
+/* Toolbar Styling */
+.toolbar {
+    background: #444;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
     padding: 10px 20px;
-    text-decoration: none; /* Remove underline */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    border-radius: 5px; /* Rounded corners */
-    margin-right: 20px; /* Space between the back button and other elements */
+    align-items: center;
 }
 
-.back-button:hover {
-    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
-}
-
-/* Title Styling */
-.title {
-    font-size: 36px;
-    font-weight: bold;
+.menu {
+    list-style: none;
     margin: 0;
-    line-height: 1.4; /* Add spacing between lines in multiline titles */
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
-/* Home Icon Styling */
-.home-icon {
-    position: absolute;
-    left: 15px;
-    top: 15px;
-    font-size: 1.5rem;
+.menu li {
+    position: relative;
+}
+
+.menu li a {
     color: #fff;
     text-decoration: none;
+    padding: 10px 20px;
+    display: block;
 }
 
-/* Back to Top Button */
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 12px 20px;
-    background-color: #333;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 50px;
-    display: none; /* Hidden by default */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 0;
-    font-size: 16px;
+.menu li a:hover {
+    background: #555;
+}
+
+/* Dropdown Menu Styling */
+.dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    background: #555;
+    list-style: none;
+    margin: 0;
+    padding: 0;
     z-index: 1000;
 }
 
-.back-to-top.show {
-    display: block; /* Show button */
-    opacity: 1;
-    transform: translateY(0);
+.dropdown .dropdown-menu li {
+    width: 200px;
 }
 
-/* Navigation Styling */
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+.dropdown .dropdown-menu li a {
+    padding: 10px;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
+.dropdown:hover .dropdown-menu {
+    display: block;
 }
 
-/* Section Styling */
-section {
-    padding: 20px;
-    line-height: 1.8; /* Improve readability of content within sections */
+/* Collapsible Menu (Mobile) */
+.menu-toggle {
+    background: #333;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: none;
 }
 
-/* Responsive Styling */
+.menu {
+    display: flex;
+}
+
+.menu.collapsed {
+    display: none;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-    .toolbar, 
-    .content-nav {
-        display: none; /* Hidden by default on mobile */
+    .menu {
+        display: none;
         flex-direction: column;
     }
 
-    .dropdown-btn {
+    .menu-toggle {
         display: block;
     }
 
-    .content-nav a, 
-    .toolbar a {
-        width: 100%;
-        text-align: center;
-    }
-
-    .home-icon {
-        left: 10px; /* Adjust for smaller screens */
-        top: 10px;
+    .menu.collapsed {
+        display: flex;
     }
 }
