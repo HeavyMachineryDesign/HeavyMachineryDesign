@@ -1,42 +1,18 @@
+/* Global Styling */
 html {
     scroll-behavior: smooth;
-}
-
-body {
-    padding-top: 100px; /* Adjust based on header height */
-}
-
-section {
-    scroll-margin-top: 80px; /* Offset for smooth scroll to sections */
-}
-
-.toolbar a:focus + .dropdown-menu,
-.dropdown-menu a:focus {
-    display: block; /* Show dropdown on keyboard focus */
-}
-
-.dropdown.active .dropdown-menu {
-    display: block; /* Show dropdown on click in mobile */
 }
 
 body {
     font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
     padding: 0;
+    padding-top: 100px; /* Adjust based on header height */
     line-height: 1.6;
 }
 
-.toolbar a.active {
-    color: #007BFF; /* Match hover color for consistency */
-    font-weight: bold;
-    border-bottom: 2px solid #007BFF;
-}
-
-.toolbar a {
-    will-change: color, background-color; /* Optimize for hover transitions */
-}
-.dropdown-menu {
-    will-change: transform, opacity; /* Optimize dropdown animation */
+section {
+    scroll-margin-top: 80px; /* Offset for smooth scroll to sections */
 }
 
 /* Header Styling */
@@ -85,12 +61,19 @@ header h1 {
     font-size: 1.1em;
     padding: 10px 15px;
     transition: color 0.3s ease, background-color 0.3s ease;
+    will-change: color, background-color; /* Optimize for hover transitions */
 }
 
 .toolbar a:hover {
     color: #007BFF;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
+}
+
+.toolbar a.active {
+    color: #007BFF; /* Match hover color for consistency */
+    font-weight: bold;
+    border-bottom: 2px solid #007BFF;
 }
 
 /* Dropdown Menu */
@@ -106,6 +89,7 @@ header h1 {
     z-index: 1000;
     min-width: 200px;
     border-radius: 5px;
+    will-change: transform, opacity; /* Optimize dropdown animation */
 }
 
 .dropdown-menu li {
@@ -126,6 +110,16 @@ header h1 {
 
 .dropdown:hover .dropdown-menu {
     display: block; /* Show menu on hover */
+}
+
+/* Dropdown Accessibility */
+.toolbar a:focus + .dropdown-menu,
+.dropdown-menu a:focus {
+    display: block; /* Show dropdown on keyboard focus */
+}
+
+.dropdown.active .dropdown-menu {
+    display: block; /* Show dropdown on click in mobile */
 }
 
 /* Mobile Menu Toggle */
@@ -162,7 +156,7 @@ header h1 {
     }
 
     .dropdown.active .dropdown-menu {
-        display: block; /* Show on click */
+        display: block; /* Show dropdown on click */
     }
 
     .dropdown:hover .dropdown-menu {
