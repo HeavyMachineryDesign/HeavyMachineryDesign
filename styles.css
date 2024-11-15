@@ -7,13 +7,14 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    line-height: 1.6; /* Improve line spacing for better readability */
 }
 
 /* Header Styling */
 header {
     background: #333;
     color: #fff;
-    padding: 10px;
+    padding: 10px 20px;
     text-align: center;
     position: fixed; /* Fixed position for header */
     width: 100%; /* Ensure full width */
@@ -41,6 +42,7 @@ header {
     font-size: 36px;
     font-weight: bold;
     margin: 0;
+    line-height: 1.4; /* Add spacing between lines in multiline titles */
 }
 
 /* Home Icon Styling */
@@ -82,6 +84,7 @@ header {
 nav ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 nav ul li {
@@ -92,6 +95,7 @@ nav ul li {
 /* Section Styling */
 section {
     padding: 20px;
+    line-height: 1.8; /* Improve readability of content within sections */
 }
 
 /* Responsive Styling */
