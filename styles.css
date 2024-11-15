@@ -1,6 +1,9 @@
-/* General Styling */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -11,9 +14,9 @@ header {
     background: linear-gradient(90deg, #1a1a2e, #16213e); /* Gradient background */
     color: #fff;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Center align title and menu */
     align-items: center;
-    padding: 10px 20px;
+    padding: 20px 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -21,81 +24,106 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Basic toolbar styles */
-.toolbar {
-    background-color: #333;
-    color: white;
-    padding: 10px;
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
 }
 
-.toolbar ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+/* Toolbar Styling */
+.toolbar {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    padding: 0;
+    list-style: none;
+    background-color: #333;
+    width: 100%;
 }
 
 .toolbar li {
     position: relative;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 .toolbar a {
     text-decoration: none;
-    color: white;
-    padding: 5px 10px;
-    display: block;
+    color: #fff;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-.toolbar .dropdown-menu {
-    display: none; /* Hide by default */
+.toolbar a:hover {
+    color: #007BFF;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none; /* Hidden by default */
     position: absolute;
-    background-color: #444;
-    padding: 10px;
-    list-style-type: none;
-    top: 100%; /* Align below the parent */
+    top: 100%;
     left: 0;
+    background-color: #444;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 0;
+    z-index: 1000;
     min-width: 200px;
+    border-radius: 5px;
 }
 
-.toolbar .dropdown-menu li {
+.dropdown-menu li {
     margin: 0;
 }
 
-.toolbar .dropdown-menu a {
-    color: white;
-    padding: 5px;
+.dropdown-menu a {
     display: block;
+    color: #fff;
+    padding: 8px 15px;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
 }
 
-.toolbar .dropdown:hover .dropdown-menu {
-    display: block; /* Show on hover */
+.dropdown-menu a:hover {
+    background-color: #555;
 }
 
+.dropdown:hover .dropdown-menu {
+    display: block; /* Show menu on hover */
+}
+
+/* Mobile Menu Toggle */
 .menu-toggle {
-    display: none; /* Hide for desktop view */
+    display: none; /* Hidden for desktop */
     background-color: #333;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 10px 20px;
     cursor: pointer;
+    font-size: 1.2em;
 }
 
-/* Responsive styles */
+/* Responsive Styling */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
     }
 
-    .menu {
-        display: none; /* Hide menu for mobile view */
+    .toolbar {
+        display: none; /* Hidden by default in mobile */
         flex-direction: column;
         background-color: #333;
-        padding: 0;
+        width: 100%;
     }
 
-    .menu.active {
-        display: flex; /* Show menu when active */
+    .toolbar.active {
+        display: flex; /* Display when active */
     }
 
     .dropdown-menu {
@@ -103,11 +131,11 @@ header {
         display: none;
     }
 
-    .dropdown:hover .dropdown-menu {
-        display: none; /* Disable hover behavior in mobile view */
+    .dropdown.active .dropdown-menu {
+        display: block; /* Show on click */
     }
 
-    .dropdown.active .dropdown-menu {
-        display: block; /* Show on click in mobile view */
+    .dropdown:hover .dropdown-menu {
+        display: none; /* Disable hover in mobile */
     }
 }
