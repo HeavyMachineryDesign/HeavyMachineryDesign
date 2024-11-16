@@ -143,6 +143,10 @@ header h1 {
 @media (max-width: 300px) {
     .menu-toggle {
         display: block;
+.header {
+    font-size: 18px; /* Reduced font size */
+    width: 90%; /* Reduced width */
+    margin: 0 auto; /* Center the header box */
     }
 
     .toolbar {
@@ -154,6 +158,7 @@ header h1 {
 
     .toolbar.active {
         display: flex; /* Display when active */
+ display: none; 
     }
 
     .dropdown-menu {
@@ -163,6 +168,7 @@ header h1 {
 
     .dropdown.active .dropdown-menu {
         display: block; /* Show dropdown on click */
+ display: none; 
     }
 
     .dropdown:hover .dropdown-menu {
