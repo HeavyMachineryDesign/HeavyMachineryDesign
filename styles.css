@@ -18,7 +18,7 @@ body {
 section {
     scroll-margin-top: 150px; /* Offset for smooth scroll to sections */
     width: 90%; /* Occupies 95% of the parent width */
-    margin: 5px; /* Centers with 20px top/bottom margin */
+    margin: 20px; /* Centers with 20px top/bottom margin */
 }
 
 /* Header Styling */
@@ -29,6 +29,7 @@ header {
     align-items: center;
     padding: 20px 0;
     position: fixed;
+text-align: center;
     width: 100%;
     top: 0;
     z-index: 1000;
@@ -63,7 +64,7 @@ header h1 {
 .toolbar a {
     text-decoration: none;
     color: #fcf3cf;
-    font-size: 1em;
+    font-size: .8em;
     padding: 10px 15px;
     transition: color 0.3s ease, background-color 0.3s ease;
     will-change: color, background-color; /* Optimize for hover transitions */
@@ -124,7 +125,7 @@ header h1 {
 }
 
 .dropdown.active .dropdown-menu {
-    display: block; /* Show dropdown on click in mobile */
+    display: none; /* Show dropdown on click in mobile */
 }
 
 /* Mobile Menu Toggle */
