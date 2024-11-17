@@ -9,27 +9,25 @@ body {
     padding: 0;
     padding-top: 150px; /* Adjust based on header height */
     line-height: 2;
-    margin: 0 auto; /* Center horizontally */
     width: 100%; 
 }
 
-       
-
+/* Section Styling */
 section {
     scroll-margin-top: 150px; /* Offset for smooth scroll to sections */
-    width: 90%; /* Occupies 95% of the parent width */
-    margin: 20px; /* Centers with 20px top/bottom margin */
+    width: 90%; /* Occupies 90% of the parent width */
+    margin: 20px auto; /* Centers with 20px top/bottom margin */
 }
 
 /* Header Styling */
 header {
     background: linear-gradient(90deg, #141e30, #243b55); /* Gradient background */
     display: flex;
-    flex-direction: column; /* Center align title and menu */
+    flex-direction: column;
     align-items: center;
     padding: 20px 0;
     position: fixed;
-text-align: center;
+    text-align: center;
     width: 100%;
     top: 0;
     z-index: 1000;
@@ -40,7 +38,6 @@ header h1 {
     margin: 0;
     font-size: 2.5em;
     font-weight: bold;
-    text-align: center;
     color: #fff;
 }
 
@@ -49,8 +46,6 @@ header h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 0px; /* index the lines properly*/
-    padding: 50;
     list-style: none;
     background-color: linear-gradient(90deg, #141e30, #243b55);
     width: 100%;
@@ -64,22 +59,17 @@ header h1 {
 .toolbar a {
     text-decoration: none;
     color: #fcf3cf;
-    font-size: .8em;
+    font-size: 0.8em;
     padding: 10px 15px;
     transition: color 0.3s ease, background-color 0.3s ease;
-    will-change: color, background-color; /* Optimize for hover transitions */
 }
 
-.toolbar a:hover {
-    color: #40E0D0;
-    background-color: 092c42;
-    border-radius: 10px;
-}
-
+.toolbar a:hover,
 .toolbar a.active {
-    color: #40E0D0; /* Match hover color for consistency */
+    color: #40E0D0;
+    background-color: #092c42;
+    border-radius: 10px;
     font-weight: bold;
-    border-bottom: 2px solid #007BFF;
 }
 
 /* Dropdown Menu */
@@ -95,11 +85,6 @@ header h1 {
     z-index: 1000;
     min-width: 200px;
     border-radius: 10px;
-    will-change: transform, opacity; /* Optimize dropdown animation */
-}
-
-.dropdown-menu li {
-    margin:0;
 }
 
 .dropdown-menu a {
@@ -118,20 +103,10 @@ header h1 {
     display: block; /* Show menu on hover */
 }
 
-/* Dropdown Accessibility */
-.toolbar a:focus + .dropdown-menu,
-.dropdown-menu a:focus {
-    display: block; /* Show dropdown on keyboard focus */
-}
-
-.dropdown.active .dropdown-menu {
-    display: none; /* Show dropdown on click in mobile */
-}
-
 /* Mobile Menu Toggle */
 .menu-toggle {
     display: none; /* Hidden for desktop */
-    background-color: #333;
+    background-color: #555;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -140,13 +115,9 @@ header h1 {
 }
 
 /* Responsive Styling */
-@media (max-width: 300px) {
+@media (max-width: 768px) {
     .menu-toggle {
-        display: block;
-.header {
-    font-size: 18px; /* Reduced font size */
-    width: 90%; /* Reduced width */
-    margin: 0 auto; /* Center the header box */
+        display: block; /* Visible in mobile view */
     }
 
     .toolbar {
@@ -158,20 +129,82 @@ header h1 {
 
     .toolbar.active {
         display: flex; /* Display when active */
- display: none; 
     }
 
     .dropdown-menu {
         position: static; /* Stack submenus in mobile view */
-        display: none;
-    }
-
-    .dropdown.active .dropdown-menu {
-        display: block; /* Show dropdown on click */
- display: none; 
     }
 
     .dropdown:hover .dropdown-menu {
         display: none; /* Disable hover in mobile */
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block; /* Show dropdown on click */
+    }
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 0.8em;
+    border-radius: 50%;
+    font-size: 1.5em;
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.back-to-top.show {
+    display: block;
+}
+/* Toolbar Styling */
+.toolbar {
+    display: flex; /* Visible and horizontal for desktop */
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    background-color: linear-gradient(90deg, #141e30, #243b55);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.toolbar li {
+    margin: 0 10px; /* Add spacing between items */
+}
+
+.toolbar a {
+    text-decoration: none;
+    color: #fcf3cf;
+    font-size: 1em;
+    padding: 10px 15px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.toolbar a:hover,
+.toolbar a.active {
+    color: #40E0D0;
+    background-color: #092c42;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* Mobile-specific toolbar behavior */
+@media (max-width: 768px) {
+    .toolbar {
+        display: none; /* Hidden on mobile */
+        flex-direction: column;
+        background-color: #333;
+        width: 100%;
+    }
+
+    .toolbar.active {
+        display: flex; /* Display when active (e.g., with toggle) */
     }
 }
