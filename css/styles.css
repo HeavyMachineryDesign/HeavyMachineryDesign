@@ -144,31 +144,31 @@ header h1 {
         display: block; /* Show dropdown on click */
     }
 }
+ /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            background-color: #333;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            display: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            opacity: 0;
+            font-size: 16px;
+            z-index: 1000;
+        }
 
-/* Back to Top Button */
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 12px 20px;
-    background-color: #333;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 50px;
-    display: none; /* Initially hidden */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 0;
-    font-size: 16px;
-    z-index: 1000;
-}
+        .back-to-top.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-.back-to-top.show {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
 
 .back-to-top:hover {
     background-color: #555;
