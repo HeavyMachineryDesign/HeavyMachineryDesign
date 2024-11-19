@@ -1,255 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>Crane</title>
-    <link rel="stylesheet" href="styles.css">
-   <style>
-        html {
-            scroll-behavior: smooth; /* Enable smooth scrolling */
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        
-       /* Header Styling */
-        header {
-            background: #333;
-            position: fixed;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            position: relative;
-        }
-/* Back Button Styling */
-.back-button {
-    color: #fff; /* White text */
-    font-size: 16px; /* Adjust font size */
-    padding: 10px 20px;
-    text-decoration: none; /* Remove underline */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    border-radius: 5px; /* Rounded corners */
-    margin-right: 20px; /* Space between the back button and other elements */
-}
-
-.back-button:hover {
-    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
-}
-        .title {
-            font-size: 36px;
-            font-weight: bold;
-            margin: 0;
-        }
-
-        /* Home Icon Styling */
-        .home-icon {
-            position: absolute;
-            left: 15px;
-            top: 15px;
-            font-size: 1.5rem;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .title {
-            font-size: 36px;
-            font-weight: bold;
-            margin: 0;
-        }
-
-    }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 12px 20px;
-            background-color: #333;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            display: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            opacity: 0;
-            font-size: 16px;
-            z-index: 1000;
-        }
-
-        .back-to-top.show {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive Styling */
-        @media (max-width: 768px) {
-            .toolbar, .content-nav {
-                display: none; /* Hidden by default on mobile */
-                flex-direction: column;
-            }
-
-            .dropdown-btn {
-                display: block;
-            }
-
-            .content-nav a, .toolbar a {
-                width: 100%;
-                text-align: center;
-            }
-
-        .home-icon {
-            position: absolute;
-            left: 15px;
-            top: 15px;
-            font-size: 1.5rem;
-            color: #fff;
-            text-decoration: none;
-        }
-        
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-        section {
-            padding: 20px;
-        }
-    </style>
-
-
-   
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+
+<body id="top">
     <header>
-            <a href="javascript:window.history.back();" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+        <div class="header-container">
         <h1>Crane</h1>
-        <nav>
-            <ul>
-               
-            </ul>
-        </nav>
+           <nav class="toolbar" roBulldozerle="navigation">
+             <button class="menu-toggle" id="menuToggle">☰ Menu</button>
+                <li><a href="#about">About</a></li>
+                <li><a href="#Key Features">Key Features</a></li>
+               <li><a href="#Common-uses">Common Uses</a></li>
+                <li><a href="#Types">Types</a></li>
+               <li><a href="#History">History</a></li>
+               <li><a href="#Environmental and Technological Advances">Environmental and Technological Advances</a></li
+               <li><a href="#Conclusion">Conclusion</a></li>
+             </nav>
+    </div>
     </header>
-   
+</body>
+
 
 
     <section id="about">
         <h1>About</h1>
         <p>Cranes are vital pieces of heavy machinery used for lifting, moving, and positioning heavy loads in various construction, manufacturing, and shipping applications. They come in several types, each designed for specific tasks and environments.</p>
-
-        <h2>Key Features:</h2>
+    </section>
+        
+        <section id="Key Features">
+        <h1>Key Features:</h1>
+        <h2>1. Lifting Mechanism</h2>
         <ul>
-            <li><strong>Boom:</strong> The long arm that extends out to lift and move loads. The boom can be fixed or telescopic.</li>
-            <li><strong>Cab:</strong> The operator's compartment, which may be located at the top of the crane or in a separate structure.</li>
-            <li><strong>Counterweights:</strong> Heavy blocks placed on the opposite side of the load to balance the crane and prevent tipping.</li>
-            <li><strong>Hook and Sling:</strong> Used to attach the load being lifted.</li>
+            <li><strong>Hook or Lifting Attachment:</strong> The primary tool used to grab and lift the load.</li>
+            <li><strong>Hoist:</strong> A device that raises or lowers the load using wire ropes or chains.</li>
+            <li><strong>Winch:</strong> Operated manually or powered by engines, it controls the movement of the hoist.</li>
         </ul>
 
-        <h2>Common Uses:</h2>
+        <h2>2. Boom</h2>
+        <ul>
+            <li><strong>Main Arm:</strong> The extendable or fixed arm responsible for reaching and positioning loads.</li>
+            <li><strong>Telescopic Boom:</strong> Extendable sections for increased reach.</li>
+            <li><strong>Lattice Boom:</strong> Lightweight, high-strength construction, often used for large loads.</li>
+        </ul>
+
+        <h2>3. Rotational Capability</h2>
+        <ul>
+            <li><strong>Slewing Mechanism:</strong> Allows the crane's upper structure to rotate 360 degrees or in specific arcs for precise positioning.</li>
+        </ul>
+
+        <h2>4. Load Control</h2>
+        <ul>
+            <li><strong>Counterweights:</strong> Balances the crane to prevent tipping during heavy lifts.</li>
+            <li><strong>Load Moment Indicators (LMI):</strong> Monitors the load weight and boom angle to ensure safe operation.</li>
+        </ul>
+
+        <h2>5. Mobility</h2>
+        <ul>
+            <li><strong>Fixed Cranes:</strong> Mounted in a permanent position (e.g., tower cranes).</li>
+            <li><strong>Mobile Cranes:</strong> Equipped with wheels or tracks for movement (e.g., truck-mounted, crawler cranes).</li>
+            <li><strong>All-Terrain Cranes:</strong> Designed for both on-road and off-road environments.</li>
+        </ul>
+
+        <h2>6. Stability Features</h2>
+        <ul>
+            <li><strong>Outriggers:</strong> Extendable supports that stabilize the crane during operation.</li>
+            <li><strong>Base or Platform:</strong> Provides a secure foundation for the crane.</li>
+        </ul>
+
+        <h2>7. Power Source</h2>
+        <ul>
+            <li><strong>Diesel Engines:</strong> Common in heavy-duty cranes for robust operations.</li>
+            <li><strong>Electric Motors:</strong> Used in smaller cranes or for indoor environments.</li>
+            <li><strong>Hydraulics:</strong> Provides smooth and powerful operation of lifting mechanisms.</li>
+        </ul>
+
+        <h2>8. Control Systems</h2>
+        <ul>
+            <li><strong>Cabin Controls:</strong> Operator cabins with levers, joysticks, and electronic displays.</li>
+            <li><strong>Remote Controls:</strong> Allow operators to control the crane from a safe distance.</li>
+        </ul>
+
+        <h2>9. Safety Features</h2>
+        <ul>
+            <li><strong>Overload Protection:</strong> Prevents the crane from lifting loads beyond its capacity.</li>
+            <li><strong>Anti-Sway Systems:</strong> Reduces load movement for safer operations.</li>
+            <li><strong>Emergency Stop:</strong> Instantly halts all crane functions during critical situations.</li>
+        </ul>
+
+        <h2>10. Specialized Attachments</h2>
+        <ul>
+            <li><strong>Grab Buckets:</strong> For bulk materials like sand or gravel.</li>
+            <li><strong>Magnets:</strong> For lifting ferrous metals in industrial applications.</li>
+            <li><strong>Jib:</strong> A smaller, secondary arm for increased versatility in lifting.</li>
+        </ul>
+
+        <h2>11. Advanced Technologies</h2>
+        <ul>
+            <li><strong>GPS and Automation:</strong> Enhances precision and reduces human error.</li>
+            <li><strong>Telematics Systems:</strong> Provides real-time data on crane performance and maintenance.</li>
+            <li><strong>Collision Detection:</strong> Ensures operational safety in confined or busy environments.</li>
+        </ul>
+</section>
+    
+           <section id="Common-uses"> 
+        <h1>Common Uses:</h1>
         <ul>
             <li><strong>Construction:</strong> Essential for lifting building materials, such as steel beams, concrete panels, and heavy machinery.</li>
             <li><strong>Shipping:</strong> Used at ports to load and unload shipping containers and heavy cargo from ships.</li>
             <li><strong>Manufacturing:</strong> Commonly found in factories to move heavy items between workstations.</li>
             <li><strong>Maintenance:</strong> Used for tasks like installing or maintaining tall structures, such as communication towers.</li>
         </ul>
+</section>
 
-        <h2>Types:</h2>
+      <section id="Types">
+        <h1>Types:</h1>
         <ul>
             <li>
-                <h3>1. Mobile Cranes</h3>
-                <img src="mobile crane.jpg" alt="Mobile Crane">
+                <strong>1. Mobile Cranes</strong>
+                <img src="photos/mobile crane.jpg" alt="Mobile Crane">
                 <ul>
                     <li><strong>Truck-mounted Cranes:</strong> Mounted on a truck chassis for mobility.</li>
                     <li><strong>All-terrain Cranes:</strong> Designed for both road and off-road use.</li>
                 </ul>
             </li>
-
             <li>
-                <h3>2. Fixed Cranes</h3>
-                <img src="tower crane.jpg" alt="Tower Crane">
+                <strong>2. Fixed Cranes</strong>
+                <img src="photos/tower crane.jpg" alt="Tower Crane">
                 <ul>
                     <li><strong>Tower Cranes:</strong> Commonly used in tall buildings, characterized by their height and lifting capacity.</li>
                     <li><strong>Luffing Jib Cranes:</strong> A type of tower crane with a jib that can be raised or lowered, ideal for tight spaces.</li>
                 </ul>
             </li>
-
             <li>
-                <h3>3. Crawler Cranes</h3>
-                <img src="crawler crane.jpg" alt="Crawler Crane">
+                <strong>3. Crawler Cranes</strong>
+                <img src="photos/crawler crane.jpg" alt="Crawler Crane">
                 <ul>
                     <li>Designed for stability and mobility on uneven terrain, featuring tracks instead of wheels.</li>
                 </ul>
             </li>
-
             <li>
-                <h3>4. Rough Terrain Cranes</h3>
-                <img src="rough terrain crane.jpg" alt="Rough Terrain Crane">
+                <strong>4. Rough Terrain Cranes</strong>
+                <img src="photos/rough terrain crane.jpg" alt="Rough Terrain Crane">
                 <ul>
                     <li>Equipped with large tires and designed specifically for off-road lifting.</li>
                 </ul>
             </li>
-
             <li>
-                <h3>5. Floating Cranes</h3>
-                <img src="floating crane.jpg" alt="Floating Crane">
+                <strong>5. Floating Cranes</strong>
+                <img src="photos/floating crane.jpg" alt="Floating Crane">
                 <ul>
                     <li>Mounted on barges or vessels, used for maritime construction and heavy lifting over water.</li>
                 </ul>
             </li>
-
             <li>
-                <h3>6. Portal Cranes</h3>
-                <img src="portal crane.jpg" alt="Portal Crane">
+                <strong>6. Portal Cranes</strong>
+                <img src="photos/portal crane.jpg" alt="Portal Crane">
                 <ul>
                     <li>Move along a fixed track and are typically used in shipping yards for loading and unloading containers.</li>
                 </ul>
             </li>
-
             <li>
-                <h3>7. Bridge Cranes</h3>
-                <img src="bridge crane.jpg" alt="Bridge Crane">
+                <strong>7. Bridge Cranes</strong>
+                <img src="photos/bridge crane.jpg" alt="Bridge Crane">
                 <ul>
                     <li>Feature a horizontal beam that moves along tracks, commonly found in warehouses and factories.</li>
                 </ul>
             </li>
-
             <li>
-                <h3>8. Jib Cranes</h3>
-                <img src="jib crane.jpg" alt="Jib Crane">
+                <strong>8. Jib Cranes</strong>
+                <img src="photos/jib crane.jpg" alt="Jib Crane">
                 <ul>
                     <li>Have a horizontal arm (jib) that pivots, suitable for small tasks and lifting in workshops.</li>
                 </ul>
             </li>
-
             <li>
-                <h3>9. Stacker Cranes</h3>
-                <img src="stacker crane.jpg" alt="Stacker Crane">
+                <strong>9. Stacker Cranes</strong>
+                <img src="photos/stacker crane.jpg" alt="Stacker Crane">
                 <ul>
                     <li>Automated cranes designed for high-density storage systems, typically used in warehouses.</li>
                 </ul>
             </li>
-
             <li>
-                <h3>10. Gentry Cranes</h3>
-                <img src="Gentry crane.jpg" alt="Gentry Crane">
+                <strong>10. Gentry Cranes</strong>
+                <img src="photos/Gentry crane.jpg" alt="Gentry Crane">
                 <ul>
                     <li>Operate on overhead tracks, often used for lifting heavy materials in manufacturing and industrial settings.</li>
                 </ul>
             </li>
         </ul>
-
-        <p>Cranes are essential for increasing efficiency and safety in construction and industrial operations, making them indispensable in many projects.</p>
-    </section>
-
+</section>
+    
+       
   
 </head>
 <body id="top">
