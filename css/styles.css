@@ -174,3 +174,19 @@ header h1 {
     background-color: #555;
     transform: scale(1.1);
 }
+
+table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background: #0073e6;
+            color: white;
