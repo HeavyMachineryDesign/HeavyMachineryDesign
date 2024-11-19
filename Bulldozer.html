@@ -262,22 +262,18 @@
 </body>
 
 
-<body id="top">
+  <!-- Back to Top Button -->
+    <a href="#top" class="back-to-top" id="back-to-top">Back to Top</a>
 
-<!-- Back to Top Button -->
-<a href="#top" class="back-to-top">Back to Top</a>
-
-<script>
-   // Select the Back to Top button
-   const backToTopButton = document.querySelector('.back-to-top');
-
-   // Show or hide the button based on scroll position
-   window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-         backToTopButton.classList.add('show');
-      } else {
-         backToTopButton.classList.remove('show');
-      }
-   });
-</script>
+    <script>
+        // Back to Top Button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        };
+    </script>
 </html>
