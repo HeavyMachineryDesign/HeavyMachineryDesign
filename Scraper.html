@@ -1,168 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>Scraper</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        html {
-            scroll-behavior: smooth; /* Enable smooth scrolling */
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        
-       /* Header Styling */
-        header {
-            background: #333;
-            position: fixed;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            position: relative;
-        }
-/* Back Button Styling */
-.back-button {
-    color: #fff; /* White text */
-    font-size: 16px; /* Adjust font size */
-    padding: 10px 20px;
-    text-decoration: none; /* Remove underline */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    border-radius: 5px; /* Rounded corners */
-    margin-right: 20px; /* Space between the back button and other elements */
-}
-
-.back-button:hover {
-    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
-}
-        .title {
-            font-size: 36px;
-            font-weight: bold;
-            margin: 0;
-        }
-
-        /* Home Icon Styling */
-        .home-icon {
-            position: absolute;
-            left: 15px;
-            top: 15px;
-            font-size: 1.5rem;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .title {
-            font-size: 36px;
-            font-weight: bold;
-            margin: 0;
-        }
-
-    }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 12px 20px;
-            background-color: #333;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            display: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            opacity: 0;
-            font-size: 16px;
-            z-index: 1000;
-        }
-
-        .back-to-top.show {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive Styling */
-        @media (max-width: 768px) {
-            .toolbar, .content-nav {
-                display: none; /* Hidden by default on mobile */
-                flex-direction: column;
-            }
-
-            .dropdown-btn {
-                display: block;
-            }
-
-            .content-nav a, .toolbar a {
-                width: 100%;
-                text-align: center;
-            }
-
-        .home-icon {
-            position: absolute;
-            left: 15px;
-            top: 15px;
-            font-size: 1.5rem;
-            color: #fff;
-            text-decoration: none;
-        }
-        
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-        section {
-            padding: 20px;
-        }
-    </style>
-
-   
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+
+<body id="top">
     <header>
-         <a href="javascript:window.history.back();" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
-        <h1 class="title">Scraper</h1>
-        <nav>
-            <ul>
-               
-            </ul>
-        </nav>
+        <div class="header-container">
+        <h1>Scraper</h1>
+           <nav class="toolbar" roBulldozerle="navigation">
+             <button class="menu-toggle" id="menuToggle">☰ Menu</button>
+                <li><a href="#about">About</a></li>
+                <li><a href="#Key Features">Key Features</a></li>
+                <li><a href="#Types">Types</a></li>
+                <li><a href="#Advantages">Advantages</a></li>
+                <li><a href="#Common-uses">Common Uses</a></li>
+                <li><a href="#Operation and Maintenance">Operation and Maintenance</a></li>
+               <li><a href="#History">History</a></li>
+               <li><a href="#Conclusion">Conclusion</a></li>
+             </nav>
+    </div>
     </header>
+</body>
 
-
-<style>
-   
-   /* Responsive adjustments for mobile screens */
-   @media (max-width: 600px) {
-      .toolbar {
-         flex-direction: column;
-         align-items: center;
-         gap: 10px;
-      }
-      
-   
-</style>
+    
 <section id="about">
-<p><head>
-</head>
-<body>
-
-    <h1>Scraper</h1>
+    <h1>About</h1>
         <p>Scrapers are vital pieces of heavy machinery used in construction, mining, and earthmoving projects. They are designed to efficiently move and level large amounts of soil, gravel, and other materials. Their unique design allows them to scoop, transport, and spread materials, making them indispensable in various applications, from grading roads to land clearing.</p>
     </section>
 
-    <section>
-        <h2>Types of Scrapers</h2>
+  <section id="Key features">
+<h1>Key Features:</h1>
+        <ul>
+            <li><strong>Cutting and Scraping Blade:</strong> Horizontally adjustable blade for cutting and scraping soil or material layers.</li>
+            <li><strong>Bowl (or Hopper):</strong> Large container to collect and temporarily store material.</li>
+            <li><strong>Ejector Mechanism:</strong> Hydraulic system for efficient unloading of collected material.</li>
+            <li><strong>Hydraulic Control System:</strong> Precise control for blade, bowl, and ejector mechanisms.</li>
+            <li><strong>Articulated or Rigid Frame:</strong> Provides maneuverability or stability, depending on the frame type.</li>
+            <li><strong>High-Powered Engine:</strong> Ensures sufficient power for operation and transporting heavy loads.</li>
+            <li><strong>Large Pneumatic Tires:</strong> Provide traction and stability on uneven terrain.</li>
+            <li><strong>Operator’s Cabin:</strong> Ergonomically designed for comfort with advanced monitoring systems.</li>
+            <li><strong>Mobility Options:</strong> Wheel tractor or track scrapers for various terrain and operational needs.</li>
+            <li><strong>Optional Attachments:</strong> Rippers, GPS, or laser-guided systems for specific tasks.</li>
+            <li><strong>Versatility:</strong> Suitable for tasks like land leveling, excavation, and material transport.</li>
+            <li><strong>Durable Construction:</strong> Built to withstand heavy-duty use with low-maintenance designs.</li>
+        </ul>
+   </section>   
+    
+    <section id="types">
+        <h1>Types of Scrapers</h1>
         <p>There are several types of scrapers, each tailored for specific tasks:</p>
         <ul>
             <li><strong>Single Engine Scrapers:</strong> These scrapers have one engine and are ideal for smaller projects. They are versatile and can be used for light to moderate earthmoving tasks.</li>
@@ -172,8 +62,8 @@
         </ul>
     </section>
 
-    <section>
-        <h2>Benefits of Using Scrapers</h2>
+   <section id="Advantages">
+        <h1>Advantages</h1>
         <p>Scrapers provide numerous advantages in construction and earthmoving:</p>
         <ul>
             <li><strong>Efficiency:</strong> Scrapers can move large volumes of material quickly, reducing the time and labor required for earthmoving tasks.</li>
@@ -183,8 +73,8 @@
         </ul>
     </section>
 
-    <section>
-        <h2>Applications of Scrapers</h2>
+    <section id="Common-uses">
+        <h1>Common Uses:</h1>
         <p>Scrapers are used in various sectors, including:</p>
         <ul>
             <li><strong>Road Construction:</strong> Essential for grading and leveling surfaces before paving, scrapers ensure a solid foundation for roads.</li>
@@ -194,8 +84,8 @@
         </ul>
     </section>
 
-    <section>
-        <h2>Operation and Maintenance</h2>
+    <section id="Operation and Maintenance">
+        <h1>Operation and Maintenance</h1>
         <p>Operating a scraper requires specialized training to ensure safety and efficiency. Key operational aspects include:</p>
         <ul>
             <li><strong>Pre-Operation Checks:</strong> Operators should inspect the machine for any signs of wear or damage before use.</li>
@@ -205,8 +95,63 @@
         </ul>
     </section>
 
-    <section>
-        <h2>Conclusion</h2>
+ <section id="History">
+ <h2>1. Early Beginnings</h2>
+        <p>The concept of scrapers originated with primitive tools used by humans to dig and move soil. Early agricultural practices required basic wooden or stone tools to level land for farming.</p>
+
+        <h2>2. Animal-Powered Scrapers (19th Century)</h2>
+        <p>In the 1800s, scrapers began to take shape as animal-drawn implements. The <strong>Fresno Scraper</strong>, invented in 1883 by James Porteous, was a U-shaped bucket pulled by horses or oxen, widely used for agricultural development, irrigation, and road construction.</p>
+
+        <h2>3. Mechanization (Early 20th Century)</h2>
+        <p>The industrial revolution introduced steam-powered scrapers, which were later replaced by gasoline and diesel engines in the 1920s for better efficiency and mobility.</p>
+
+        <h2>4. Motorized Scrapers (1930s-1940s)</h2>
+        <p>Companies like Caterpillar and LeTourneau introduced rubber-tired scrapers and self-propelled models, marking a significant advancement. During World War II, these machines were widely used for constructing airstrips and military infrastructure.</p>
+
+        <h2>5. Post-War Boom (1950s-1970s)</h2>
+        <p>Massive infrastructure projects increased demand for larger and more efficient scrapers. Tandem-powered scrapers with two engines became popular for handling heavy workloads.</p>
+
+        <h2>6. Modern Innovations (1980s-Present)</h2>
+        <p>Modern scrapers now feature hydraulic systems, GPS technology, and automation for enhanced precision and efficiency. Eco-friendly hybrid and electric models are also emerging to reduce environmental impact.</p>
+
+        <h2>7. Current Use and Trends</h2>
+        <p>Scrapers are integral to construction, mining, and agricultural projects, with a focus on smart systems and sustainability.</p>
+
+        <h2>Key Milestones</h2>
+        <table>
+            <tr>
+                <th>Year</th>
+                <th>Milestone</th>
+            </tr>
+            <tr>
+                <td>1883</td>
+                <td>Invention of the Fresno Scraper</td>
+            </tr>
+            <tr>
+                <td>1920s</td>
+                <td>Transition to gasoline and diesel engines</td>
+            </tr>
+            <tr>
+                <td>1930s</td>
+                <td>Introduction of rubber-tired and self-propelled scrapers</td>
+            </tr>
+            <tr>
+                <td>1940s</td>
+                <td>Wide-scale use in World War II infrastructure</td>
+            </tr>
+            <tr>
+                <td>1950s-1970s</td>
+                <td>Development of tandem-powered and high-capacity scrapers</td>
+            </tr>
+            <tr>
+                <td>2000s</td>
+                <td>Integration of GPS and automated systems</td>
+            </tr>
+        </table>
+      </section>
+    
+     <section id="Conclusion">
+        <h1>Conclusion</h1>
         <p>Scrapers are indispensable tools in the construction and earthmoving industries, offering efficiency, versatility, and precision in material handling. Their ability to move large volumes of earth quickly makes them a crucial component of many projects. As technology continues to evolve, scrapers are becoming even more advanced, further enhancing their role in modern construction. Whether for road building, land development, or mining, scrapers will remain vital to the success of many operations.</p>
     </section>
 
