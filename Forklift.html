@@ -1,186 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>Forklift</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        html {
-            scroll-behavior: smooth; /* Enable smooth scrolling */
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        
-       /* Header Styling */
-        header {
-            background: #333;
-            position: fixed;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            position: relative;
-        }
-/* Back Button Styling */
-.back-button {
-    color: #fff; /* White text */
-    font-size: 16px; /* Adjust font size */
-    padding: 10px 20px;
-    text-decoration: none; /* Remove underline */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    border-radius: 5px; /* Rounded corners */
-    margin-right: 20px; /* Space between the back button and other elements */
-}
-
-.back-button:hover {
-    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
-}
-        .title {
-            font-size: 36px;
-            font-weight: bold;
-            margin: 0;
-        }
-
-        /* Home Icon Styling */
-        .home-icon {
-            position: absolute;
-            left: 15px;
-            top: 15px;
-            font-size: 1.5rem;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .title {
-            font-size: 36px;
-            font-weight: bold;
-            margin: 0;
-        }
-
-    }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 12px 20px;
-            background-color: #333;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            display: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            opacity: 0;
-            font-size: 16px;
-            z-index: 1000;
-        }
-
-        .back-to-top.show {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive Styling */
-        @media (max-width: 768px) {
-            .toolbar, .content-nav {
-                display: none; /* Hidden by default on mobile */
-                flex-direction: column;
-            }
-
-            .dropdown-btn {
-                display: block;
-            }
-
-            .content-nav a, .toolbar a {
-                width: 100%;
-                text-align: center;
-            }
-
-        .home-icon {
-            position: absolute;
-            left: 15px;
-            top: 15px;
-            font-size: 1.5rem;
-            color: #fff;
-            text-decoration: none;
-        }
-        
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-        section {
-            padding: 20px;
-        }
-    </style>
-
-
-   
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+
+<body id="top">
     <header>
-            <a href="javascript:window.history.back();" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+        <div class="header-container">
         <h1>Forklift</h1>
-        <nav>
-            <ul>
+           <nav class="toolbar" roBulldozerle="navigation">
+             <button class="menu-toggle" id="menuToggle">☰ Menu</button>
+                <li><a href="#about">About</a></li>
+                <li><a href="#Key Features">Key Features</a></li>
+               <li><a href="#Types">Types</a></li>
+               <li><a href="#History">History</a></li>
                
-            </ul>
-        </nav>
+             </nav>
+    </div>
     </header>
+</body>
 
 
-<style>
-   
-   /* Responsive adjustments for mobile screens */
-   @media (max-width: 600px) {
-      .toolbar {
-         flex-direction: column;
-         align-items: center;
-         gap: 10px;
-      }
-      
-   
-</style>
 <section id="about">
-<p><head>
-</head>
-<body>
+
     <h1>Forklift</h1>
     <p>Forklifts are powerful industrial vehicles used primarily for lifting and moving heavy materials over short distances. They are essential in warehouses, construction sites, and manufacturing facilities.</p>
+</section>
+    
 
+    <section id="Key Features">
     <h2>Key Features</h2>
     <ul>
-        <li><strong>Lifting Capacity:</strong> Forklifts can typically lift loads ranging from 3,000 to 60,000 pounds, depending on the model.</li>
-        <li><strong>Mast Types:</strong> Different mast configurations allow for varying lift heights and load handling.</li>
-        <li><strong>Fuel Types:</strong> Forklifts can be powered by electric batteries, propane, diesel, or gasoline, each suited for specific applications.</li>
-        <li><strong>Attachments:</strong> Forklifts can be equipped with various attachments, such as forks, clamps, and booms, to handle different types of loads.</li>
+       <h2>1. Lifting Capacity</h2>
+        <ul>
+            <li><strong>Description:</strong> Forklifts are designed to carry and lift heavy loads, with capacities ranging from 1 ton to over 40 tons for industrial models.</li>
+            <li><strong>Importance:</strong> Determines the type of material that can be handled, such as pallets, containers, or machinery.</li>
+        </ul>
+
+        <h2>2. Mast and Forks</h2>
+        <ul>
+            <li><strong>Description:</strong> The mast supports the forks, which are used to lift and lower the load. Masts can be single or multi-stage for varying heights.</li>
+            <li><strong>Importance:</strong> Determines how high and how far the forklift can extend its forks.</li>
+        </ul>
+
+        <h2>3. Maneuverability</h2>
+        <ul>
+            <li><strong>Description:</strong> Forklifts can maneuver in tight spaces, often turning in a 180-degree radius.</li>
+            <li><strong>Importance:</strong> Essential for working in confined areas like warehouses and narrow aisles.</li>
+        </ul>
+
+        <h2>4. Stability and Safety Features</h2>
+        <ul>
+            <li><strong>Description:</strong> Forklifts are equipped with counterbalance weights, stability wheels, and sensors to ensure safe operation.</li>
+            <li><strong>Importance:</strong> Helps prevent accidents by ensuring the forklift remains stable while handling heavy loads.</li>
+        </ul>
+
+        <h2>5. Fork Positioning and Adjustability</h2>
+        <ul>
+            <li><strong>Description:</strong> Many forklifts feature adjustable forks, allowing for flexible handling of different loads.</li>
+            <li><strong>Importance:</strong> Provides versatility in handling wide, narrow, or irregular loads.</li>
+        </ul>
+
+        <h2>6. Fuel Type</h2>
+        <ul>
+            <li><strong>Description:</strong> Forklifts are powered by electric, LPG (liquefied petroleum gas), or diesel engines.</li>
+            <li><strong>Importance:</strong> Fuel choice affects operating costs, emissions, and suitability for specific environments.</li>
+        </ul>
+
+        <h2>7. Load Center</h2>
+        <ul>
+            <li><strong>Description:</strong> The load center refers to the distance from the forks to the center of the load. This affects the forklift's lifting capacity and stability.</li>
+            <li><strong>Importance:</strong> Ensures safe lifting and prevents the forklift from tipping under heavy loads.</li>
+        </ul>
+
+        <h2>8. Tires and Ground Clearance</h2>
+        <ul>
+            <li><strong>Description:</strong> Forklifts are equipped with different tire types (pneumatic or solid) based on terrain, and ground clearance varies for outdoor use.</li>
+            <li><strong>Importance:</strong> Affects the forklift's ability to operate on different surfaces, like rough terrain or smooth indoor floors.</li>
+        </ul>
+
+        <h2>9. Ergonomics and Operator Comfort</h2>
+        <ul>
+            <li><strong>Description:</strong> Forklifts feature operator cabins with adjustable seats, clear visibility, and easily accessible controls.</li>
+            <li><strong>Importance:</strong> Enhances operator comfort, reduces fatigue, and improves safety and productivity.</li>
+        </ul>
+
+        <h2>10. Lifting Height</h2>
+        <ul>
+            <li><strong>Description:</strong> Forklifts are designed to lift loads to various heights, with some capable of reaching over 40 feet.</li>
+            <li><strong>Importance:</strong> Crucial for applications requiring high stacking or retrieval of materials from tall shelves.</li>
+        </ul>
+
+        <h2>11. Speed and Performance</h2>
+        <ul>
+            <li><strong>Description:</strong> Forklifts' speed depends on their power source, with electric models offering slower speeds and diesel models faster performance.</li>
+            <li><strong>Importance:</strong> Faster forklifts improve productivity in high-demand environments.</li>
+        </ul>
+
+        <h2>12. Hydraulic Systems</h2>
+        <ul>
+            <li><strong>Description:</strong> Forklifts use hydraulic systems to lift, tilt, and lower loads with precision.</li>
+            <li><strong>Importance:</strong> Ensures smooth operation and load handling, contributing to efficiency and safety.</li>
+        </ul>
+
+        <h2>13. Attachments and Versatility</h2>
+        <ul>
+            <li><strong>Description:</strong> Forklifts can be fitted with various attachments like side shifters, rotators, or fork extensions for specialized tasks.</li>
+            <li><strong>Importance:</strong> Increases the forklift’s versatility, allowing it to handle a wide range of materials.</li>
+        </ul>
+
+        <h2>14. Maintenance and Durability</h2>
+        <ul>
+            <li><strong>Description:</strong> Forklifts are designed for durability, with easy access for regular maintenance to ensure long service life.</li>
+            <li><strong>Importance:</strong> Regular maintenance reduces downtime, lowers repair costs, and enhances safety.</li>
+        </ul>
+
+        <h2>15. Environmental Impact</h2>
+        <ul>
+            <li><strong>Description:</strong> Modern forklifts, especially electric models, are designed to minimize emissions and reduce environmental impact.</li>
+            <li><strong>Importance:</strong> Helps companies comply with environmental regulations and adopt greener practices.</li>
+        </ul>
     </ul>
+</section>
 
-    <h2>Types of Forklifts</h2>
-    <h3>1. Counterbalance Forklifts</h3>
-    <p>The most common type, featuring forks at the front and a counterweight at the back. Ideal for indoor and outdoor use on level surfaces.</p>
+    <section id="Types">
+    <h2>Types</h2>
+    <h2>1. Counterbalance Forklift</h2>
+        <ul>
+            <li><strong>Description:</strong> The most common type of forklift, featuring a weight at the rear to counterbalance the load at the front.</li>
+            <li><strong>Applications:</strong> Suitable for a wide range of tasks, from indoor warehouse work to outdoor loading and unloading.</li>
+            <li><strong>Fuel Type:</strong> Can be electric, diesel, or LPG (liquefied petroleum gas).</li>
+            <li><strong>Advantages:</strong> Easy to maneuver, can handle heavy loads, and is versatile for various tasks.</li>
+        </ul>
 
-    <h3>2. Reach Forklifts</h3>
-    <p>Designed for narrow aisles, with extending forks that allow for greater reach. Commonly used in warehouses for storing pallets at height.</p>
+        <h2>2. Reach Truck</h2>
+        <ul>
+            <li><strong>Description:</strong> Designed for high stacking and narrow aisle operations. The forks can extend forward, allowing it to reach pallets stored at a height.</li>
+            <li><strong>Applications:</strong> Primarily used in warehouses with narrow aisles.</li>
+            <li><strong>Fuel Type:</strong> Electric.</li>
+            <li><strong>Advantages:</strong> Ideal for high storage in tight spaces, making it perfect for small warehouses.</li>
+        </ul>
 
-    <h3>3. Pallet Jacks</h3>
-    <p>Manual or electric devices used for lifting and moving pallets. Ideal for small warehouses or retail environments.</p>
+        <h2>3. Pallet Jack (Manual and Electric)</h2>
+        <ul>
+            <li><strong>Description:</strong> A smaller forklift designed for lifting and moving pallets. The manual version is operated by hand, while the electric version uses a motor for easier movement.</li>
+            <li><strong>Applications:</strong> Ideal for short-distance transport in warehouses or retail environments.</li>
+            <li><strong>Fuel Type:</strong> Manual or electric.</li>
+            <li><strong>Advantages:</strong> Compact, easy to operate, and efficient for small-scale movements.</li>
+        </ul>
 
-    <h3>4. Telehandlers</h3>
-    <p>Similar to forklifts but with a telescoping boom that ext
+        <h2>4. Order Picker</h2>
+        <ul>
+            <li><strong>Description:</strong> A forklift designed to allow operators to pick orders directly from shelves, with an elevated platform for the driver to stand on.</li>
+            <li><strong>Applications:</strong> Common in order fulfillment centers and warehouses.</li>
+            <li><strong>Fuel Type:</strong> Electric.</li>
+            <li><strong>Advantages:</strong> Efficient for order picking in environments where workers need to move through racks and shelves.</li>
+        </ul>
 
+        <h2>5. Reach Forklift (Straddle)</h2>
+        <ul>
+            <li><strong>Description:</strong> A forklift with a straddle design that allows it to handle multiple pallets and place them in narrow spaces.</li>
+            <li><strong>Applications:</strong> Used in warehouses and distribution centers for handling large volumes of stacked pallets.</li>
+            <li><strong>Fuel Type:</strong> Electric.</li>
+            <li><strong>Advantages:</strong> Allows operators to handle multiple pallets and increases productivity in crowded spaces.</li>
+        </ul>
+
+        <h2>6. Telehandler (Rough Terrain Forklift)</h2>
+        <ul>
+            <li><strong>Description:</strong> A type of forklift with an extendable boom that allows for greater reach and can lift higher than traditional forklifts.</li>
+            <li><strong>Applications:</strong> Commonly used on construction sites, farms, and outdoor environments.</li>
+            <li><strong>Fuel Type:</strong> Diesel or LPG.</li>
+            <li><strong>Advantages:</strong> Great for lifting loads to greater heights and over obstacles, often used for heavy-duty applications.</li>
+        </ul>
+
+        <h2>7. Sideloader Forklift</h2>
+        <ul>
+            <li><strong>Description:</strong> A forklift that operates with the load carried on its side, making it ideal for long or bulky loads.</li>
+            <li><strong>Applications:</strong> Suitable for carrying long materials like pipes, timber, and metal rods.</li>
+            <li><strong>Fuel Type:</strong> Electric, diesel, or LPG.</li>
+            <li><strong>Advantages:</strong> Can operate in narrow aisles and is ideal for specific tasks involving bulky materials.</li>
+        </ul>
+
+        <h2>8. Rough Terrain Forklift</h2>
+        <ul>
+            <li><strong>Description:</strong> A forklift designed for use in outdoor environments with uneven terrain. It features large tires and high ground clearance.</li>
+            <li><strong>Applications:</strong> Used in construction sites, lumber yards, and agricultural settings.</li>
+            <li><strong>Fuel Type:</strong> Diesel or LPG.</li>
+            <li><strong>Advantages:</strong> Provides stability and strength for lifting heavy loads on rough or uneven ground.</li>
+        </ul>
+
+        <h2>9. Container Handler</h2>
+        <ul>
+            <li><strong>Description:</strong> A specialized forklift designed to handle shipping containers and other heavy-duty loads in port environments.</li>
+            <li><strong>Applications:</strong> Used in ports, shipping yards, and large distribution centers for handling containers.</li>
+            <li><strong>Fuel Type:</strong> Diesel.</li>
+            <li><strong>Advantages:</strong> High lifting capacity, capable of stacking containers in high, dense formations.</li>
+        </ul>
+
+        <h2>10. Narrow Aisle Forklift</h2>
+        <ul>
+            <li><strong>Description:</strong> A forklift designed to operate in narrow aisles, maximizing storage space.</li>
+            <li><strong>Applications:</strong> Perfect for warehouses with limited space and high-density shelving.</li>
+            <li><strong>Fuel Type:</strong> Electric.</li>
+            <li><strong>Advantages:</strong> Great for maximizing warehouse space and storing products at greater heights.</li>
+        </ul>
+
+        <h2>11. Big Forklift</h2>
+        <ul>
+            <li><strong>Description:</strong> Heavy-duty forklifts built to handle extremely large and heavy loads. Often used for industrial tasks like moving steel or heavy construction materials.</li>
+            <li><strong>Applications:</strong> Used in large-scale manufacturing, steel yards, and ports.</li>
+            <li><strong>Fuel Type:</strong> Diesel.</li>
+            <li><strong>Advantages:</strong> Capable of lifting and transporting extremely heavy materials that smaller forklifts cannot handle.</li>
+        </ul>
+
+        <h2>12. Walkie Reach Forklift</h2>
+        <ul>
+            <li><strong>Description:</strong> A type of reach truck that is operated while walking behind the machine. It is used for lifting pallets in high-rise racks.</li>
+            <li><strong>Applications:</strong> Commonly used in warehouses for stacking and retrieving pallets in tight spaces.</li>
+            <li><strong>Fuel Type:</strong> Electric.</li>
+            <li><strong>Advantages:</strong> Compact, easy to maneuver, and suitable for use in narrow aisles.</li>
+        </ul>
+</section>
+
+
+   <section id="History"> 
+<h2>Early Beginnings (Late 19th - Early 20th Century)</h2>
+        <ul>
+            <li><strong>Hand-Powered Hoists (Late 1800s):</strong> Early precursors of forklifts were simple, hand-powered lifting mechanisms designed to move heavy loads in warehouses and factories.</li>
+            <li><strong>1906:</strong> Tractors equipped with lifting mechanisms appeared, primarily used by railroads for loading goods.</li>
+        </ul>
+
+        <h2>The First Powered Lift Trucks (1910s)</h2>
+        <ul>
+            <li><strong>1917:</strong> The <em>Clark Equipment Company</em> introduced the "Tructractor," a powered platform truck for internal factory use.</li>
+            <li><strong>1919:</strong> The <em>Yale & Towne Manufacturing Company</em> launched the first battery-powered lift truck with a hoist.</li>
+        </ul>
+
+        <h2>Advancements During the 1920s</h2>
+        <ul>
+            <li><strong>Rise of Forks and Mast:</strong> Forks and hydraulic lifting masts became standard, enabling vertical lifting and stacking.</li>
+            <li><strong>Increased Industrial Use:</strong> Factories and warehouses began to widely adopt forklifts for moving goods within their facilities.</li>
+        </ul>
+
+        <h2>World War II (1939-1945): The Catalyst for Growth</h2>
+        <ul>
+            <li><strong>Massive Demand:</strong> Forklifts became critical for managing logistics in military supply chains.</li>
+            <li><strong>Standardization of Pallets:</strong> The war led to the widespread use of standardized pallets, revolutionizing how goods were stored, transported, and handled.</li>
+        </ul>
+
+        <h2>Post-War Era (1940s-1960s): Expansion and Innovation</h2>
+        <ul>
+            <li><strong>Global Industrial Boom:</strong> The rapid growth of industries spurred the adoption of forklifts worldwide.</li>
+            <li><strong>Introduction of Gasoline and Diesel Engines:</strong> Forklifts transitioned from battery power to internal combustion engines.</li>
+            <li><strong>Articulating Forks and Advanced Hydraulics:</strong> Innovations allowed forklifts to handle more diverse loads and operate in tighter spaces.</li>
+        </ul>
+
+        <h2>The 1970s-1990s: Specialization and Safety</h2>
+        <ul>
+            <li><strong>Electric Forklifts for Indoor Use:</strong> Electric forklifts became popular for indoor operations due to their lack of emissions.</li>
+            <li><strong>Safety Features:</strong> Roll cages, improved braking systems, and stability mechanisms were introduced.</li>
+            <li><strong>Ergonomic Design:</strong> Manufacturers began focusing on operator comfort and usability.</li>
+        </ul>
+
+        <h2>Modern Era (2000-Present): Automation and Sustainability</h2>
+        <ul>
+            <li><strong>Automation and Robotics:</strong> Autonomous forklifts with advanced sensors, cameras, and AI technologies are now used in smart warehouses.</li>
+            <li><strong>Environmental Concerns:</strong> Electric forklifts dominate indoor operations, and lithium-ion batteries are becoming the standard.</li>
+            <li><strong>Connectivity:</strong> Modern forklifts are equipped with telematics for real-time monitoring and fleet management.</li>
+        </ul>
+
+</section>
+       
         <!-- Back to Top Button -->
 <a href="#top" class="back-to-top">Back to Top</a>
 
