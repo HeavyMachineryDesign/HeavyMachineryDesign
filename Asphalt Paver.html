@@ -1,151 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <title>Asphalt Paver</title>
+    <title>Horizontal Directional Drilling (HDD)</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         html {
-            scroll-behavior: smooth; /* Enable smooth scrolling */
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        
-       /* Header Styling */
-        header {
-            background: #333;
-            position: fixed;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            position: relative;
-        }
-/* Back Button Styling */
-.back-button {
-    color: #fff; /* White text */
-    font-size: 16px; /* Adjust font size */
-    padding: 10px 20px;
-    text-decoration: none; /* Remove underline */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    border-radius: 5px; /* Rounded corners */
-    margin-right: 20px; /* Space between the back button and other elements */
-}
-
-.back-button:hover {
-    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
-}
-        .title {
-            font-size: 36px;
-            font-weight: bold;
-            margin: 0;
-        }
-
-        /* Home Icon Styling */
-        .home-icon {
-            position: absolute;
-            left: 15px;
-            top: 15px;
-            font-size: 1.5rem;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .title {
-            font-size: 36px;
-            font-weight: bold;
-            margin: 0;
-        }
-
-    }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 12px 20px;
-            background-color: #333;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            display: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            opacity: 0;
-            font-size: 16px;
-            z-index: 1000;
-        }
-
-        .back-to-top.show {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive Styling */
-        @media (max-width: 768px) {
-            .toolbar, .content-nav {
-                display: none; /* Hidden by default on mobile */
-                flex-direction: column;
-            }
-
-            .dropdown-btn {
-                display: block;
-            }
-
-            .content-nav a, .toolbar a {
-                width: 100%;
-                text-align: center;
-            }
-
-        .home-icon {
-            position: absolute;
-            left: 15px;
-            top: 15px;
-            font-size: 1.5rem;
-            color: #fff;
-            text-decoration: none;
-        }
-        
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-        section {
-            padding: 20px;
+            scroll-behavior: smooth;
         }
     </style>
-
-   
 </head>
-<body>
+
+<body id="top">
     <header>
-            <a href="javascript:window.history.back();" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+        <div class="header-container">
+             <a href="javascript:window.history.back();" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
         <h1>Asphalt Paver</h1>
-        <nav>
-            <ul>
-               
-            </ul>
-        </nav>
+           <nav class="toolbar" role="navigation">
+             <button class="menu-toggle" id="menuToggle">☰ Menu</button>
+                <li><a href="#about">About</a></li>
+                <li><a href="#Key Features">Key Features</a></li>
+                <li><a href="#Types">Types</a></li>
+                <li><a href="#Applications">Applications</a></li>
+               <li><a href="#History">Applications</a></li>
+             </nav>
+    </div>
     </header>
-
-
-        <section>
+   
+        <section id="about">
         <h2>About</h2>
         <p>An <strong>asphalt paver</strong> (also known as a paver finisher or paving machine) is heavy construction equipment used to lay asphalt on roads, bridges, parking lots, and other surfaces. The machine spreads and levels asphalt evenly over the surface, creating a foundation ready for compaction and smoothing. It is an essential tool in road construction and repair, known for its precision in creating smooth, flat surfaces.</p>
     </section>
 
-    <section>
+    <section id="key-features">
         <h2>Key Features</h2>
         <ul class="feature-list">
             <li><strong>Screed</strong>: Smooths, levels, and provides the desired thickness to the asphalt layer, often heated to prevent sticking.</li>
@@ -157,7 +46,7 @@
         </ul>
     </section>
 
-    <section>
+    <section id="types">
         <h2>Types</h2>
         <ul class="type-list">
             <li><strong>Tracked Asphalt Pavers</strong>: Equipped with rubber or steel tracks, ideal for uneven terrain and larger projects, providing a smoother finish.</li>
@@ -166,7 +55,7 @@
         </ul>
     </section>
 
-    <section>
+    <section id="applications">
         <h2>Applications</h2>
         <ul class="application-list">
             <li><strong>Road Construction and Maintenance</strong>: Used for constructing and repairing road surfaces, highways, and bridges.</li>
@@ -176,8 +65,8 @@
             <li><strong>Resurfacing and Overlays</strong>: Adds new asphalt layers on top of old surfaces to improve durability.</li>
         </ul>
     </section>
-
-    <section>
+   
+    <section id="history">
         <h2>History</h2>
         <p>The concept of asphalt pavers began in the <strong>1930s</strong> when basic machines replaced manual asphalt spreading on roadways.</p>
         <p>In the <strong>1940s–1950s</strong>, pavers evolved to include conveyor belts, screeds, and heating features, improving efficiency. The <strong>modern era</strong> brought advanced features like electronic controls and GPS, making pavers more accurate and efficient. Today, they are essential in infrastructure projects worldwide.</p>
