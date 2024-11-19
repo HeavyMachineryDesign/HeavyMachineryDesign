@@ -1,170 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>Grader</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        html {
-            scroll-behavior: smooth; /* Enable smooth scrolling */
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        
-       /* Header Styling */
-        header {
-            background: #333;
-            position: fixed;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            position: relative;
-        }
-/* Back Button Styling */
-.back-button {
-    color: #fff; /* White text */
-    font-size: 16px; /* Adjust font size */
-    padding: 10px 20px;
-    text-decoration: none; /* Remove underline */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    border-radius: 5px; /* Rounded corners */
-    margin-right: 20px; /* Space between the back button and other elements */
-}
-
-.back-button:hover {
-    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
-}
-        .title {
-            font-size: 36px;
-            font-weight: bold;
-            margin: 0;
-        }
-
-        /* Home Icon Styling */
-        .home-icon {
-            position: absolute;
-            left: 15px;
-            top: 15px;
-            font-size: 1.5rem;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .title {
-            font-size: 36px;
-            font-weight: bold;
-            margin: 0;
-        }
-
-    }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 12px 20px;
-            background-color: #333;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            display: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            opacity: 0;
-            font-size: 16px;
-            z-index: 1000;
-        }
-
-        .back-to-top.show {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive Styling */
-        @media (max-width: 768px) {
-            .toolbar, .content-nav {
-                display: none; /* Hidden by default on mobile */
-                flex-direction: column;
-            }
-
-            .dropdown-btn {
-                display: block;
-            }
-
-            .content-nav a, .toolbar a {
-                width: 100%;
-                text-align: center;
-            }
-
-        .home-icon {
-            position: absolute;
-            left: 15px;
-            top: 15px;
-            font-size: 1.5rem;
-            color: #fff;
-            text-decoration: none;
-        }
-        
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-        section {
-            padding: 20px;
-        }
-    </style>
-
-
-   
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+
+<body id="top">
     <header>
-            <a href="javascript:window.history.back();" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+        <div class="header-container">
         <h1>Grader</h1>
-        <nav>
-            <ul>
-               
-            </ul>
-        </nav>
+           <nav class="toolbar" roBulldozerle="navigation">
+             <button class="menu-toggle" id="menuToggle">☰ Menu</button>
+                <li><a href="#about">About</a></li>
+                <li><a href="#Key Features">Key Features</a></li>
+                <li><a href="#Common-uses">Common Uses</a></li>
+                <li><a href="#Advantages">Advantages</a></li>
+               <li><a href="#Innovations">Innovations</a></li>
+               <li><a href="#Conclusion">Conclusion</a></li>
+             </nav>
+    </div>
     </header>
-
-
-
+</body>
+    
 <section id="about">
-<p><head>
-</head>
-<body>
-
-
     <h1>Grader</h1>
-<p><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-</head></body> 
         <p>Graders, commonly known as motor graders, are essential heavy machinery in the construction and civil engineering sectors. Their primary function is to create a flat and even surface, making them indispensable in road construction, land development, and grading tasks. As versatile and powerful machines, graders enhance productivity and precision, playing a vital role in modern infrastructure projects.</p>
     </section>
 
-    <section>
-        <h2>Design and Functionality</h2>
+    <section id="Key-features">
+        <h2>Key Features</h2>
         <p>A typical grader features a long frame with a large, adjustable blade positioned between the front and rear axles. This blade can be raised, lowered, and tilted to achieve the desired grading depth and angle. Most graders are equipped with a six-wheel design, which provides stability and maneuverability, especially on uneven terrains.</p>
         <p>The operation of a grader requires skilled operators who can adjust the blade according to the specific needs of the job. With the advent of advanced technology, many modern graders now include GPS and laser guidance systems, allowing for enhanced accuracy and efficiency in grading tasks.</p>
     </section>
 
-    <section>
-        <h2>Applications of Graders</h2>
+    <section id="Common-uses">
+        <h2>Common uses:</h2>
         <p>Graders are predominantly used in various construction and maintenance activities, including:</p>
         <ul>
             <li><strong>Road Construction:</strong> Graders are crucial in leveling the ground before paving, ensuring a smooth surface for asphalt or concrete. They also create proper drainage slopes to prevent water accumulation.</li>
@@ -174,8 +47,8 @@
         </ul>
     </section>
 
-    <section>
-        <h2>Benefits of Graders</h2>
+ <section id="Advantages">
+        <h2>Advantages</h2>
         <p>The advantages of using graders are numerous:</p>
         <ul>
             <li><strong>Efficiency:</strong> Graders significantly reduce the time and labor required for grading tasks compared to manual methods.</li>
@@ -184,12 +57,12 @@
         </ul>
     </section>
 
-    <section>
+     <section id="Innovations">
         <h2>Technological Innovations</h2>
         <p>The evolution of grader technology has transformed their operation. Features such as GPS systems provide real-time positioning data, allowing operators to achieve precise grading. Automated controls in some models further streamline the grading process, enabling consistent results with minimal manual intervention.</p>
     </section>
 
-    <section>
+    <section id="Conclusion">
         <h2>Conclusion</h2>
         <p>Graders are vital tools in the construction industry, contributing to the efficient and precise execution of grading tasks. Their ability to adapt to various applications, from road construction to landscaping, underscores their importance in infrastructure development. As technology continues to advance, graders will likely evolve further, enhancing their capabilities and reinforcing their role as essential machinery in modern construction.</p>
     </section>
