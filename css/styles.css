@@ -43,17 +43,18 @@ header h1 {
 
 /* Toolbar Styling */
 .toolbar {
-    display: flex;
+    display: flex; /* Visible and horizontal for desktop */
     justify-content: center;
     align-items: center;
     list-style: none;
-    background-color: linear-gradient(90deg, #141e30, #243b55);
+    background: linear-gradient(90deg, #141e30, #243b55); /* Corrected background property */
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .toolbar li {
-    position: relative;
-    margin: 0 5px;
+    margin: 0 10px; /* Add spacing between items */
 }
 
 .toolbar a {
@@ -115,7 +116,7 @@ header h1 {
 }
 
 /* Responsive Styling */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .menu-toggle {
         display: block; /* Visible in mobile view */
     }
@@ -128,7 +129,7 @@ header h1 {
     }
 
     .toolbar.active {
-        display: none; /* Display when active */
+        display: flex; /* Display when active */
     }
 
     .dropdown-menu {
@@ -147,64 +148,29 @@ header h1 {
 /* Back to Top Button */
 .back-to-top {
     position: fixed;
-    bottom: 1em;
-    right: 1em;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
     background-color: #333;
     color: white;
-    border: none;
-    padding: 0.8em;
-    border-radius: 50%;
-    font-size: .8em;
-    display: none;
-    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    display: none; /* Initially hidden */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    font-size: 16px;
     z-index: 1000;
 }
 
 .back-to-top.show {
     display: block;
-}
-/* Toolbar Styling */
-.toolbar {
-    display: flex; /* Visible and horizontal for desktop */
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    background-color: linear-gradient(90deg, #141e30, #243b55);
-    width: 100%;
-    margin: 0;
-    padding: 0;
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.toolbar li {
-    margin: 0 10px; /* Add spacing between items */
-}
-
-.toolbar a {
-    text-decoration: none;
-    color: #fcf3cf;
-    font-size: .8em;
-    padding: 10px 15px;
-    transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.toolbar a:hover,
-.toolbar a.active {
-    color: #40E0D0;
-    background-color: #092c42;
-    border-radius: 10px;
-    font-weight: bold;
-}
-
-/* Mobile-specific toolbar behavior */
-@media (max-width: 768px) {
-    .toolbar {
-        display: none; /* Hidden on mobile */
-        flex-direction: column;
-        background-color: #333;
-        width: 100%;
-    }
-
-    .toolbar.active {
-        display: flex; /* Display when active (e.g., with toggle) */
-    }
+.back-to-top:hover {
+    background-color: #555;
+    transform: scale(1.1);
 }
