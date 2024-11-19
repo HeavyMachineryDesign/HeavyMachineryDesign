@@ -1,152 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>Loader</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        html {
-            scroll-behavior: smooth; /* Enable smooth scrolling */
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        
-       /* Header Styling */
-        header {
-            background: #333;
-            position: fixed;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            position: relative;
-        }
-/* Back Button Styling */
-.back-button {
-    color: #fff; /* White text */
-    font-size: 16px; /* Adjust font size */
-    padding: 10px 20px;
-    text-decoration: none; /* Remove underline */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    border-radius: 5px; /* Rounded corners */
-    margin-right: 20px; /* Space between the back button and other elements */
-}
-
-.back-button:hover {
-    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
-}
-        .title {
-            font-size: 36px;
-            font-weight: bold;
-            margin: 0;
-        }
-
-        /* Home Icon Styling */
-        .home-icon {
-            position: absolute;
-            left: 15px;
-            top: 15px;
-            font-size: 1.5rem;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .title {
-            font-size: 36px;
-            font-weight: bold;
-            margin: 0;
-        }
-
-    }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 12px 20px;
-            background-color: #333;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            display: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            opacity: 0;
-            font-size: 16px;
-            z-index: 1000;
-        }
-
-        .back-to-top.show {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive Styling */
-        @media (max-width: 768px) {
-            .toolbar, .content-nav {
-                display: none; /* Hidden by default on mobile */
-                flex-direction: column;
-            }
-
-            .dropdown-btn {
-                display: block;
-            }
-
-            .content-nav a, .toolbar a {
-                width: 100%;
-                text-align: center;
-            }
-
-        .home-icon {
-            position: absolute;
-            left: 15px;
-            top: 15px;
-            font-size: 1.5rem;
-            color: #fff;
-            text-decoration: none;
-        }
-        
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-        section {
-            padding: 20px;
-        }
-    </style>
-
-
-   
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+
+<body id="top">
     <header>
-            <a href="javascript:window.history.back();" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+        <div class="header-container">
         <h1>Loader</h1>
-        <nav>
-            <ul>
-               
-            </ul>
-        </nav>
+           <nav class="toolbar" roBulldozerle="navigation">
+             <button class="menu-toggle" id="menuToggle">☰ Menu</button>
+                <li><a href="#about">About</a></li>
+                <li><a href="#Key Features">Key Features</a></li>
+                <li><a href="#Common-uses">Common Uses</a></li>
+                <li><a href="#Types">Types</a></li>
+             </nav>
+    </div>
     </header>
-
-
-
+</body>
     
     <section id="about">
         <h1>Loaders</h1>
         <p>Loaders are versatile heavy machinery used primarily in construction, mining, and industrial applications for moving and loading materials. Here’s an overview of the main types and their applications:</p>
+    </section>
 
+    
+     <section id="key features">
+        <h2>Key Features</h2>
+        <ul>
+            <li><strong>Hydraulic Power:</strong> Most loaders use hydraulic systems for lifting and lowering, providing strong lifting capabilities.</li>
+            <li><strong>Bucket Size and Type:</strong> Different bucket sizes and shapes are available depending on the material being handled.</li>
+            <li><strong>Maneuverability:</strong> Many loaders are designed for tight spaces and can pivot or turn easily, especially skid steers.</li>
+        </ul>
+     </section>
+
+      <section id="Common-uses">
+        <h2>Applications</h2>
+        <ul>
+            <li><strong>Construction:</strong> Moving earth, loading materials, and site preparation.</li>
+            <li><strong>Mining:</strong> Loading ore and waste material, especially in both surface and underground operations.</li>
+            <li><strong>Landscaping:</strong> Grading, leveling, and transporting soil and materials.</li>
+        </ul>
+     </section>
+    
+     <section id="types">
         <h2>Types of Loaders</h2>
 
         <h3>1. Wheel Loaders</h3>
@@ -168,22 +69,10 @@
         <h3>5. LHD (Load-Haul-Dump) Loaders</h3>
         <p><strong>Description:</strong> Specifically designed for underground mining operations, capable of loading, transporting, and dumping materials.</p>
         <p><strong>Applications:</strong> Mucking in tunnels and underground mines.</p>
+     </section>
 
-        <h2>Key Features</h2>
-        <ul>
-            <li><strong>Hydraulic Power:</strong> Most loaders use hydraulic systems for lifting and lowering, providing strong lifting capabilities.</li>
-            <li><strong>Bucket Size and Type:</strong> Different bucket sizes and shapes are available depending on the material being handled.</li>
-            <li><strong>Maneuverability:</strong> Many loaders are designed for tight spaces and can pivot or turn easily, especially skid steers.</li>
-        </ul>
 
-        <h2>Applications</h2>
-        <ul>
-            <li><strong>Construction:</strong> Moving earth, loading materials, and site preparation.</li>
-            <li><strong>Mining:</strong> Loading ore and waste material, especially in both surface and underground operations.</li>
-            <li><strong>Landscaping:</strong> Grading, leveling, and transporting soil and materials.</li>
-        </ul>
-
-        <p>Loaders are crucial for improving efficiency and productivity in various industries. If you need more detailed information about specific types or models, feel free to ask!
+   
     
 <!-- Back to Top Button -->
 <a href="#top" class="back-to-top">Back to Top</a>
