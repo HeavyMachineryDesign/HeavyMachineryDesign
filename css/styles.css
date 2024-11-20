@@ -43,7 +43,9 @@ header {
     position: relative; /* Ensures proper positioning for absolute children */
 }
 
-
+.nav-button.active + .dropdown-menu {
+  display: block;
+}
 
 body {
     font-family: 'Poppins', Arial, sans-serif;
