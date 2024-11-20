@@ -6,7 +6,7 @@ html {
 body {
     font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 150px 0 0; /* Add padding-top to avoid header overlap */
     box-sizing: border-box;
     line-height: 2;
     width: 100%;
@@ -18,7 +18,7 @@ body {
 
 /* Section Styling */
 section {
-    scroll-margin-top: 150px;
+    scroll-margin-top: 150px; /* Adjusted for header height */
     width: 90%;
     margin: 20px auto;
 }
@@ -154,6 +154,22 @@ header .home-icon:hover {
     .dropdown.active .dropdown-menu {
         display: block;
     }
+
+    header .home-icon {
+        position: relative; /* Keep inside the header */
+        margin-top: 10px;
+        left: 0;
+    }
+
+    /* Add padding to body to avoid overlap */
+    body {
+        padding-top: 100px; /* Adjust based on header's height */
+    }
+
+    /* Make header text size smaller */
+    header h1 {
+        font-size: 1.8em; /* Adjusted for smaller screens */
+    }
 }
 
 /* Back to Top Button */
@@ -179,16 +195,4 @@ header .home-icon:hover {
     display: block;
     opacity: 1;
     transform: translateY(0);
-}
-
-@media (max-width: 768px) {
-    /* Make header text size smaller */
-    header h1 {
-        font-size: 1.8em; /* Adjusted for smaller screens */
-    }
-
-    /* Add padding to body to avoid overlap */
-    body {
-        padding-top: 20px; /* Adjust this value based on your header's height */
-    }
 }
