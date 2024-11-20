@@ -105,8 +105,8 @@ header .home-icon:hover {
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: 100%; /* Position below the parent menu */
+    left: 0; /* Align with the left of the parent */
     background-color: #283747;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     list-style: none;
@@ -133,6 +133,7 @@ header .home-icon:hover {
 }
 
 @media (max-width: 768px) {
+    /* Mobile Toolbar */
     .toolbar {
         display: none;
         flex-direction: column;
@@ -144,17 +145,22 @@ header .home-icon:hover {
     }
 
     .dropdown-menu {
-        position: static;
+        position: relative; /* Use relative positioning for mobile */
+        top: 0;
+        left: 0;
+        margin-top: 10px; /* Add spacing below the main menu */
+        box-shadow: none; /* Remove shadow for a cleaner look */
     }
 
     .dropdown:hover .dropdown-menu {
-        display: none;
+        display: none; /* Disable hover interaction on mobile */
     }
 
     .dropdown.active .dropdown-menu {
-        display: block;
+        display: block; /* Use click to show dropdown on mobile */
     }
 
+    /* Mobile Header */
     header {
         flex-direction: row; /* Align items in a row */
         justify-content: center; /* Center content horizontally */
@@ -168,16 +174,14 @@ header .home-icon:hover {
         margin-right: 15px; /* Add space between the button and text */
     }
 
-    /* Add padding to body to avoid overlap */
-    body {
-        padding-top: 100px; /* Adjust based on header's height */
+    header h1 {
+        font-size: 1.8em; /* Smaller font size for mobile */
+        margin: 0; /* Remove margins */
     }
 
-    /* Make header text size smaller */
-    header h1 {
-       font-size: 1.8em; /* Smaller font size for mobile */
-        margin: 0; /* Remove margins */
-        color: #fff; /* Ensure text color remains readable */
+    /* Adjust body padding for mobile */
+    body {
+        padding-top: 100px; /* Adjust based on header's height */
     }
 }
 
