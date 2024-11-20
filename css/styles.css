@@ -1,3 +1,26 @@
+header .home-icon {
+    position: absolute; /* Positioned relative to the header */
+    bottom: 10px; /* 10px from the bottom of the header */
+    left: 10px; /* 10px from the left edge of the header */
+    font-size: 1.8em; /* Adjust size as needed */
+    color: white;
+    background-color: #333;
+    padding: 12px;
+    border-radius: 50%; /* Circle button */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 10; /* Ensures it appears above other elements */
+}
+
+header .home-icon:hover {
+    background-color: #555;
+    transform: scale(1.1);
+}
+
 /* Global Styling */
 html {
     scroll-behavior: smooth;
