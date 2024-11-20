@@ -1,3 +1,10 @@
+/* Global Styling */
+html {
+    scroll-behavior: smooth;
+}
+
+
+
 /* Home Icon Styling */
 header .home-icon {
     position: absolute; /* Positioned relative to the header */
@@ -22,20 +29,30 @@ header .home-icon:hover {
     transform: scale(1.1);
 }
 
-/* Global Styling */
-html {
-    scroll-behavior: smooth;
+/* Header Styling */
+header {
+    background: linear-gradient(90deg, #141e30, #243b55); /* Gradient background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0; /* Adjust padding as needed */
+    text-align: center;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0; /* Remove any unwanted margin */
+    position: relative; /* Ensures proper positioning for absolute children */
 }
+
+
 
 body {
     font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    padding-top: 150px; /* Adjust based on header height */
-    line-height: 2;
-    width: 100%;
+    box-sizing: border-box; /* Ensures padding and borders are included in element width/height */
 }
-
 /* Section Styling */
 section {
     scroll-margin-top: 150px; /* Offset for smooth scroll to sections */
@@ -43,22 +60,6 @@ section {
     margin: 20px auto; /* Centers with 20px top/bottom margin */
 }
 
-/* Header Styling */
-header {
-    background: linear-gradient(90deg, #141e30, #243b55); /* Gradient background */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-    text-align: center;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 0; /* Ensure no unnecessary margin */
-    padding-top: 0; /* Adjust padding if needed */
-    position: relative; /* Necessary for positioning the home icon */
-}
 
 header h1 {
     margin: 0;
