@@ -3,6 +3,32 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and borders are included in element width/height */
+    line-height: 2;
+    width: 100%;
+}
+/* Section Styling */
+section {
+    scroll-margin-top: 150px; /* Offset for smooth scroll to sections */
+    width: 90%; /* Occupies 90% of the parent width */
+    margin: 20px auto; /* Centers with 20px top/bottom margin */
+}
+
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
 /* Home Icon Styling */
 header .home-icon {
     position: absolute; /* Positioned relative to the header */
@@ -55,30 +81,6 @@ header {
   position: relative; /* Keeps button's placement controlled */
 }
 
-body {
-    font-family: 'Poppins', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Ensures padding and borders are included in element width/height */
-    line-height: 2;
-    width: 100%;
-}
-/* Section Styling */
-section {
-    scroll-margin-top: 150px; /* Offset for smooth scroll to sections */
-    width: 90%; /* Occupies 90% of the parent width */
-    margin: 20px auto; /* Centers with 20px top/bottom margin */
-}
-
-
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 10px;
-}
 
 /* Toolbar Styling */
 .toolbar {
@@ -192,7 +194,34 @@ header h1 {
         display: block; /* Show dropdown on click */
     }
 
+
+    /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            background-color: #333;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            display: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            opacity: 0;
+            font-size: 16px;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
     header .home-icon {
         font-size: 1.6em; /* Adjust icon size for smaller screens */
     }
-}
+
