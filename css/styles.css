@@ -3,8 +3,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
-
 /* Home Icon Styling */
 header .home-icon {
     position: absolute; /* Positioned relative to the header */
@@ -52,6 +50,8 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* Ensures padding and borders are included in element width/height */
+    line-height: 2;
+    width: 100%;
 }
 /* Section Styling */
 section {
