@@ -1,4 +1,4 @@
-<script>
+
     document.addEventListener("DOMContentLoaded", () => {
         const menuToggle = document.getElementById("menuToggle");
         const menu = document.getElementById("menu");
@@ -18,4 +18,7 @@
             });
         });
     });
-</script>
+document.querySelector('.nav-button').addEventListener('click', function() {
+  const dropdown = document.querySelector('.dropdown-menu');
+  dropdown.classList.toggle('active'); // Toggle visibility
+});
