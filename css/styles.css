@@ -187,12 +187,6 @@ header .home-icon:hover {
         font-size: 1.8em; /* Adjusted for smaller screens */
     }
 
-    /* Make the header non-fixed */
-    header {
-        position: static;
-        box-shadow: none; /* Optional: remove shadow for a simpler look */
-    }
-
     /* Add padding to body to avoid overlap */
     body {
         padding-top: 20px; /* Adjust this value based on your header's height */
