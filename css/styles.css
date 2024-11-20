@@ -155,10 +155,17 @@ header .home-icon:hover {
         display: block;
     }
 
+    header {
+        flex-direction: row; /* Align items in a row */
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Align items vertically */
+        padding: 10px 15px; /* Reduce padding for mobile */
+    }
+
     header .home-icon {
-        position: relative; /* Keep inside the header */
-        margin-top: 10px;
-        left: 0;
+        position: static; /* Reset absolute positioning */
+        margin: 0; /* Remove margins */
+        margin-right: 15px; /* Add space between the button and text */
     }
 
     /* Add padding to body to avoid overlap */
@@ -168,7 +175,9 @@ header .home-icon:hover {
 
     /* Make header text size smaller */
     header h1 {
-        font-size: 1.8em; /* Adjusted for smaller screens */
+       font-size: 1.8em; /* Smaller font size for mobile */
+        margin: 0; /* Remove margins */
+        color: #fff; /* Ensure text color remains readable */
     }
 }
 
