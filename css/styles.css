@@ -31,7 +31,7 @@ header h1 {
 
 /* Home Icon Styling */
 header .home-icon {
-    position: absolute; /* Positioned relative to the header */
+    position: relative; /* Positioned relative to the header */
     bottom: 10px; /* 10px from the bottom of the header */
     left: 10px; /* 10px from the left edge of the header */
     font-size: 1.8em; /* Adjust size as needed */
