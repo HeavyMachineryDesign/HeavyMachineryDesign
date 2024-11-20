@@ -9,7 +9,7 @@ body {
     padding: 0;
     padding-top: 160px; /* Adjust based on header height */
     line-height: 2;
-    width: 100%; 
+    width: 100%;
 }
 
 /* Section Styling */
@@ -26,7 +26,6 @@ header {
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
-    position: fixed;
     text-align: center;
     width: 100%;
     top: 0;
@@ -39,6 +38,30 @@ header h1 {
     font-size: 2.5em;
     font-weight: bold;
     color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Home Icon */
+header .home-icon {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 1.5em;
+    color: white;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+header .home-icon:hover {
+    background-color: #555;
 }
 
 /* Toolbar Styling */
@@ -117,6 +140,15 @@ header h1 {
 
 /* Responsive Styling */
 @media (max-width: 768px) {
+    header {
+        position: relative; /* Unfixed header for small screens */
+        padding: 15px 10px;
+    }
+
+    header h1 {
+        font-size: 1.8em; /* Smaller header text */
+    }
+
     .menu-toggle {
         display: block; /* Visible in mobile view */
     }
@@ -144,49 +176,3 @@ header h1 {
         display: block; /* Show dropdown on click */
     }
 }
- /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 12px 20px;
-            background-color: #333;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            display: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            opacity: 0;
-            font-size: 16px;
-            z-index: 1000;
-        }
-
-        .back-to-top.show {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-
-.back-to-top:hover {
-    background-color: #555;
-    transform: scale(1.1);
-}
-
-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background: #0073e6;
-            color: white;
