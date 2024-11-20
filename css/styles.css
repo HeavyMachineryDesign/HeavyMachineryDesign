@@ -7,45 +7,60 @@ body {
     font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Ensures padding and borders are included in element width/height */
+    box-sizing: border-box;
     line-height: 2;
     width: 100%;
 }
-/* Section Styling */
-section {
-    scroll-margin-top: 150px; /* Offset for smooth scroll to sections */
-    width: 90%; /* Occupies 90% of the parent width */
-    margin: 20px auto; /* Centers with 20px top/bottom margin */
+
+*, *::before, *::after {
+    box-sizing: inherit;
 }
 
+/* Section Styling */
+section {
+    scroll-margin-top: 150px;
+    width: 90%;
+    margin: 20px auto;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(90deg, #141e30, #243b55);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
 header h1 {
-    margin: 0;
+    margin: 0 0 10px;
     font-size: 2.5em;
     font-weight: bold;
     color: #fff;
-    text-align: center;
-    margin-bottom: 10px;
 }
 
-
-/* Home Icon Styling */
 header .home-icon {
-    position: relative; /* Positioned relative to the header */
-    bottom: 10px; /* 10px from the bottom of the header */
-    left: 10px; /* 10px from the left edge of the header */
-    font-size: 1.8em; /* Adjust size as needed */
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 1.8em;
     color: white;
     background-color: #333;
     padding: 12px;
-    border-radius: 50%; /* Circle button */
+    border-radius: 50%;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 10; /* Ensures it appears above other elements */
+    z-index: 10;
 }
 
 header .home-icon:hover {
@@ -53,49 +68,21 @@ header .home-icon:hover {
     transform: scale(1.1);
 }
 
-/* Header Styling */
-header {
-    background: linear-gradient(90deg, #141e30, #243b55); /* Gradient background */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0; /* Adjust padding as needed */
-    text-align: center;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 0; /* Remove any unwanted margin */
-    position: relative; /* Ensures proper positioning for absolute children */
-}
-
-.nav-button.active + .dropdown-menu {
-  display: block;
-}
-
-.navbar {
-  position: relative; /* Ensures positioning context */
-}
-
-.nav-button {
-  position: relative; /* Keeps button's placement controlled */
-}
-
-
 /* Toolbar Styling */
 .toolbar {
-    display: flex; /* Visible and horizontal for desktop */
+    display: flex;
     justify-content: center;
     align-items: center;
     list-style: none;
-    background: linear-gradient(90deg, #141e30, #243b55); /* Corrected background property */
+    background: linear-gradient(90deg, #141e30, #243b55);
     width: 100%;
     margin: 0;
     padding: 0;
+    top: 60px; /* Adjust for fixed header */
 }
 
 .toolbar li {
-    margin: 0 10px; /* Add spacing between items */
+    margin: 0 10px;
 }
 
 .toolbar a {
@@ -116,14 +103,14 @@ header {
 
 /* Dropdown Menu */
 .dropdown-menu {
-    display: none; /* Hidden by default */
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
     background-color: #283747;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     list-style: none;
-    padding: 20px 0;
+    padding: 10px 0;
     z-index: 1000;
     min-width: 200px;
     border-radius: 10px;
@@ -142,86 +129,54 @@ header {
 }
 
 .dropdown:hover .dropdown-menu {
-    display: block; /* Show menu on hover */
+    display: block;
 }
 
-/* Mobile Menu Toggle */
-.menu-toggle {
-    display: none; /* Hidden for desktop */
-    background-color: #555;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 1.2em;
-}
-
-/* Responsive Styling */
 @media (max-width: 768px) {
-    header {
-        position: relative; /* Unfixed header for small screens */
-        padding: 15px 10px;
-    }
-
-    header h1 {
-        font-size: 1.8em; /* Smaller header text */
-    }
-
-    .menu-toggle {
-        display: block; /* Visible in mobile view */
-    }
-
     .toolbar {
-        display: none; /* Hidden by default in mobile */
+        display: none;
         flex-direction: column;
         background-color: #333;
-        width: 100%;
     }
 
     .toolbar.active {
-        display: flex; /* Display when active */
+        display: flex;
     }
 
     .dropdown-menu {
-        position: static; /* Stack submenus in mobile view */
+        position: static;
     }
 
     .dropdown:hover .dropdown-menu {
-        display: none; /* Disable hover in mobile */
+        display: none;
     }
 
     .dropdown.active .dropdown-menu {
-        display: block; /* Show dropdown on click */
+        display: block;
     }
+}
 
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    font-size: 16px;
+    z-index: 1000;
+}
 
-    /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 12px 20px;
-            background-color: #333;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            display: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            opacity: 0;
-            font-size: 16px;
-            z-index: 1000;
-        }
-
-        .back-to-top.show {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-
-    header .home-icon {
-        font-size: 1.6em; /* Adjust icon size for smaller screens */
-    }
-
+.back-to-top.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
