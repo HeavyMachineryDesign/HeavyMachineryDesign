@@ -47,6 +47,14 @@ header {
   display: block;
 }
 
+.navbar {
+  position: relative; /* Ensures positioning context */
+}
+
+.nav-button {
+  position: relative; /* Keeps button's placement controlled */
+}
+
 body {
     font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
