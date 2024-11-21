@@ -47,30 +47,32 @@ header h1 {
 
 /* Enhanced Home Icon Styling */
 header .home-icon {
-    position: relative; /* Positioned relative to the header */
-    bottom: 10px; /* 10px from the bottom of the header */
-    left: 10px; /* 10px from the left edge of the header */
-    font-size: 1em; /* Slightly larger size for emphasis */
+    position: fixed; /* Fixed position for consistent placement */
+    bottom: 20px; /* 20px from the bottom of the viewport */
+    left: 20px; /* 20px from the left of the viewport */
+    font-size: 1.5em; /* Small yet noticeable size */
     color: #fff; /* Clean white color for the icon */
     background: linear-gradient(135deg, #6a11cb, #2575fc); /* Attractive gradient background */
-    padding: 15px; /* Larger padding for a more prominent appearance */
+    padding: 10px; /* Padding for a balanced look */
     border-radius: 50%; /* Circular shape */
-    text-decoration: none;
-    display: flex;
-    align-items: left;
-    justify-content: left;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow for a lifted effect */
-    transition: all 0.3s ease; /* Smooth transition for all properties */
-    z-index: 10; /* Ensures it appears above other elements */
+    text-decoration: none; /* Remove text underline */
+    display: flex; /* Flex for centering content */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* 3D effect with shadow */
+    transition: all 0.3s ease; /* Smooth hover transitions */
+    z-index: 1000; /* Ensure visibility above other elements */
     border: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border for better contrast */
+    cursor: pointer; /* Indicate clickable button */
 }
 
 header .home-icon:hover {
     background: linear-gradient(135deg, #2575fc, #6a11cb); /* Reverse gradient on hover */
-    transform: scale(1.2) rotate(10deg); /* Add slight rotation for a playful effect */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
+    transform: scale(1.1); /* Slightly enlarge for hover effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
     border: 2px solid rgba(255, 255, 255, 0.5); /* Enhance border visibility */
 }
+
 
 
 /* Toolbar Styling */
@@ -172,10 +174,11 @@ header .home-icon:hover {
         padding: 10px 15px; /* Reduce padding for mobile */
     }
 
-    header .home-icon {
-        position: static; /* Reset absolute positioning */
-        margin: 0; /* Remove margins */
-        margin-right: 15px; /* Add space between the button and text */
+   header .home-icon {
+        bottom: 15px; /* Adjust spacing for smaller screens */
+        left: 15px; /* Adjust spacing for smaller screens */
+        font-size: 1.2em; /* Slightly smaller size for mobile */
+        padding: 8px; /* Adjust padding */
     }
 
     header h1 {
