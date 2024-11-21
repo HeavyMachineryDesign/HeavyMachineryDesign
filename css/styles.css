@@ -102,16 +102,20 @@ header .home-icon:hover {
 }
 
 /* Dropdown Menu */
+.nav-item {
+    position: relative; /* Ensure dropdown positions relative to the parent */
+}
+
 .dropdown-menu {
     display: none;
-    position: relative;
-    top: 100%; /* Position below the parent menu */
+    position: absolute; /* Absolute positioning to escape the toolbar */
+    top: calc(100% + 5px); /* Position just below the parent menu with a gap */
     left: 0; /* Align with the left of the parent */
     background-color: #283747;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     list-style: none;
     padding: 10px 0;
-    z-index: 1000;
+    z-index: 1050; /* Ensure it appears above the toolbar */
     min-width: 200px;
     border-radius: 10px;
 }
@@ -124,22 +128,15 @@ header .home-icon:hover {
     transition: background-color 0.3s ease;
 }
 
-.nav-item {
-    position: relative;
-}
-
 .nav-item:hover .dropdown-menu {
-    display: block;
+    display: block; /* Show dropdown on hover */
 }
 
 .dropdown-menu a:hover {
     background-color: #092c42;
 }
 
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
+/* Mobile Adjustments */
 @media (max-width: 768px) {
     /* Mobile Toolbar */
     .toolbar {
@@ -187,33 +184,4 @@ header .home-icon:hover {
         margin: 0; /* Remove margins */
     }
 
-    /* Adjust body padding for mobile */
-    body {
-        padding-top: 100px; /* Adjust based on header's height */
-    }
-}
-
-/* Back to Top Button */
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 12px 20px;
-    background-color: #333;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 50px;
-    display: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    font-size: 16px;
-    z-index: 1000;
-}
-
-.back-to-top.show {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
+    /* Adjust body padding for mobile
