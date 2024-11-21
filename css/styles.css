@@ -190,6 +190,15 @@ header .home-icon:hover {
     body {
         padding-top: 100px; /* Adjust based on header's height */
     }
+.back-to-top {
+        bottom: 15px; /* Adjust bottom spacing */
+        right: 15px; /* Adjust right spacing */
+        width: 40px;
+        height: 40px;
+        font-size: 18px; /* Slightly smaller font size */
+        line-height: 40px; /* Adjust vertical alignment */
+    }
+}
 }
 
 /* Back to Top Button */
@@ -197,22 +206,35 @@ header .home-icon:hover {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    padding: 12px 20px;
-    background-color: #333;
-    color: white;
-    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient for a sleek look */
+    color: #fff;
+    font-size: 20px; /* Icon or text size */
+    text-align: center; /* Center align text or icon */
+    line-height: 50px; /* Vertically center text or icon */
     text-decoration: none;
-    border-radius: 50px;
-    display: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    font-size: 16px;
+    border-radius: 50%; /* Perfectly circular */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Subtle 3D effect */
+    opacity: 0; /* Hidden by default */
+    transform: translateY(20px); /* Slight downward offset */
+    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     z-index: 1000;
+    cursor: pointer;
 }
 
+/* Visible State */
 .back-to-top.show {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1; /* Make it visible */
+    transform: translateY(0); /* Bring it into view */
 }
+
+/* Hover Effect */
+.back-to-top:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb); /* Reverse gradient on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Stronger shadow */
+    transform: translateY(-5px); /* Subtle upward animation */
+}
+
+    
+
