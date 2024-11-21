@@ -124,6 +124,14 @@ header .home-icon:hover {
     transition: background-color 0.3s ease;
 }
 
+.nav-item {
+    position: relative;
+}
+
+.nav-item:hover .dropdown-menu {
+    display: block;
+}
+
 .dropdown-menu a:hover {
     background-color: #092c42;
 }
