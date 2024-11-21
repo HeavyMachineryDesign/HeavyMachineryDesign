@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.getElementById("menuToggle");
     const menu = document.getElementById("menu");
     const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
-    const backToTopButton = document.getElementById("back-to-top");
+    const backToTopButton = document.querySelector(".back-to-top");
 
     // **Toggle main menu for mobile view**
     if (menuToggle && menu) {
@@ -23,19 +23,19 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-   // JavaScript to toggle the Back to Top button
-const backToTop = document.querySelector('.back-to-top');
+    // **Toggle the Back to Top button**
+    if (backToTopButton) {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) { // Show button after 300px scroll
+                backToTopButton.classList.add("show");
+            } else {
+                backToTopButton.classList.remove("show");
+            }
+        });
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) { // Show button after 300px scroll
-        backToTop.classList.add('show');
-    } else {
-        backToTop.classList.remove('show');
+        // Scroll to top on click
+        backToTopButton.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
     }
-
-
-// Scroll to top on click
-backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
 });
