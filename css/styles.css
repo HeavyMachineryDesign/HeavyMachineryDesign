@@ -145,6 +145,11 @@ header .home-icon:hover {
     background-color: #092c42; /* Highlight on hover */
 }
 
+.dropdown-menu {
+    right: auto; /* Default alignment */
+    left: 0;     /* Ensure it starts aligned with the parent */
+}
+
 /* Fix for Mobile Devices */
 @media (max-width: 768px) 
 {
