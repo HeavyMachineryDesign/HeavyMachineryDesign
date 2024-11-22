@@ -114,18 +114,18 @@ header {
     font-weight: bold;
 }
 
-/* Dropdown Menu */
+/* Dropdown Menu: Desktop */
 .dropdown-menu {
     display: none; /* Hidden by default */
-    position: absolute;
-    top: 100%;
-    left: 0;
+    position: absolute; /* Dropdown positioned relative to the parent */
+    top: calc(100% + 5px); /* Offset slightly below the parent */
+    left: 0; /* Align to the left of the parent */
     background-color: #283747;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     list-style: none;
-    padding: 20px 0;
+    padding: 10px 0;
     z-index: 1000;
-    min-width: 200px;
+    min-width: 200px; /* Ensures consistent width */
     border-radius: 10px;
 }
 
@@ -133,7 +133,7 @@ header {
     display: block;
     color: #fcf3cf;
     padding: 8px 15px;
-    white-space: nowrap;
+    white-space: nowrap; /* Prevents text wrapping */
     transition: background-color 0.3s ease;
 }
 
@@ -145,19 +145,30 @@ header {
     display: block; /* Show menu on hover */
 }
 
-/* Mobile Menu Toggle */
-.menu-toggle {
-    display: none; /* Hidden for desktop */
-    background-color: #555;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 1.2em;
-}
+
 
 /* Responsive Styling */
 @media (max-width: 768px) {
+
+ .dropdown-menu {
+        position: static; /* Remove absolute positioning for mobile */
+        display: none; /* Hidden by default */
+        width: 100%; /* Occupies full width */
+        padding: 0; /* Reset padding */
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block; /* Show dropdown on click */
+    }
+
+    .dropdown-menu a {
+        padding: 12px 15px; /* Adjust spacing for touch-friendly design */
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none; /* Disable hover functionality on mobile */
+    }
+    
     header {
         position: relative; /* Unfixed header for small screens */
         padding: 15px 10px;
