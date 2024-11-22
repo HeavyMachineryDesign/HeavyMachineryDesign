@@ -24,16 +24,12 @@ header h1 {
     font-size: 2.5em;
     font-weight: bold;
     color: #fff;
-    text-align: center;
-    margin-bottom: 10px;
+    flex: 1; /* Allow the title to take available space */
+    text-align: center; /* Center the text within its space */
 }
-
 
 /* Home Icon Styling */
 header .home-icon {
-    position: relative; /* Positioned relative to the header */
-    bottom: 10px; /* 10px from the bottom of the header */
-    left: 10px; /* 10px from the left edge of the header */
     font-size: 1.8em; /* Adjust size as needed */
     color: white;
     background-color: #333;
@@ -45,7 +41,7 @@ header .home-icon {
     justify-content: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 10; /* Ensures it appears above other elements */
+    margin-right: 15px; /* Add space between the icon and the title */
 }
 
 header .home-icon:hover {
@@ -56,17 +52,17 @@ header .home-icon:hover {
 /* Header Styling */
 header {
     background: linear-gradient(90deg, #141e30, #243b55); /* Gradient background */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0; /* Adjust padding as needed */
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center; /* Center items vertically */
+    padding: 20px; /* Adjust padding as needed */
     text-align: center;
     width: 100%;
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
     margin: 0; /* Remove any unwanted margin */
-    position: relative; /* Ensures proper positioning for absolute children */
 }
 
 .nav-button.active + .dropdown-menu {
@@ -204,7 +200,14 @@ header {
     .dropdown.active .dropdown-menu {
         display: block; /* Show dropdown on click */
     }
+header .home-icon {
+        font-size: 1.6em; /* Smaller icon size */
+        padding: 10px; /* Adjust padding for smaller screens */
+        margin-right: 10px; /* Reduce spacing */
+    }
 
+    
+}
 
     /* Back to Top Button */
         .back-to-top {
