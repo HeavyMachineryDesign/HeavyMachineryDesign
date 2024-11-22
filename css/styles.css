@@ -6,90 +6,96 @@ html {
 body {
     font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
-    padding: 150px 0 0; /* Add padding-top to avoid header overlap */
-    box-sizing: border-box;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and borders are included in element width/height */
     line-height: 2;
     width: 100%;
 }
-
-*, *::before, *::after {
-    box-sizing: inherit;
-}
-
 /* Section Styling */
 section {
-    scroll-margin-top: 150px; /* Adjusted for header height */
-    width: 90%;
-    margin: 20px auto;
+    scroll-margin-top: 150px; /* Offset for smooth scroll to sections */
+    width: 90%; /* Occupies 90% of the parent width */
+    margin: 20px auto; /* Centers with 20px top/bottom margin */
+}
+
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+/* Home Icon Styling */
+header .home-icon {
+    position: relative; /* Positioned relative to the header */
+    bottom: 10px; /* 10px from the bottom of the header */
+    left: 10px; /* 10px from the left edge of the header */
+    font-size: 1.8em; /* Adjust size as needed */
+    color: white;
+    background-color: #333;
+    padding: 12px;
+    border-radius: 50%; /* Circle button */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 10; /* Ensures it appears above other elements */
+}
+
+header .home-icon:hover {
+    background-color: #555;
+    transform: scale(1.1);
 }
 
 /* Header Styling */
 header {
-    background: linear-gradient(90deg, #141e30, #243b55);
+    background: linear-gradient(90deg, #141e30, #243b55); /* Gradient background */
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 0;
+    padding: 20px 0; /* Adjust padding as needed */
     text-align: center;
     width: 100%;
-    position: fixed;
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0; /* Remove any unwanted margin */
+    position: relative; /* Ensures proper positioning for absolute children */
 }
 
-header h1 {
-    margin: 0 0 10px;
-    font-size: 2.5em;
-    font-weight: bold;
-    color: #fff;
+.nav-button.active + .dropdown-menu {
+  display: block;
 }
 
-/* Enhanced Home Icon Styling */
-header .home-icon {
-    position: fixed; /* Fixed position for consistent placement */
-    bottom: 20px; /* 20px from the bottom of the viewport */
-    left: 20px; /* 20px from the left of the viewport */
-    font-size: 1.5em; /* Small yet noticeable size */
-    color: #fff; /* Clean white color for the icon */
-    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Attractive gradient background */
-    padding: 10px; /* Padding for a balanced look */
-    border-radius: 50%; /* Circular shape */
-    text-decoration: none; /* Remove text underline */
-    display: flex; /* Flex for centering content */
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* 3D effect with shadow */
-    transition: all 0.3s ease; /* Smooth hover transitions */
-    z-index: 1000; /* Ensure visibility above other elements */
-    border: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border for better contrast */
-    cursor: pointer; /* Indicate clickable button */
+.navbar {
+  position: relative; /* Ensures positioning context */
 }
 
-header .home-icon:hover {
-    background: linear-gradient(135deg, #2575fc, #6a11cb); /* Reverse gradient on hover */
-    transform: scale(1.1); /* Slightly enlarge for hover effect */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
-    border: 2px solid rgba(255, 255, 255, 0.5); /* Enhance border visibility */
+.nav-button {
+  position: relative; /* Keeps button's placement controlled */
 }
-
 
 
 /* Toolbar Styling */
 .toolbar {
-    display:none;
+    display: flex; /* Visible and horizontal for desktop */
     justify-content: center;
     align-items: center;
     list-style: none;
-    background: linear-gradient(90deg, #141e30, #243b55);
+    background: linear-gradient(90deg, #141e30, #243b55); /* Corrected background property */
     width: 100%;
     margin: 0;
     padding: 0;
-    top: 60px; /* Adjust for fixed header */
 }
 
 .toolbar li {
-    margin: 0 10px;
+    margin: 0 10px; /* Add spacing between items */
 }
 
 .toolbar a {
@@ -108,62 +114,80 @@ header .home-icon:hover {
     font-weight: bold;
 }
 
-/* Dropdown Menu Styling */
-.nav-item {
-    position: relative; /* Ensure dropdown aligns with this parent */
-    z-index: 100; /* Keep above other elements */
-}
-
+/* Dropdown Menu */
 .dropdown-menu {
-    display: none; /* Initially hidden */
-    position: absolute; /* Align relative to the parent nav-item */
-    top: calc(100% + 5px); /* Slight gap below the parent link */
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
     left: 0;
-    background-color: #283747; /* Dark background */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    list-style: none; /* Remove bullets */
-    padding: 10px 0;
-    z-index: 1050; /* Ensure visibility above other elements */
-    min-width: 200px; /* Ensure enough space for links */
-    border-radius: 10px; /* Smooth corners */
+    background-color: #283747;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 20px 0;
+    z-index: 1000;
+    min-width: 200px;
+    border-radius: 10px;
 }
 
 .dropdown-menu a {
-    display: block; /* Ensure full clickable area */
-    color: #fcf3cf; /* Light text color */
-    padding: 10px 15px; /* Adequate spacing */
-    text-decoration: none; /* Remove underline */
-    white-space: wrap; /* Prevent text wrapping */
+    display: block;
+    color: #fcf3cf;
+    padding: 8px 15px;
+    white-space: nowrap;
     transition: background-color 0.3s ease;
 }
 
-.nav-item:hover .dropdown-menu {
+.dropdown-menu a:hover {
+    background-color: #092c42;
+}
+
+.dropdown:hover .dropdown-menu {
     display: block; /* Show menu on hover */
 }
 
-.dropdown-menu a:hover {
-    background-color: #092c42; /* Highlight on hover */
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none; /* Hidden for desktop */
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.2em;
 }
 
-.dropdown-menu {
-    right: auto; /* Default alignment */
-    left: 0;     /* Ensure it starts aligned with the parent */
-}
+/* Responsive Styling */
+@media (max-width: 768px) {
+    header {
+        position: relative; /* Unfixed header for small screens */
+        padding: 15px 10px;
+    }
 
-/* Fix for Mobile Devices */
-@media (max-width: 768px) 
-{
+    header h1 {
+        font-size: 1.8em; /* Smaller header text */
+    }
+
+    .menu-toggle {
+        display: block; /* Visible in mobile view */
+    }
+
+    .toolbar {
+        display: none; /* Hidden by default in mobile */
+        flex-direction: column;
+        background-color: #333;
+        width: 100%;
+    }
+
+    .toolbar.active {
+        display: flex; /* Display when active */
+    }
+
     .dropdown-menu {
-        position: relative; /* Reset for mobile */
-        top: 0;
-        left: 0;
-        width: 100%; /* Full width for mobile */
-        margin-top: 10px; /* Spacing from parent */
-        box-shadow: none; /* Cleaner look */
+        position: static; /* Stack submenus in mobile view */
     }
 
     .dropdown:hover .dropdown-menu {
-        display: none; /* Disable hover on mobile */
+        display: none; /* Disable hover in mobile */
     }
 
     .dropdown.active .dropdown-menu {
@@ -171,75 +195,33 @@ header .home-icon:hover {
     }
 
 
-    /* Mobile Header */
-    header {
-        flex-direction: row; /* Align items in a row */
-        justify-content: center; /* Center content horizontally */
-        align-items: center; /* Align items vertically */
-        padding: 10px 15px; /* Reduce padding for mobile */
+    /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            background-color: #333;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            display: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            opacity: 0;
+            font-size: 16px;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+    header .home-icon {
+        font-size: 1.6em; /* Adjust icon size for smaller screens */
     }
-
-   header .home-icon {
-        bottom: 15px; /* Adjust spacing for smaller screens */
-        left: 15px; /* Adjust spacing for smaller screens */
-        font-size: 1.2em; /* Slightly smaller size for mobile */
-        padding: 8px; /* Adjust padding */
-    }
-
-    header h1 {
-        font-size: 1.8em; /* Smaller font size for mobile */
-        margin: 0; /* Remove margins */
-    }
-
-    /* Adjust body padding for mobile */
-    body {
-        padding-top: 100px; /* Adjust based on header's height */
-    }
-.back-to-top {
-        bottom: 15px; /* Adjust bottom spacing */
-        right: 15px; /* Adjust right spacing */
-        width: 40px;
-        height: 40px;
-        font-size: 18px; /* Slightly smaller font size */
-        line-height: 40px; /* Adjust vertical alignment */
-    }
-}
-
-
-/* Back to Top Button */
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient for a sleek look */
-    color: #fff;
-    font-size: 20px; /* Icon or text size */
-    text-align: center; /* Center align text or icon */
-    line-height: 50px; /* Vertically center text or icon */
-    text-decoration: none;
-    border-radius: 50%; /* Perfectly circular */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Subtle 3D effect */
-    opacity: 0; /* Hidden by default */
-    transform: translateY(20px); /* Slight downward offset */
-    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    z-index: 1000;
-    cursor: pointer;
-}
-
-/* Visible State */
-.back-to-top.show {
-    opacity: 1; /* Make it visible */
-    transform: translateY(0); /* Bring it into view */
-}
-
-/* Hover Effect */
-.back-to-top:hover {
-    background: linear-gradient(135deg, #2575fc, #6a11cb); /* Reverse gradient on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Stronger shadow */
-    transform: translateY(-5px); /* Subtle upward animation */
-}
-
-    
 
