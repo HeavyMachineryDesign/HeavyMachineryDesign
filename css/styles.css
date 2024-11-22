@@ -161,7 +161,7 @@ header {
     color: white; /* Button text color */
     font-weight: bold;
     text-decoration: none;
-    border-radius: 50%; /* Circular shape */
+    border-radius: 25%; /* Circular shape */
     display: none; /* Initially hidden */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for effect */
     transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transitions */
