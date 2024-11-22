@@ -141,6 +141,37 @@ header {
     display: block; /* Show menu on hover */
 }
 
+   /* Back to Top Button Styling */
+.back-to-top {
+    position: fixed; /* Always fixed to the viewport */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    padding: 12px 20px; /* Size and spacing */
+    background-color: #333; /* Button background */
+    color: white; /* Button text color */
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50%; /* Circular shape */
+    display: none; /* Initially hidden */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for effect */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    opacity: 0; /* Invisible by default */
+    font-size: 16px; /* Adjust size as needed */
+    z-index: 1000; /* Ensure it appears above other elements */
+    text-align: center; /* Center the content */
+    line-height: 1.5em; /* Ensures icon is vertically centered */
+}
+
+ .back-to-top.show {
+    display: block; /* Display the button when needed */
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* No vertical offset */
+}
+
+.back-to-top:hover {
+    background-color: #555; /* Lighter background on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
 
 
 /* Responsive Styling */
@@ -208,34 +239,4 @@ header .home-icon {
 
     
 }
-
-    /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 12px 20px;
-            background-color: #333;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            display: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            opacity: 0;
-            font-size: 16px;
-            z-index: 1000;
-        }
-
-        .back-to-top.show {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-
-    header .home-icon {
-        font-size: 1.6em; /* Adjust icon size for smaller screens */
-    }
 
