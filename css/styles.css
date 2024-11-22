@@ -33,7 +33,7 @@ header h1 {
     position: fixed; /* Fixed position for floating effect */
     bottom: 20px; /* 20px from the bottom of the screen */
     left: 20px; /* 20px from the left of the screen */
-    font-size: 2em; /* Adjust the size as needed */
+    font-size: 1em; /* Adjust the size as needed */
     background-color: #333;
     color: white;
     padding: 15px;
