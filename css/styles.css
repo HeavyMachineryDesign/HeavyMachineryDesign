@@ -77,7 +77,7 @@ header .home-icon:hover {
 
 /* Toolbar Styling */
 .toolbar {
-    display: flex;
+    display:none;
     justify-content: center;
     align-items: center;
     list-style: none;
@@ -133,7 +133,7 @@ header .home-icon:hover {
     color: #fcf3cf; /* Light text color */
     padding: 10px 15px; /* Adequate spacing */
     text-decoration: none; /* Remove underline */
-    white-space: nowrap; /* Prevent text wrapping */
+    white-space: wrap; /* Prevent text wrapping */
     transition: background-color 0.3s ease;
 }
 
@@ -146,7 +146,8 @@ header .home-icon:hover {
 }
 
 /* Fix for Mobile Devices */
-@media (max-width: 768px) {
+@media (max-width: 768px) 
+{
     .dropdown-menu {
         position: relative; /* Reset for mobile */
         top: 0;
@@ -163,7 +164,6 @@ header .home-icon:hover {
     .dropdown.active .dropdown-menu {
         display: block; /* Show dropdown on click */
     }
-}
 
 
     /* Mobile Header */
@@ -199,7 +199,7 @@ header .home-icon:hover {
         line-height: 40px; /* Adjust vertical alignment */
     }
 }
-}
+
 
 /* Back to Top Button */
 .back-to-top {
