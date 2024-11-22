@@ -29,18 +29,19 @@ header h1 {
 }
 
 /* Home Icon Styling */
-header .home-icon {
-    font-size: 1.5em; /* Adjust size as needed */
-    color: white;
+.home-icon {
+    position: fixed; /* Fixed position for floating effect */
+    bottom: 20px; /* 20px from the bottom of the screen */
+    left: 20px; /* 20px from the left of the screen */
+    font-size: 2em; /* Adjust the size as needed */
     background-color: #333;
-    padding: 10px 15px;
-    border-radius: 50%; /* Circle button */
-    text-decoration: none;
-    display: flex;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000; /* Ensure it stays above other content */
 }
-
 .home-icon:hover {
     background-color: #555;
     transform: scale(1.1);
@@ -88,13 +89,6 @@ header {
 }
 
 
-.navbar {
-    background: linear-gradient(90deg, #141e30, #243b55); /* Matches the header gradient */
-    width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
-
 .nav-button {
   position: relative; /* Keeps button's placement controlled */
 }
@@ -105,7 +99,7 @@ header {
     display: flex; /* Visible and horizontal for desktop */
     justify-content: center;
     align-items: center;
-    justify-content: space-between; /* Distribute items (Home button left, menu centered) */
+    justify-content: center; /* Center menu items */
     list-style: none;
     background: linear-gradient(90deg, #141e30, #243b55); /* Corrected background property */
     width: 100%;
