@@ -23,19 +23,25 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // **Toggle the Back to Top button**
-    if (backToTopButton) {
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) { // Show button after 300px scroll
-                backToTopButton.classList.add("show");
-            } else {
-                backToTopButton.classList.remove("show");
-            }
-        });
+  // Back to Top Button Logic
+document.addEventListener("DOMContentLoaded", function () {
+    const backToTopButton = document.querySelector(".back-to-top");
 
-        // Scroll to top on click
-        backToTopButton.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
+    // Show/Hide the button based on scroll position
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 300) { // Adjust as needed
+            backToTopButton.classList.add("show");
+        } else {
+            backToTopButton.classList.remove("show");
+        }
+    });
+
+    // Smooth Scroll to Top on Click
+    backToTopButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
         });
-    }
+    });
 });
