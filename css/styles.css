@@ -53,7 +53,7 @@ header .home-icon:hover {
 header {
     background: linear-gradient(90deg, #141e30, #243b55); /* Gradient background */
     display: flex; /* Use flexbox for layout */
-    justify-content: flex-start; /* Align items to the left */
+    justify-content: center; /* Align items to the center */
     align-items: center; /* Center items vertically */
     padding: 20px; /* Adjust padding as needed */
     text-align: center;
