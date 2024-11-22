@@ -30,21 +30,18 @@ header h1 {
 
 /* Home Icon Styling */
 header .home-icon {
-    font-size: 1.8em; /* Adjust size as needed */
+    font-size: 1.5em; /* Adjust size as needed */
     color: white;
     background-color: #333;
-    padding: 12px;
+    padding: 10px 15px;
     border-radius: 50%; /* Circle button */
     text-decoration: none;
     display: flex;
-    align-items: center;
-    justify-content: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-right: 15px; /* Add space between the icon and the title */
 }
 
-header .home-icon:hover {
+.home-icon:hover {
     background-color: #555;
     transform: scale(1.1);
 }
@@ -68,6 +65,28 @@ header {
 .nav-button.active + .dropdown-menu {
   display: block;
 }
+
+
+.nav-menu li {
+    margin: 0 15px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #fcf3cf;
+    font-size: 1em;
+    padding: 10px 15px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #40E0D0;
+    background-color: #092c42;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
 
 .navbar {
     background: linear-gradient(90deg, #141e30, #243b55); /* Matches the header gradient */
@@ -106,13 +125,6 @@ header {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-.toolbar a:hover,
-.toolbar a.active {
-    color: #40E0D0;
-    background-color: #092c42;
-    border-radius: 10px;
-    font-weight: bold;
-}
 
 /* Dropdown Menu: Desktop */
 .dropdown-menu {
