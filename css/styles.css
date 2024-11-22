@@ -70,7 +70,10 @@ header {
 }
 
 .navbar {
-  position: relative; /* Ensures positioning context */
+    background: linear-gradient(90deg, #141e30, #243b55); /* Matches the header gradient */
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
 .nav-button {
@@ -83,11 +86,12 @@ header {
     display: flex; /* Visible and horizontal for desktop */
     justify-content: center;
     align-items: center;
+    justify-content: space-between; /* Distribute items (Home button left, menu centered) */
     list-style: none;
     background: linear-gradient(90deg, #141e30, #243b55); /* Corrected background property */
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 10px 20px;
 }
 
 .toolbar li {
