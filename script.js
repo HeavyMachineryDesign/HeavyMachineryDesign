@@ -69,4 +69,11 @@ function prevSlide() {
 // Auto-slide every 5 seconds
 setInterval(nextSlide, 5000);
 
+    const slider = document.querySelector('.slider');
+let autoSlide = setInterval(nextSlide, 5000);
+
+slider.addEventListener('mouseover', () => clearInterval(autoSlide));
+slider.addEventListener('mouseout', () => autoSlide = setInterval(nextSlide, 5000));
+
+
                           
