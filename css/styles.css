@@ -1,3 +1,74 @@
+/* Carousel Styling */
+.carousel-wrapper {
+    position: relative; /* Ensure carousel is isolated */
+    width: 100%; /* Full width by default */
+    max-width: 1200px; /* Optional max-width for larger screens */
+    margin: 20px auto; /* Center horizontally */
+    overflow: hidden; /* Hide overflowing images */
+    border-radius: 10px; /* Rounded edges for carousel */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.carousel-container {
+    display: flex; /* Horizontal alignment of images */
+    transition: transform 0.5s ease-in-out; /* Smooth sliding */
+}
+
+.carousel-item {
+    flex: 0 0 25%; /* Show 4 items by default */
+    box-sizing: border-box; /* Maintain spacing and borders */
+    padding: 5px; /* Space between images */
+}
+
+.carousel-item img {
+    width: 100%; /* Images fit their containers */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional rounded corners */
+}
+
+/* Carousel Navigation Buttons */
+.carousel-wrapper .prev,
+.carousel-wrapper .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-wrapper .prev {
+    left: 10px;
+}
+
+.carousel-wrapper .next {
+    right: 10px;
+}
+
+.carousel-wrapper .prev:hover,
+.carousel-wrapper .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive Styling for Carousel */
+@media (max-width: 768px) {
+    .carousel-item {
+        flex: 0 0 50%; /* Show 2 items in smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item {
+        flex: 0 0 100%; /* Show 1 item on very small screens */
+    }
+}
+
+
 /* Global Styling */
 html {
     scroll-behavior: smooth;
