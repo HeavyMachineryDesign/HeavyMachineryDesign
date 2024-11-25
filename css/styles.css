@@ -21,10 +21,12 @@
 }
 
 .carousel-item img {
-    width: 100%; /* Images fit their containers */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%; /* Images fit their containers horizontally */
+    height: 200px; /* Fixed height for all images */
+    object-fit: cover; /* Ensures images cover the container without distortion */
     border-radius: 8px; /* Optional rounded corners */
 }
+
 
 /* Carousel Navigation Buttons */
 .carousel-wrapper .prev,
