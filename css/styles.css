@@ -183,64 +183,6 @@ header {
     display: block; /* Show menu on hover */
 }
 
-.carousel {
-    position: relative;
-    width: 90%;
-    max-width: 800px;
-    overflow: hidden; /* Hide overflow for carousel effect */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.carousel-container {
-    display: flex; /* Arrange items in a row */
-    transition: transform 0.5s ease-in-out; /* Smooth scrolling effect */
-}
-
-.carousel-item {
-    flex: 0 0 25%; /* Each item occupies 25% of the container width */
-    box-sizing: border-box;
-    padding: 5px; /* Space between images */
-}
-
-.carousel-item img {
-    width: 100%; /* Image fills the container */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px;
-}
-
-/* Navigation buttons */
-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-    z-index: 1000;
-}
-
-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-/* Responsive styling */
-@media (max-width: 768px) {
-    .carousel-item {
-        flex: 0 0 50%; /* Show two items per view on smaller screens */
-    }
-}
    /* Back to Top Button Styling */
 .back-to-top {
     position: fixed; /* Always fixed to the viewport */
@@ -343,8 +285,3 @@ header .home-icon {
     
 }
 
-@media (max-width: 480px) {
-    .carousel-item {
-        flex: 0 0 100%; /* Show one item per view on very small screens */
-    }
-}
