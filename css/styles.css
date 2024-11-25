@@ -32,6 +32,12 @@ header h1 {
     text-align: center; /* Center the text within its space */
 }
 
+.uniform-image {
+    width: 400px; /* Set a uniform width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Make images block elements */
+}
+
 /* Home Icon Styling */
 .home-icon {
     position: fixed; /* Fixed position for floating effect */
@@ -87,7 +93,7 @@ header {
 .nav-menu a:hover,
 .nav-menu a.active {
     color: #40E0D0;
-    background-color: #092c42;
+    background-color: linear-gradient(90deg, #141e30, #243b55);
     border-radius: 10px;
     font-weight: bold;
 }
@@ -151,7 +157,7 @@ header {
     position: absolute; /* Dropdown positioned relative to the parent */
     top: calc(100% + 5px); /* Offset slightly below the parent */
     left: 0; /* Align to the left of the parent */
-    background-color: #283747;
+    background-color: linear-gradient(90deg, #141e30, #243b55);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     list-style: none;
     padding: 10px 0;
@@ -162,7 +168,7 @@ header {
 
 .dropdown-menu a {
     display: block;
-    color: #fcf3cf;
+    color: linear-gradient(90deg, #141e30, #243b55);
     padding: 8px 15px;
     white-space: nowrap; /* Prevents text wrapping */
     transition: background-color 0.3s ease;
@@ -182,7 +188,7 @@ header {
     bottom: 20px; /* Distance from the bottom */
     right: 20px; /* Distance from the right */
     padding: 12px 20px; /* Size and spacing */
-    background-color: #333; /* Button background */
+    background-color: linear-gradient(90deg, #141e30, #243b55); /* Button background */
     color: white; /* Button text color */
     font-weight: bold;
     text-decoration: none;
@@ -210,6 +216,79 @@ header {
     transform: scale(1.1); /* Slightly enlarge on hover */
 }
 
+
+}
+#image-slider {
+    position: relative;
+    max-width: 600px; /* Adjust as needed */
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider {
+    width: 100%;
+}
+
+.slider img {
+    width: 100%;
+    display: block;
+    transition: opacity 0.5s ease;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#prevButton {
+    left: 10px;
+}
+
+#nextButton {
+    right: 10px;
+}
+
+#image-slider {
+    position: relative;
+    max-width: 600px; /* Adjust as needed */
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider {
+    width: 100%;
+}
+
+.slider img {
+    width: 100%;
+    display: block;
+    transition: opacity 0.5s ease;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#prevButton {
+    left: 10px;
+}
+
+#nextButton {
+    right: 10px;
+}
 
 /* Responsive Styling */
 @media (max-width: 768px) {
@@ -249,7 +328,7 @@ header {
     .toolbar {
         display: none; /* Hidden by default in mobile */
         flex-direction: column;
-        background-color: #333;
+        background-color: linear-gradient(90deg, #141e30, #243b55);
         width: 100%;
     }
 
