@@ -191,7 +191,7 @@ header {
     position: relative;
     width: 90%;
     max-width: 800px;
-    overflow: hidden; /* Hide overflow to display only visible slides */
+    overflow: hidden; /* Hide overflow for carousel effect */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -202,13 +202,14 @@ header {
 }
 
 .carousel-item {
-    min-width: 100%; /* Each image takes full width of the carousel */
+    flex: 0 0 25%; /* Each item occupies 25% of the container width */
     box-sizing: border-box;
+    padding: 5px; /* Space between images */
 }
 
 .carousel-item img {
-    width: 100%; /* Images scale to fit their container */
-    display: block;
+    width: 100%; /* Image fills the container */
+    height: auto; /* Maintain aspect ratio */
     border-radius: 10px;
 }
 
@@ -238,7 +239,12 @@ button:hover {
     right: 10px;
 }
 
-
+/* Responsive styling */
+@media (max-width: 768px) {
+    .carousel-item {
+        flex: 0 0 50%; /* Show two items per view on smaller screens */
+    }
+}
    /* Back to Top Button Styling */
 .back-to-top {
     position: fixed; /* Always fixed to the viewport */
@@ -341,17 +347,8 @@ header .home-icon {
     
 }
 
-/* Responsive styling for smaller screens */
-@media (max-width: 768px) {
-    .carousel {
-        width: 100%;
-    }
-
-    button {
-        padding: 8px;
-    }
-
-    .prev, .next {
-        top: 45%;
+@media (max-width: 480px) {
+    .carousel-item {
+        flex: 0 0 100%; /* Show one item per view on very small screens */
     }
 }
