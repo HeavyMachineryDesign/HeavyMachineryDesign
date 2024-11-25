@@ -119,11 +119,33 @@ header {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
+.dropdown {
+  position: relative; /* Ensures dropdown menu is positioned relative to the parent */
+  display: inline-block;
+}
+
+.dropdown-menu li {
+  padding: 8px 20px;
+}
+
+.dropdown-menu li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f2f2f2;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
 
 /* Dropdown Menu: Desktop */
 .dropdown-menu {
     display: none; /* Hidden by default */
-    position: relative; /* Dropdown positioned relative to the parent */
+    position: absolute; /* Dropdown positioned relative to the parent */
     top: calc(100% + 5px); /* Offset slightly below the parent */
     left: 0; /* Align to the left of the parent */
     background-color: #283747;
@@ -171,6 +193,8 @@ header {
     text-align: center; /* Center the content */
     line-height: 1.5em; /* Ensures icon is vertically centered */
 }
+
+
 
  .back-to-top.show {
     display: block; /* Display the button when needed */
