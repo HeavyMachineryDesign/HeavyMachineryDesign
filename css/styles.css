@@ -14,6 +14,11 @@ body {
     box-sizing: border-box; /* Ensures padding and borders are included in element width/height */
     line-height: 2;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
 }
 /* Section Styling */
 section {
@@ -182,27 +187,27 @@ header {
     display: block; /* Show menu on hover */
 }
 
-.slider {
-    position: center;
-    width: 100%;
+.carousel {
+    position: relative;
+    width: 90%;
     max-width: 800px;
-    overflow: hidden; /* Hide overflow to show only the active slide */
+    overflow: hidden; /* Hide overflow to display only visible slides */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.slides {
-    display: flex; /* Arrange slides in a row */
-    transition: transform 0.5s ease-in-out; /* Smooth transition between slides */
+.carousel-container {
+    display: flex; /* Arrange items in a row */
+    transition: transform 0.5s ease-in-out; /* Smooth scrolling effect */
 }
 
-.slide {
-    min-width: 100%; /* Each slide takes up full container width */
+.carousel-item {
+    min-width: 100%; /* Each image takes full width of the carousel */
     box-sizing: border-box;
 }
 
-.slide img {
-    width: 100%;
+.carousel-item img {
+    width: 100%; /* Images scale to fit their container */
     display: block;
     border-radius: 10px;
 }
@@ -232,6 +237,7 @@ button:hover {
 .next {
     right: 10px;
 }
+
 
    /* Back to Top Button Styling */
 .back-to-top {
@@ -268,78 +274,6 @@ button:hover {
 }
 
 
-}
-#image-slider {
-    position: relative;
-    max-width: 600px; /* Adjust as needed */
-    margin: auto;
-    overflow: hidden;
-}
-
-.slider {
-    width: 100%;
-}
-
-.slider img {
-    width: 100%;
-    display: block;
-    transition: opacity 0.5s ease;
-}
-
-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-#prevButton {
-    left: 10px;
-}
-
-#nextButton {
-    right: 10px;
-}
-
-#image-slider {
-    position: relative;
-    max-width: 600px; /* Adjust as needed */
-    margin: auto;
-    overflow: hidden;
-}
-
-.slider {
-    width: 100%;
-}
-
-.slider img {
-    width: 100%;
-    display: block;
-    transition: opacity 0.5s ease;
-}
-
-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-#prevButton {
-    left: 10px;
-}
-
-#nextButton {
-    right: 10px;
-}
 
 /* Responsive Styling */
 @media (max-width: 768px) {
@@ -409,38 +343,15 @@ header .home-icon {
 
 /* Responsive styling for smaller screens */
 @media (max-width: 768px) {
-    .slider {
-        width: 90%; /* Reduce slider width on smaller screens */
-    }
-
-    .slide img {
-        height: auto; /* Maintain aspect ratio */
+    .carousel {
+        width: 100%;
     }
 
     button {
-        padding: 8px; /* Adjust button size for smaller screens */
+        padding: 8px;
     }
 
     .prev, .next {
-        top: 45%; /* Reposition buttons closer to the center */
-    }
-}
-
-@media (max-width: 480px) {
-    .slider {
-        width: 100%; /* Full width for very small screens */
-    }
-
-    .slide img {
-        height: auto; /* Maintain aspect ratio */
-    }
-
-    button {
-        padding: 6px; /* Further reduce button size */
-        font-size: 12px; /* Adjust button font size */
-    }
-
-    .prev, .next {
-        top: 40%; /* Slightly adjust button position */
+        top: 45%;
     }
 }
