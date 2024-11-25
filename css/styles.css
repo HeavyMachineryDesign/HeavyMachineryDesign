@@ -123,7 +123,7 @@ header {
 /* Dropdown Menu: Desktop */
 .dropdown-menu {
     display: none; /* Hidden by default */
-    position: absolute; /* Dropdown positioned relative to the parent */
+    position: relative; /* Dropdown positioned relative to the parent */
     top: calc(100% + 5px); /* Offset slightly below the parent */
     left: 0; /* Align to the left of the parent */
     background-color: #283747;
