@@ -119,7 +119,7 @@ header h1 {
     background-color: #333;
     color: white;
     padding: 15px;
-    border-radius: 50%;
+    border-radius: 25%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, transform 0.3s ease;
     z-index: 1000; /* Ensure it stays above other content */
@@ -229,7 +229,7 @@ header {
     position: absolute; /* Dropdown positioned relative to the parent */
     top: calc(100% + 5px); /* Offset slightly below the parent */
     left: 0; /* Align to the left of the parent */
-    background-color: linear-gradient(90deg, #141e30, #243b55);
+    background-color: #333;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     list-style: none;
     padding: 10px 0;
@@ -264,7 +264,7 @@ header {
     color: white; /* Button text color */
     font-weight: bold;
     text-decoration: none;
-    border-radius: 50%; /* Circular shape */
+    border-radius: 25%; /* Circular shape */
     display: none; /* Initially hidden */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for effect */
     transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transitions */
