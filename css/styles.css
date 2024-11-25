@@ -3,6 +3,10 @@ html {
     scroll-behavior: smooth;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
@@ -97,7 +101,6 @@ header {
 /* Toolbar Styling */
 .toolbar {
     display: flex; /* Visible and horizontal for desktop */
-    justify-content: center;
     align-items: center;
     justify-content: center; /* Center menu items */
     list-style: none;
@@ -183,7 +186,7 @@ header {
     color: white; /* Button text color */
     font-weight: bold;
     text-decoration: none;
-    border-radius: 25%; /* Circular shape */
+    border-radius: 50%; /* Circular shape */
     display: none; /* Initially hidden */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for effect */
     transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transitions */
