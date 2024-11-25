@@ -183,8 +183,8 @@ header {
 }
 
 .slider {
-    position: relative;
-    width: 80%;
+    position: center;
+    width: 100%;
     max-width: 800px;
     overflow: hidden; /* Hide overflow to show only the active slide */
     border-radius: 10px;
@@ -407,3 +407,40 @@ header .home-icon {
     
 }
 
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .slider {
+        width: 90%; /* Reduce slider width on smaller screens */
+    }
+
+    .slide img {
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    button {
+        padding: 8px; /* Adjust button size for smaller screens */
+    }
+
+    .prev, .next {
+        top: 45%; /* Reposition buttons closer to the center */
+    }
+}
+
+@media (max-width: 480px) {
+    .slider {
+        width: 100%; /* Full width for very small screens */
+    }
+
+    .slide img {
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    button {
+        padding: 6px; /* Further reduce button size */
+        font-size: 12px; /* Adjust button font size */
+    }
+
+    .prev, .next {
+        top: 40%; /* Slightly adjust button position */
+    }
+}
