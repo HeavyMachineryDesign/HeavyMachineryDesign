@@ -14,12 +14,8 @@ body {
     box-sizing: border-box; /* Ensures padding and borders are included in element width/height */
     line-height: 2;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f4f4f4;
 }
+
 /* Section Styling */
 section {
     scroll-margin-top: 150px; /* Offset for smooth scroll to sections */
