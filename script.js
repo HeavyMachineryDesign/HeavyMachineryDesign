@@ -15,6 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
             toggle.addEventListener("click", (e) => {
                 e.preventDefault();
                 toggle.parentElement.classList.toggle("active");
+                // Update aria-expanded for accessibility
+                const isActive = toggle.parentElement.classList.contains("active");
+                toggle.setAttribute("aria-expanded", isActive);
             });
         });
     }
@@ -89,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!isDragging) return;
             e.preventDefault();
             const x = (e.pageX || e.touches[0].pageX) - carouselContainer.offsetLeft;
-            const walk = (x - startX) * 2; // Adjust scroll speed
+            const walk = (x - startX) * 2; // Adjust scroll speed (if needed)
             carouselContainer.scrollLeft = scrollLeft - walk;
         };
 
