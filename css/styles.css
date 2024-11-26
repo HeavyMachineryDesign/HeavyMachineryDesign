@@ -3,47 +3,44 @@
     position: relative; /* Ensure carousel is isolated */
     width: 100%; /* Full width by default */
     margin: 20px auto; /* Center horizontally */
-    overflow: hidden; /* Ensure contained scrolling */
+    overflow: hidden; /* Prevent overflowing images */
     border-radius: 10px; /* Rounded edges for carousel */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    border: 2px solid rgba(0, 0, 0, 0.1); /* Optional visual border */
+    border: 2px solid rgba(0, 0, 0, 0.1); /* Optional border */
 }
 
 .carousel-container {
-    filter: none; /* Remove any applied blur */
-    display: flex;
+    display: flex; /* Align items in a row */
     transition: transform 0.5s ease-in-out;
-    position: relative; /* To contain the pseudo-elements */
     overflow: hidden; /* Hide overflowing elements */
-
 }
 
 .carousel-item {
-    flex: 0 0 25%;
-    padding: 5px;
+    flex: 0 0 25%; /* Four items visible at once */
+    padding: 5px; /* Space between items */
     position: relative;
 }
 
 .carousel-item img {
-    width: 100%; /* Ensure the image fills the container */
+    width: 100%; /* Ensure the image fills its container */
     height: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Crop or resize proportionally */
-    border-radius: 8px; /* Add rounded corners */
-    image-rendering: crisp-edges; /* Sharp edges for better clarity */
-    -ms-interpolation-mode: nearest-neighbor; /* For older IE browsers */
+    border-radius: 8px; /* Rounded corners for images */
+    image-rendering: crisp-edges; /* Sharper images for modern browsers */
+    -ms-interpolation-mode: nearest-neighbor; /* Support for older IE */
 }
 
-/* Add blur effect using pseudo-elements */
+/* Blur Effect Using Pseudo-Elements */
 .carousel-wrapper::before,
 .carousel-wrapper::after {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 30px;
+    width: 30px; /* Blur edge width */
     z-index: 1;
-    pointer-events: none; /* Prevent interaction */
-    height: 100%;
+    pointer-events: none; /* Ignore pointer events */
+    height: 100%; /* Full height */
 }
 
 .carousel-wrapper::before {
@@ -60,7 +57,7 @@
 .carousel-wrapper .prev,
 .carousel-wrapper .next {
     position: absolute;
-    top: 50%;
+    top: 50%; /* Center vertically */
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
@@ -69,7 +66,7 @@
     cursor: pointer;
     border-radius: 50%;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 20; /* Ensure buttons are above pseudo-elements */
+    z-index: 20; /* Above other elements */
 }
 
 .carousel-wrapper .prev {
@@ -84,37 +81,6 @@
 .carousel-wrapper .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
     transform: scale(1.1);
-}
-
-/* Responsive Styling for Carousel */
-@media (max-width: 768px) {
-    .carousel-item {
-        flex: 0 0 100%; /* For single item on mobile */
-    }
-}
-
-@media (max-width: 480px) {
-    .carousel-item {
-        flex: 0 0 100%; /* Show 1 item on very small screens */
-    }
-}
-
-/* Global Styling */
-html {
-    scroll-behavior: smooth;
-    -webkit-scroll-behavior: smooth; /* Safari */
-}
-
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    width: 100%;
 }
 
 /* Back to Top Button */
@@ -134,14 +100,12 @@ body {
     text-align: center;
     line-height: 1.5em;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    -webkit-transition: opacity 0.3s ease, transform 0.3s ease; /* Safari */
 }
 
 .back-to-top.show {
     display: block;
     opacity: 1;
     transform: translateY(0);
-    visibility: visible;
 }
 
 .back-to-top:hover {
@@ -149,23 +113,18 @@ body {
     background-color: #555;
 }
 
-/* Responsive Adjustments */
+/* Responsive Styling for Carousel */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 1.8em;
-    }
-
-    .toolbar {
-        flex-direction: column;
-        display: none;
-    }
-
-    .toolbar.active {
-        display: flex;
+    .carousel-item {
+        flex: 0 0 50%; /* Two items visible on tablets */
     }
 }
 
 @media (max-width: 480px) {
+    .carousel-item {
+        flex: 0 0 100%; /* One item visible on mobile */
+    }
+
     .back-to-top {
         font-size: 12px;
         padding: 10px 15px;
