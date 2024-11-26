@@ -22,6 +22,7 @@
     flex: 0 0 25%;
     padding: 5px;
     position: relative;
+    
 }
 
 .carousel-item img {
@@ -95,7 +96,7 @@
 /* Responsive Styling for Carousel */
 @media (max-width: 768px) {
     .carousel-item {
-        flex: 0 0 50%; /* Show 2 items on smaller screens */
+        flex: 0 0 100%; /* For single item on mobile */
     }
 }
 
