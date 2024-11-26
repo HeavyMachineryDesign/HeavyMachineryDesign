@@ -202,58 +202,66 @@ header {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
+/* Dropdown Menu Styling */
 .dropdown {
-  position: relative; /* Ensures dropdown menu is positioned relative to the parent */
-  display: inline-block;
+    position: relative; /* Ensures dropdown menu is positioned relative to the parent */
+    display: inline-block; /* Align dropdown with inline elements */
 }
 
-.dropdown-menu li {
-  padding: 8px 20px;
-}
-
-.dropdown-menu li a {
-  color: #333;
-  text-decoration: none;
-}
-
-.dropdown-menu li a:hover {
-  background-color: #f2f2f2;
-}
-
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* Dropdown Menu: Desktop */
 .dropdown-menu {
     display: none; /* Hidden by default */
     position: absolute; /* Dropdown positioned relative to the parent */
     top: calc(100% + 5px); /* Offset slightly below the parent */
     left: 0; /* Align to the left of the parent */
-    background-color: #333;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    list-style: none;
-    padding: 10px 0;
-    z-index: 1000;
+    background-color: #333; /* Dark background for menu */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    list-style: none; /* Remove bullets */
+    padding: 10px 0; /* Padding around menu items */
+    z-index: 1000; /* Ensure it appears above other elements */
     min-width: 200px; /* Ensures consistent width */
-    border-radius: 10px;
+    border-radius: 10px; /* Rounded corners for menu */
 }
 
 .dropdown-menu a {
-    display: block;
-    color: linear-gradient(90deg, #141e30, #243b55);
-    padding: 8px 15px;
-    white-space: nowrap; /* Prevents text wrapping */
-    transition: background-color 0.3s ease;
+    display: block; /* Each link occupies full width */
+    color: #fcf3cf; /* Light text color for visibility */
+    background-color: transparent; /* Transparent background */
+    padding: 8px 15px; /* Spacing for touch-friendly design */
+    text-decoration: none; /* Remove underline */
+    white-space: nowrap; /* Prevent text wrapping */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effects */
 }
 
 .dropdown-menu a:hover {
-    background-color: #092c42;
+    background-color: #092c42; /* Highlight background on hover */
+    color: #40E0D0; /* Lighter text on hover */
 }
 
+/* Show dropdown on hover (desktop) */
 .dropdown:hover .dropdown-menu {
     display: block; /* Show menu on hover */
+}
+
+/* Responsive Dropdown Menu (Mobile) */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static; /* Remove absolute positioning */
+        display: none; /* Hidden by default */
+        width: 100%; /* Occupies full width */
+        padding: 0; /* Reset padding */
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block; /* Show dropdown when active */
+    }
+
+    .dropdown-menu a {
+        padding: 12px 15px; /* Adjust spacing for touch-friendly design */
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none; /* Disable hover functionality on mobile */
+    }
 }
 
    /* Back to Top Button Styling */
