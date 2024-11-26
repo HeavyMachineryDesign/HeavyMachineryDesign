@@ -36,36 +36,36 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Carousel Navigation
-    const carouselContainer = document.querySelector('.carousel-container');
-    const prevButton = document.querySelector('.prev');
-    const nextButton = document.querySelector('.next');
-    const items = document.querySelectorAll('.carousel-item');
-    if (carouselContainer && prevButton && nextButton && items.length > 0) {
-        const itemWidth = items[0].offsetWidth;
-        let currentIndex = 0;
-        const visibleItems = Math.floor(carouselContainer.offsetWidth / itemWidth);
+  
+document.addEventListener("DOMContentLoaded", () => {
+    const carouselContainer = document.querySelector(".carousel-container");
+    const prevButton = document.querySelector(".prev");
+    const nextButton = document.querySelector(".next");
 
-        function updateCarouselPosition() {
-            const newTransform = -currentIndex * itemWidth;
-            carouselContainer.style.transform = `translateX(${newTransform}px)`;
-        }
+    let currentIndex = 0; // Track the current index
+    const totalItems = document.querySelectorAll(".carousel-item").length;
 
-        prevButton.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateCarouselPosition();
-            }
-        });
+    const updateCarouselPosition = () => {
+        const itemWidth = document.querySelector(".carousel-item").offsetWidth;
+        carouselContainer.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    };
 
-        nextButton.addEventListener('click', () => {
-            if (currentIndex < items.length - visibleItems) {
-                currentIndex++;
-                updateCarouselPosition();
-            }
-        });
-    }
+    prevButton.addEventListener("click", () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalItems - 1;
+        updateCarouselPosition();
+    });
 
+    nextButton.addEventListener("click", () => {
+        currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0;
+        updateCarouselPosition();
+    });
+
+    // Ensure responsive behavior when resizing
+    window.addEventListener("resize", updateCarouselPosition);
+});
+
+
+    
     // Carousel Drag/Swipe Functionality
     if (carouselContainer) {
         let isDragging = false;
