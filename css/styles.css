@@ -2,11 +2,11 @@
 .carousel-wrapper {
     position: relative; /* Ensure carousel is isolated */
     width: 100%; /* Full width by default */
-    max-width: 1200px; /* Optional max-width for larger screens */
     margin: 20px auto; /* Center horizontally */
-    overflow: hidden; /* Hide overflowing images */
+    overflow: visible; /* Allow overflowing images to be visible */
     border-radius: 10px; /* Rounded edges for carousel */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border: 2px solid rgba(0, 0, 0, 0.1); /* Optional visual border */
 }
 
 
