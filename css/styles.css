@@ -3,26 +3,23 @@
     position: relative; /* Ensure carousel is isolated */
     width: 100%; /* Full width by default */
     margin: 20px auto; /* Center horizontally */
-    overflow: visible; /* Allow overflowing images to be visible */
+    overflow: hidden; /* Ensure contained scrolling */
     border-radius: 10px; /* Rounded edges for carousel */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     border: 2px solid rgba(0, 0, 0, 0.1); /* Optional visual border */
 }
 
-
 .carousel-container {
     display: flex;
     transition: transform 0.5s ease-in-out;
     position: relative; /* To contain the pseudo-elements */
-    filter: none; /* Remove blur */
-    overflow: visible; /* Keep as-is to handle edge cases */
+    overflow: hidden; /* Hide overflowing elements */
 }
 
 .carousel-item {
     flex: 0 0 25%;
     padding: 5px;
     position: relative;
-    
 }
 
 .carousel-item img {
@@ -40,29 +37,22 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 30px; /* Width of the blur edges */
-    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    width: 30px;
     z-index: 1;
     pointer-events: none; /* Prevent interaction */
-    height: 90%; /* Reduce the height slightly */
+    height: 100%;
 }
 
 .carousel-wrapper::before {
     left: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 .carousel-wrapper::after {
     right: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
-/* Blur the overflowing container */
-.carousel-container {
-    filter: blur(8px); /* Blur applied */
-    position: relative;
-    overflow: visible; /* The container holds a sharp scroll context */
-}
 /* Carousel Navigation Buttons */
 .carousel-wrapper .prev,
 .carousel-wrapper .next {
@@ -76,7 +66,6 @@
     cursor: pointer;
     border-radius: 50%;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    pointer-events: auto;
     z-index: 20; /* Ensure buttons are above pseudo-elements */
 }
 
@@ -107,13 +96,10 @@
     }
 }
 
-<button class="prev" aria-label="Previous Slide">◀</button>
-<button class="next" aria-label="Next Slide">▶</button>
-<a href="#" class="back-to-top" aria-label="Back to top">↑</a>
-
 /* Global Styling */
 html {
     scroll-behavior: smooth;
+    -webkit-scroll-behavior: smooth; /* Safari */
 }
 
 *, *::before, *::after {
@@ -124,105 +110,8 @@ body {
     font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 2;
+    line-height: 1.6;
     width: 100%;
-}
-
-/* Section Styling */
-section {
-    scroll-margin-top: 150px; /* Offset for smooth scroll to sections */
-    width: 90%; /* Occupies 90% of the parent width */
-    margin: 20px auto; /* Centers with 20px top/bottom margin */
-}
-
-/* Header Styling */
-header {
-    background: linear-gradient(90deg, #141e30, #243b55); /* Gradient background */
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Align items to the center */
-    align-items: center; /* Center items vertically */
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    font-weight: bold;
-    color: #fff;
-    flex: 1;
-    text-align: center;
-}
-
-/* Toolbar Styling */
-.toolbar {
-    display: flex; /* Visible and horizontal for desktop */
-    align-items: center;
-    justify-content: center; /* Center menu items */
-    list-style: none;
-    background: linear-gradient(90deg, #141e30, #243b55); /* Corrected background property */
-    width: 100%;
-    margin: 0;
-    padding: 10px 20px;
-}
-
-.toolbar li {
-    margin: 0 10px;
-}
-
-.toolbar a {
-    text-decoration: none;
-    color: #fcf3cf;
-    font-size: 0.8em;
-    padding: 10px 15px;
-    transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.toolbar a:hover {
-    color: #40E0D0;
-    background-color: #243b55; /* Simpler background for hover */
-    border-radius: 10px;
-    font-weight: bold;
-}
-
-/* Dropdown Styling */
-.dropdown {
-    position: relative; /* Ensures dropdown menu is positioned relative to the parent */
-    display: inline-block;
-}
-
-.dropdown-menu {
-    display: none; /* Hidden by default */
-    position: absolute; /* Dropdown positioned relative to the parent */
-    top: calc(100% + 5px);
-    left: 0;
-    background-color: #333;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    list-style: none;
-    padding: 10px 0;
-    z-index: 1000;
-    min-width: 200px;
-    border-radius: 10px;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-.dropdown-menu a {
-    display: block;
-    color: #fcf3cf;
-    padding: 8px 15px;
-    white-space: nowrap;
-    transition: background-color 0.3s ease;
-}
-
-.dropdown-menu a:hover {
-    background-color: #092c42;
 }
 
 /* Back to Top Button */
@@ -236,20 +125,20 @@ header h1 {
     font-weight: bold;
     border-radius: 50%;
     display: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     opacity: 0;
     font-size: 16px;
     z-index: 1000;
     text-align: center;
     line-height: 1.5em;
     transition: opacity 0.3s ease, transform 0.3s ease;
+    -webkit-transition: opacity 0.3s ease, transform 0.3s ease; /* Safari */
 }
 
 .back-to-top.show {
     display: block;
     opacity: 1;
     transform: translateY(0);
-    visibility: visible; /* Ensure visibility is reset */
+    visibility: visible;
 }
 
 .back-to-top:hover {
@@ -257,7 +146,7 @@ header h1 {
     background-color: #555;
 }
 
-/* Responsive Styling */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     header h1 {
         font-size: 1.8em;
@@ -271,20 +160,8 @@ header h1 {
     .toolbar.active {
         display: flex;
     }
-
-    .dropdown-menu {
-        position: relative;
-        width: 100%;
-    }
-
-    .dropdown:hover .dropdown-menu {
-        display: none;
-    }
-
-    .dropdown.active .dropdown-menu {
-        display: block;
-    }
 }
+
 @media (max-width: 480px) {
     .back-to-top {
         font-size: 12px;
