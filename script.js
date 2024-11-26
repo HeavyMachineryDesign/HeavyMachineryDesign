@@ -14,8 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         dropdownToggles.forEach(toggle => {
             toggle.addEventListener("click", (e) => {
                 e.preventDefault();
-                const parent = toggle.parentElement;
-                parent.classList.toggle("active");
+                toggle.parentElement.classList.toggle("active");
             });
         });
     }
@@ -23,22 +22,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // Back to Top Button Logic
     const backToTopButton = document.querySelector(".back-to-top");
     if (backToTopButton) {
-        // Show/Hide the button based on scroll position
         window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) { // Adjust threshold as needed
+            if (window.scrollY > 300) {
                 backToTopButton.classList.add("show");
             } else {
                 backToTopButton.classList.remove("show");
             }
         });
 
-        // Smooth Scroll to Top on Click
         backToTopButton.addEventListener("click", (e) => {
             e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-            });
+            window.scrollTo({ top: 0, behavior: "smooth" });
         });
     }
 
@@ -48,8 +42,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextButton = document.querySelector('.next');
     const items = document.querySelectorAll('.carousel-item');
     if (carouselContainer && prevButton && nextButton && items.length > 0) {
-        const itemWidth = items[0].offsetWidth; // Width of one carousel item
+        const itemWidth = items[0].offsetWidth;
         let currentIndex = 0;
+        const visibleItems = Math.floor(carouselContainer.offsetWidth / itemWidth);
+
+        function updateCarouselPosition() {
+            const newTransform = -currentIndex * itemWidth;
+            carouselContainer.style.transform = `translateX(${newTransform}px)`;
+        }
 
         prevButton.addEventListener('click', () => {
             if (currentIndex > 0) {
@@ -59,16 +59,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         nextButton.addEventListener('click', () => {
-            if (currentIndex < items.length - 4) { // Adjust visible items count (e.g., 4 items)
+            if (currentIndex < items.length - visibleItems) {
                 currentIndex++;
                 updateCarouselPosition();
             }
         });
-
-        function updateCarouselPosition() {
-            const newTransform = -currentIndex * itemWidth;
-            carouselContainer.style.transform = `translateX(${newTransform}px)`;
-        }
     }
 
     // Carousel Drag/Swipe Functionality
@@ -77,47 +72,33 @@ document.addEventListener("DOMContentLoaded", () => {
         let startX;
         let scrollLeft;
 
-        carouselContainer.addEventListener('mousedown', (e) => {
+        const startDrag = (e) => {
             isDragging = true;
-            carouselContainer.classList.add('dragging');
-            startX = e.pageX - carouselContainer.offsetLeft;
+            startX = (e.pageX || e.touches[0].pageX) - carouselContainer.offsetLeft;
             scrollLeft = carouselContainer.scrollLeft;
-        });
+        };
 
-        carouselContainer.addEventListener('mouseleave', () => {
+        const stopDrag = () => {
             isDragging = false;
             carouselContainer.classList.remove('dragging');
-        });
+        };
 
-        carouselContainer.addEventListener('mouseup', () => {
-            isDragging = false;
-            carouselContainer.classList.remove('dragging');
-        });
-
-        carouselContainer.addEventListener('mousemove', (e) => {
+        const doDrag = (e) => {
             if (!isDragging) return;
             e.preventDefault();
-            const x = e.pageX - carouselContainer.offsetLeft;
+            const x = (e.pageX || e.touches[0].pageX) - carouselContainer.offsetLeft;
             const walk = (x - startX) * 2; // Adjust scroll speed
             carouselContainer.scrollLeft = scrollLeft - walk;
-        });
+        };
 
-        // Touch support for swipe
-        carouselContainer.addEventListener('touchstart', (e) => {
-            isDragging = true;
-            startX = e.touches[0].pageX - carouselContainer.offsetLeft;
-            scrollLeft = carouselContainer.scrollLeft;
-        });
+        carouselContainer.addEventListener('mousedown', startDrag);
+        carouselContainer.addEventListener('touchstart', startDrag);
 
-        carouselContainer.addEventListener('touchend', () => {
-            isDragging = false;
-        });
+        carouselContainer.addEventListener('mouseleave', stopDrag);
+        carouselContainer.addEventListener('mouseup', stopDrag);
+        carouselContainer.addEventListener('touchend', stopDrag);
 
-        carouselContainer.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            const x = e.touches[0].pageX - carouselContainer.offsetLeft;
-            const walk = (x - startX) * 2;
-            carouselContainer.scrollLeft = scrollLeft - walk;
-        });
+        carouselContainer.addEventListener('mousemove', doDrag);
+        carouselContainer.addEventListener('touchmove', doDrag);
     }
 });
