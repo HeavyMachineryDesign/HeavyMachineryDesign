@@ -46,25 +46,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-let currentIndex = 0;
+document.addEventListener("DOMContentLoaded", () => {
+    const carouselContainer = document.querySelector('.carousel-container');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    const items = document.querySelectorAll('.carousel-item');
+    
+    const itemWidth = items[0].offsetWidth; // Width of one carousel item
+    let currentIndex = 0;
 
-const carouselContainer = document.querySelector('.carousel-container');
-const totalItems = document.querySelectorAll('.carousel-item').length;
+    // Event listeners for navigation
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarouselPosition();
+        }
+    });
 
-function showSlide(index) {
-    // Ensure index wraps around (e.g., -1 to last slide, totalSlides to 0)
-    currentIndex = (index + totalItems) % totalItems;
-    const offset = -currentIndex * 100; // Calculate offset for horizontal scrolling
-    carouselContainer.style.transform = `translateX(${offset}%)`;
-}
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < items.length - 4) { // 4 is the number of visible items
+            currentIndex++;
+            updateCarouselPosition();
+        }
+    });
 
-function nextSlide() {
-    showSlide(currentIndex + 1);
-}
-
-function prevSlide() {
-    showSlide(currentIndex - 1);
-}
-
-// Auto-slide every 5 seconds
-setInterval(nextSlide, 5000);
+    function updateCarouselPosition() {
+        const newTransform = -currentIndex * itemWidth;
+        carouselContainer.style.transform = `translateX(${newTransform}px)`;
+    }
+});
