@@ -9,24 +9,55 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
+
 .carousel-container {
-    display: flex; /* Horizontal alignment of images */
-    transition: transform 0.5s ease-in-out; /* Smooth sliding */
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    position: relative; /* To contain the pseudo-elements */
 }
 
 .carousel-item {
-    flex: 0 0 25%; /* Show 4 items by default */
-    box-sizing: border-box; /* Maintain spacing and borders */
-    padding: 5px; /* Space between images */
+    flex: 0 0 25%;
+    padding: 5px;
+    position: relative;
 }
 
 .carousel-item img {
-    width: 100%; /* Images fit their containers horizontally */
-    height: 200px; /* Fixed height for all images */
-    object-fit: cover; /* Ensures images cover the container without distortion */
-    border-radius: 8px; /* Optional rounded corners */
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
+/* Add blur effect using pseudo-elements */
+.carousel-wrapper::before,
+.carousel-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 30px; /* Width of the blur edges */
+    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    z-index: 1;
+    pointer-events: none; /* Prevent interaction */
+}
+
+.carousel-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.carousel-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+/* Blur the overflowing container */
+.carousel-container {
+    filter: blur(8px); /* Blur applied */
+    position: relative;
+    overflow: visible; /* The container holds a sharp scroll context */
+}
 /* Carousel Navigation Buttons */
 .carousel-wrapper .prev,
 .carousel-wrapper .next {
@@ -40,7 +71,7 @@
     cursor: pointer;
     border-radius: 50%;
     z-index: 10;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .carousel-wrapper .prev {
@@ -54,6 +85,7 @@
 .carousel-wrapper .prev:hover,
 .carousel-wrapper .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
 }
 
 /* Responsive Styling for Carousel */
@@ -68,6 +100,10 @@
         flex: 0 0 100%; /* Show 1 item on very small screens */
     }
 }
+
+<button class="prev" aria-label="Previous Slide">◀</button>
+<button class="next" aria-label="Next Slide">▶</button>
+<a href="#" class="back-to-top" aria-label="Back to top">↑</a>
 
 /* Global Styling */
 html {
@@ -142,7 +178,7 @@ header h1 {
 
 .toolbar a:hover {
     color: #40E0D0;
-    background: linear-gradient(90deg, #141e30, #243b55);
+    background-color: #243b55; /* Simpler background for hover */
     border-radius: 10px;
     font-weight: bold;
 }
@@ -207,6 +243,7 @@ header h1 {
     display: block;
     opacity: 1;
     transform: translateY(0);
+    visibility: visible; /* Ensure visibility is reset */
 }
 
 .back-to-top:hover {
@@ -240,5 +277,13 @@ header h1 {
 
     .dropdown.active .dropdown-menu {
         display: block;
+    }
+}
+@media (max-width: 480px) {
+    .back-to-top {
+        font-size: 12px;
+        padding: 10px 15px;
+        bottom: 10px;
+        right: 10px;
     }
 }
