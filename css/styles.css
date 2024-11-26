@@ -69,18 +69,17 @@
     cursor: pointer;
     border-radius: 50%;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    pointer-events: auto;
-    z-index: 20; /* Ensure buttons are above pseudo-elements */
+    pointer-events: auto; /* Ensure they can be clicked */
+    z-index: 10; /* Ensure buttons are above other elements */
 }
 
 
 .carousel-wrapper .prev {
-    left: 10px;
+    left: 10px; /* Adjust for visibility */
 }
 
-
 .carousel-wrapper .next {
-    right: 10px;
+    right: 10px; /* Adjust for visibility */
 }
 
 .carousel-wrapper .prev:hover,
@@ -89,25 +88,22 @@
     transform: scale(1.1);
 }
 
-/* Responsive Styling for Carousel */
+/* Mobile-Specific Adjustments for Buttons */
 @media (max-width: 768px) {
-    .carousel-item {
-        flex: 0 0 50%; /* Show 2 items on tablets */
+    .carousel-wrapper .prev,
+    .carousel-wrapper .next {
+        padding: 8px; /* Smaller buttons */
+        font-size: 14px; /* Adjust size */
     }
 }
 
 @media (max-width: 480px) {
-    .carousel-item {
-        flex: 0 0 100%; /* Show 1 item on very small screens */
-        padding: 10px; /* Add some padding for better spacing */
-    }
-
     .carousel-wrapper .prev,
     .carousel-wrapper .next {
-        padding: 8px;
-        font-size: 12px; /* Adjust size for smaller buttons */
+        padding: 6px;
+        font-size: 12px;
     }
-}
+
 
 /* Global Styling */
 html {
