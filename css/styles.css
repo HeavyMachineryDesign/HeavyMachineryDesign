@@ -27,7 +27,6 @@
     border-radius: 8px; /* Optional rounded corners */
 }
 
-
 /* Carousel Navigation Buttons */
 .carousel-wrapper .prev,
 .carousel-wrapper .next {
@@ -60,7 +59,7 @@
 /* Responsive Styling for Carousel */
 @media (max-width: 768px) {
     .carousel-item {
-        flex: 0 0 50%; /* Show 2 items in smaller screens */
+        flex: 0 0 50%; /* Show 2 items on smaller screens */
     }
 }
 
@@ -69,7 +68,6 @@
         flex: 0 0 100%; /* Show 1 item on very small screens */
     }
 }
-
 
 /* Global Styling */
 html {
@@ -84,7 +82,6 @@ body {
     font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Ensures padding and borders are included in element width/height */
     line-height: 2;
     width: 100%;
 }
@@ -96,87 +93,28 @@ section {
     margin: 20px auto; /* Centers with 20px top/bottom margin */
 }
 
-
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    font-weight: bold;
-    color: #fff;
-    flex: 1; /* Allow the title to take available space */
-    text-align: center; /* Center the text within its space */
-}
-
-.uniform-image {
-    width: 400px; /* Set a uniform width */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Make images block elements */
-}
-
-/* Home Icon Styling */
-.home-icon {
-    position: fixed; /* Fixed position for floating effect */
-    bottom: 20px; /* 20px from the bottom of the screen */
-    left: 20px; /* 20px from the left of the screen */
-    font-size: 1em; /* Adjust the size as needed */
-    background-color: #333;
-    color: white;
-    padding: 15px;
-    border-radius: 25%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 1000; /* Ensure it stays above other content */
-}
-.home-icon:hover {
-    background-color: #555;
-    transform: scale(1.1);
-}
-
 /* Header Styling */
 header {
     background: linear-gradient(90deg, #141e30, #243b55); /* Gradient background */
     display: flex; /* Use flexbox for layout */
     justify-content: center; /* Align items to the center */
     align-items: center; /* Center items vertically */
-    padding: 20px; /* Adjust padding as needed */
+    padding: 20px;
     text-align: center;
     width: 100%;
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
-    margin: 0; /* Remove any unwanted margin */
 }
 
-.nav-button.active + .dropdown-menu {
-  display: block;
-}
-
-
-.nav-menu li {
-    margin: 0 15px;
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: #fcf3cf;
-    font-size: 1em;
-    padding: 10px 15px;
-    transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.nav-menu a:hover,
-.nav-menu a.active {
-    color: #40E0D0;
-    background-color: linear-gradient(90deg, #141e30, #243b55);
-    border-radius: 10px;
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
     font-weight: bold;
+    color: #fff;
+    flex: 1;
+    text-align: center;
 }
-
-
-.nav-button {
-  position: relative; /* Keeps button's placement controlled */
-}
-
 
 /* Toolbar Styling */
 .toolbar {
@@ -191,7 +129,7 @@ header {
 }
 
 .toolbar li {
-    margin: 0 10px; /* Add spacing between items */
+    margin: 0 10px;
 }
 
 .toolbar a {
@@ -202,167 +140,105 @@ header {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Dropdown Menu Styling */
+.toolbar a:hover {
+    color: #40E0D0;
+    background: linear-gradient(90deg, #141e30, #243b55);
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* Dropdown Styling */
 .dropdown {
     position: relative; /* Ensures dropdown menu is positioned relative to the parent */
-    display: inline-block; /* Align dropdown with inline elements */
+    display: inline-block;
 }
 
 .dropdown-menu {
     display: none; /* Hidden by default */
     position: absolute; /* Dropdown positioned relative to the parent */
-    top: calc(100% + 5px); /* Offset slightly below the parent */
-    left: 0; /* Align to the left of the parent */
-    background-color: #333; /* Dark background for menu */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    list-style: none; /* Remove bullets */
-    padding: 10px 0; /* Padding around menu items */
-    z-index: 1000; /* Ensure it appears above other elements */
-    min-width: 200px; /* Ensures consistent width */
-    border-radius: 10px; /* Rounded corners for menu */
+    top: calc(100% + 5px);
+    left: 0;
+    background-color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 0;
+    z-index: 1000;
+    min-width: 200px;
+    border-radius: 10px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
 }
 
 .dropdown-menu a {
-    display: block; /* Each link occupies full width */
-    color: #fcf3cf; /* Light text color for visibility */
-    background-color: transparent; /* Transparent background */
-    padding: 8px 15px; /* Spacing for touch-friendly design */
-    text-decoration: none; /* Remove underline */
-    white-space: nowrap; /* Prevent text wrapping */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effects */
+    display: block;
+    color: #fcf3cf;
+    padding: 8px 15px;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
 }
 
 .dropdown-menu a:hover {
-    background-color: #092c42; /* Highlight background on hover */
-    color: #40E0D0; /* Lighter text on hover */
+    background-color: #092c42;
 }
 
-/* Show dropdown on hover (desktop) */
-.dropdown:hover .dropdown-menu {
-    display: block; /* Show menu on hover */
-}
-
-/* Responsive Dropdown Menu (Mobile) */
-@media (max-width: 768px) {
-    .dropdown-menu {
-        position: static; /* Remove absolute positioning */
-        display: none; /* Hidden by default */
-        width: 100%; /* Occupies full width */
-        padding: 0; /* Reset padding */
-    }
-
-    .dropdown.active .dropdown-menu {
-        display: block; /* Show dropdown when active */
-    }
-
-    .dropdown-menu a {
-        padding: 12px 15px; /* Adjust spacing for touch-friendly design */
-    }
-
-    .dropdown:hover .dropdown-menu {
-        display: none; /* Disable hover functionality on mobile */
-    }
-}
-
-   /* Back to Top Button Styling */
+/* Back to Top Button */
 .back-to-top {
-    position: fixed; /* Always fixed to the viewport */
-    bottom: 20px; /* Distance from the bottom */
-    right: 20px; /* Distance from the right */
-    padding: 12px 20px; /* Size and spacing */
-    background-color: linear-gradient(90deg, #141e30, #243b55); /* Button background */
-    color: white; /* Button text color */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    background: linear-gradient(90deg, #141e30, #243b55);
+    color: white;
     font-weight: bold;
-    text-decoration: none;
-    border-radius: 25%; /* Circular shape */
-    display: none; /* Initially hidden */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for effect */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transitions */
-    opacity: 0; /* Invisible by default */
-    font-size: 16px; /* Adjust size as needed */
-    z-index: 1000; /* Ensure it appears above other elements */
-    text-align: center; /* Center the content */
-    line-height: 1.5em; /* Ensures icon is vertically centered */
+    border-radius: 50%;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    font-size: 16px;
+    z-index: 1000;
+    text-align: center;
+    line-height: 1.5em;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-
-
- .back-to-top.show {
-    display: block; /* Display the button when needed */
-    opacity: 1; /* Fully visible */
-    transform: translateY(0); /* No vertical offset */
+.back-to-top.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .back-to-top:hover {
-    background-color: #555; /* Lighter background on hover */
-    transform: scale(1.1); /* Slightly enlarge on hover */
+    transform: scale(1.1);
+    background-color: #555;
 }
-
-
 
 /* Responsive Styling */
 @media (max-width: 768px) {
-
- .dropdown-menu {
-        position: static; /* Remove absolute positioning for mobile */
-        display: none; /* Hidden by default */
-        width: 100%; /* Occupies full width */
-        padding: 0; /* Reset padding */
-    }
-
-    .dropdown.active .dropdown-menu {
-        display: block; /* Show dropdown on click */
-    }
-
-    .dropdown-menu a {
-        padding: 12px 15px; /* Adjust spacing for touch-friendly design */
-    }
-
-    .dropdown:hover .dropdown-menu {
-        display: none; /* Disable hover functionality on mobile */
-    }
-    
-    header {
-        position: relative; /* Unfixed header for small screens */
-        padding: 15px 10px;
-    }
-
     header h1 {
-        font-size: 1.8em; /* Smaller header text */
-    }
-
-    .menu-toggle {
-        display: block; /* Visible in mobile view */
+        font-size: 1.8em;
     }
 
     .toolbar {
-        display: none; /* Hidden by default in mobile */
         flex-direction: column;
-        background-color: linear-gradient(90deg, #141e30, #243b55);
-        width: 100%;
+        display: none;
     }
 
     .toolbar.active {
-        display: flex; /* Display when active */
+        display: flex;
     }
 
     .dropdown-menu {
-        position: static; /* Stack submenus in mobile view */
+        position: relative;
+        width: 100%;
     }
 
     .dropdown:hover .dropdown-menu {
-        display: none; /* Disable hover in mobile */
+        display: none;
     }
 
     .dropdown.active .dropdown-menu {
-        display: block; /* Show dropdown on click */
+        display: block;
     }
-header .home-icon {
-        font-size: 1.6em; /* Smaller icon size */
-        padding: 10px; /* Adjust padding for smaller screens */
-        margin-right: 10px; /* Reduce spacing */
-    }
-
-    
 }
-
