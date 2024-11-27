@@ -36,29 +36,35 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Carousel Logic
-    const prevButton = document.querySelector(".prev");
-const nextButton = document.querySelector(".next");
-const carouselContainer = document.querySelector(".carousel-container");
 
-let currentIndex = 0;
-const itemsToShow = 4; // Adjust based on the number of visible items
-const itemWidth = document.querySelector(".carousel-item").offsetWidth;
 
-prevButton.addEventListener("click", () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateCarousel();
+    
+document.addEventListener('DOMContentLoaded', function() {
+    const prevButton = document.querySelector('.carousel-control-prev');
+    const nextButton = document.querySelector('.carousel-control-next');
+    const carouselInner = document.querySelector('.carousel-inner');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        const items = carouselInner.children;
+        const itemWidth = items[0].offsetWidth;
+        carouselInner.style.transform = `translateX(${-currentIndex * itemWidth}px)`;
     }
-});
 
-nextButton.addEventListener("click", () => {
-    if (currentIndex < carouselContainer.children.length - itemsToShow) {
-        currentIndex++;
-        updateCarousel();
-    }
-});
+    prevButton.addEventListener('click', function() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
 
-function updateCarousel() {
-    carouselContainer.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-}
+    nextButton.addEventListener('click', function() {
+        const items = carouselInner.children;
+        if (currentIndex < items.length - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    updateCarousel(); // Initialize the carousel position
+});
