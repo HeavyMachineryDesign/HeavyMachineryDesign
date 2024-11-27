@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    
 document.addEventListener('DOMContentLoaded', function() {
     const prevButton = document.querySelector('.carousel-control-prev');
     const nextButton = document.querySelector('.carousel-control-next');
@@ -57,6 +56,18 @@ document.addEventListener('DOMContentLoaded', function() {
             updateCarousel();
         }
     });
+
+    nextButton.addEventListener('click', function() {
+        const items = carouselInner.children;
+        if (currentIndex < items.length - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    updateCarousel(); // Initialize the carousel position
+});
+
 
     nextButton.addEventListener('click', function() {
         const items = carouselInner.children;
