@@ -208,23 +208,51 @@ header h1 {
     z-index: 1000;
     min-width: 200px;
     border-radius: 10px;
+    transition: all 0.3s ease; /* Smooth transition */
+    opacity: 0; /* Start hidden */
+    visibility: hidden; /* Ensure it's hidden */
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
     display: block;
+    opacity: 1; /* Show dropdown */
+    visibility: visible;
 }
 
 .dropdown-menu a {
     display: block;
     color: #fcf3cf;
-    padding: 8px 15px;
+    padding: 10px 20px;
     white-space: nowrap;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth color transition */
 }
 
-.dropdown-menu a:hover {
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
     background-color: #092c42;
+    color: #fff; /* Ensure text color changes for better visibility */
 }
+
+/* Accessibility and Responsiveness */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        width: 100%; /* Full width on small screens */
+        box-shadow: none; /* Remove shadow */
+    }
+
+    .dropdown-menu a {
+        padding: 15px 20px; /* Increased padding for touch devices */
+        text-align: center; /* Center text */
+    }
+}
+
+.dropdown a:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 2px #fcf3cf; /* Custom focus outline */
+}
+
 
 /* Back to Top Button */
 .back-to-top {
