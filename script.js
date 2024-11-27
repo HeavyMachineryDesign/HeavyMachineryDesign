@@ -37,68 +37,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Carousel Logic
-    const carouselContainer = document.querySelector(".carousel-container");
-    const prevButton = document.querySelector(".prev");
-    const nextButton = document.querySelector(".next");
+    const carouselContainer = document.querySelector('.carousel-container');
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
 
-    if (carouselContainer && prevButton && nextButton) {
-        let currentIndex = 0; // Track the current index
-        const items = document.querySelectorAll(".carousel-item");
-        const totalItems = items.length;
+let currentIndex = 0;
 
-        const updateCarouselPosition = () => {
-            const itemWidth = items[0].offsetWidth;
-            carouselContainer.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-        };
+prevButton.addEventListener('click', () => {
+    currentIndex = Math.max(currentIndex - 1, 0);
+    carouselContainer.style.transform = `translateX(-${currentIndex * 25}%)`;
+});
 
-        // Move to the previous slide
-        prevButton.addEventListener("click", () => {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalItems - 1;
-            updateCarouselPosition();
-        });
-
-        // Move to the next slide
-        nextButton.addEventListener("click", () => {
-            currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0;
-            updateCarouselPosition();
-        });
-
-        // Ensure responsive behavior when resizing
-        window.addEventListener("resize", updateCarouselPosition);
-    }
-
-    // Carousel Drag/Swipe Functionality
-    if (carouselContainer) {
-        let isDragging = false;
-        let startX = 0;
-        let scrollLeft = 0;
-
-        const startDrag = (e) => {
-            isDragging = true;
-            startX = (e.pageX || e.touches[0].pageX) - carouselContainer.offsetLeft;
-            scrollLeft = carouselContainer.scrollLeft;
-            carouselContainer.classList.add("dragging");
-        };
-
-        const stopDrag = () => {
-            isDragging = false;
-            carouselContainer.classList.remove("dragging");
-        };
-
-        const doDrag = (e) => {
-            if (!isDragging) return;
-            e.preventDefault();
-            const x = (e.pageX || e.touches[0].pageX) - carouselContainer.offsetLeft;
-            const walk = (x - startX) * 2; // Adjust scroll speed
-            carouselContainer.scrollLeft = scrollLeft - walk;
-        };
-
-        carouselContainer.addEventListener("mousedown", startDrag);
-        carouselContainer.addEventListener("touchstart", startDrag);
-        carouselContainer.addEventListener("mouseleave", stopDrag);
-        carouselContainer.addEventListener("mouseup", stopDrag);
-        carouselContainer.addEventListener("touchend", stopDrag);
-        carouselContainer.addEventListener("mousemove", doDrag);
-        carouselContainer.addEventListener("touchmove", doDrag);
-    }
+nextButton.addEventListener('click', () => {
+    currentIndex = Math.min(currentIndex + 1, carouselContainer.children.length - 1);
+    carouselContainer.style.transform = `translateX(-${currentIndex * 25}%)`;
 });
