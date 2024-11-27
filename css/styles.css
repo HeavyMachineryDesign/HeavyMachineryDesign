@@ -89,7 +89,8 @@
 /* Responsive Styling */
 @media (max-width: 768px) {
     .carousel-item {
-        flex: 0 0 50%; /* 2 items per row */
+        flex: 0 0 25%; /* 4 items per row */
+        width: 90%; /* Shrink carousel */
     }
 }
 
