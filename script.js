@@ -37,18 +37,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Carousel Logic
-    const carouselContainer = document.querySelector('.carousel-container');
-const prevButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
+    const prevButton = document.querySelector(".prev");
+const nextButton = document.querySelector(".next");
+const carouselContainer = document.querySelector(".carousel-container");
 
 let currentIndex = 0;
+const itemsToShow = 4; // Adjust based on the number of visible items
+const itemWidth = document.querySelector(".carousel-item").offsetWidth;
 
-prevButton.addEventListener('click', () => {
-    currentIndex = Math.max(currentIndex - 1, 0);
-    carouselContainer.style.transform = `translateX(-${currentIndex * 25}%)`;
+prevButton.addEventListener("click", () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+    }
 });
 
-nextButton.addEventListener('click', () => {
-    currentIndex = Math.min(currentIndex + 1, carouselContainer.children.length - 1);
-    carouselContainer.style.transform = `translateX(-${currentIndex * 25}%)`;
+nextButton.addEventListener("click", () => {
+    if (currentIndex < carouselContainer.children.length - itemsToShow) {
+        currentIndex++;
+        updateCarousel();
+    }
 });
+
+function updateCarousel() {
+    carouselContainer.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+}
