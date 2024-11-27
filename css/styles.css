@@ -1,15 +1,15 @@
 /* Carousel Styling */
 .carousel-wrapper {
     position: relative; /* Ensure carousel is isolated */
-    width: 100%; /* Full width by default */
+    width: 90%; /* Full width by default */
     margin: 20px auto; /* Center horizontally */
-    overflow: visible; /* Allow overflowing images to be visible */
+    overflow: hidden; /* Change to hidden for better layout control */
     border-radius: 10px; /* Rounded edges for carousel */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     border: 2px solid rgba(0, 0, 0, 0.1); /* Optional visual border */
 }
 
-
+/* Adjust carousel container */
 .carousel-container {
     display: flex;
     transition: transform 0.5s ease-in-out;
@@ -18,6 +18,7 @@
     overflow: visible; /* Keep as-is to handle edge cases */
 }
 
+/* Carousel Items */
 .carousel-item {
     flex: 0 0 25%;
     padding: 5px;
@@ -30,7 +31,7 @@
     height: 200px;
     object-fit: cover;
     border-radius: 8px;
-    image-rendering: auto; /* Ensure clarity */
+    image-rendering: crisp-edges; /* Improve clarity */
 }
 
 /* Add blur effect using pseudo-elements */
@@ -57,12 +58,7 @@
     background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
 }
 
-/* Blur the overflowing container */
-.carousel-container {
-    filter: blur(8px); /* Blur applied */
-    position: relative;
-    overflow: visible; /* The container holds a sharp scroll context */
-}
+
 /* Carousel Navigation Buttons */
 .carousel-wrapper .prev,
 .carousel-wrapper .next {
@@ -98,18 +94,19 @@
 @media (max-width: 768px) {
     .carousel-item {
         flex: 0 0 100%; /* For single item on mobile */
+        width: 90%; /* Shrinks carousel on smaller screens */
+        margin: auto;
     }
 }
 
 @media (max-width: 480px) {
     .carousel-item {
         flex: 0 0 100%; /* Show 1 item on very small screens */
+        width: 90%; /* Shrinks carousel on smaller screens */
+        margin: auto;
     }
 }
 
-<button class="prev" aria-label="Previous Slide">◀</button>
-<button class="next" aria-label="Next Slide">▶</button>
-<a href="#" class="back-to-top" aria-label="Back to top">↑</a>
 
 /* Global Styling */
 html {
