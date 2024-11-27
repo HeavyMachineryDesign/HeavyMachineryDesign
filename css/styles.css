@@ -78,6 +78,11 @@
     z-index: 10; /* Ensure buttons appear above other elements */
 }
 
+.carousel-control-prev,
+.carousel-control-next {
+    display: block; /* Ensure they are visible */
+}
+
 .carousel-wrapper .prev {
     left: 10px;
 }
