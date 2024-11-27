@@ -37,11 +37,11 @@
         
     </header>
 
-<div class="carousel-wrapper">
-    <button class="prev" onclick="prevSlide()">&#10094;</button>
-    <div class="carousel-container">
+<div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+       
         <!-- Slide 1 -->
-            <div class="carousel-item">
+            <div class="carousel-item active">
                 <img src="Photos/Amphibious Excavator.jpg" alt="Image 1">
             </div>
             <!-- Slide 2 -->
@@ -74,8 +74,14 @@
             </div>
     </div>
     
-<button class="prev" aria-label="Previous Slide">◀</button>
-<button class="next" aria-label="Next Slide">▶</button>
+ <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 
 </div>
 
