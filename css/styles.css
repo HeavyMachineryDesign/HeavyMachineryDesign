@@ -1,6 +1,6 @@
 /* Carousel Styling */
 .carousel-inner {
-     display: flex; /* Display images horizontally */
+    display: flex; /* Display images horizontally */
     flex-wrap: nowrap; /* Prevent wrapping to the next line */
     overflow-x: auto; /* Allow horizontal scrolling for excess images */
     scroll-snap-type: x mandatory; /* Enable smooth scrolling between items */
@@ -15,7 +15,7 @@
 }
 
 .carousel-inner::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for a clean look */
+    display: visible; /* Hide scrollbar for a clean look */
 }
 
 /* Carousel Container */
@@ -35,7 +35,7 @@
 }
 
 .carousel-item img {
-    height: 200; /* Maintain aspect ratio */
+    height: 200px; /* Maintain aspect ratio */
     margin: 0 auto; /* Center the image */
     border-radius: 8px; /* Rounded edges for the images */
     image-rendering: auto; /* Default rendering for clarity */
