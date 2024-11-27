@@ -1,69 +1,64 @@
 /* Carousel Styling */
 .carousel-inner {
     position: relative; /* Ensure carousel is isolated */
-    width: 90%; /* Full width by default */
+    width: 90%; /* Centered, not full-screen width */
     margin: 20px auto; /* Center horizontally */
-    overflow: hidden; /* Change to hidden for better layout control */
+    overflow: hidden; /* Hide overflow for clean appearance */
     border-radius: 10px; /* Rounded edges for carousel */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    border: 2px solid rgba(0, 0, 0, 0.1); /* Optional visual border */
+    border: 2px solid rgba(0, 0, 0, 0.1); /* Optional border */
 }
 
-/* Adjust carousel container */
+/* Carousel Container */
 .carousel-container {
     display: flex;
-    transition: transform 0.5s ease-in-out;/* Smooth transition for sliding */
-    position: relative; /* To contain the pseudo-elements */
-    filter: none; /* Remove blur */
-    overflow: visible; /* Keep as-is to handle edge cases */
-    position: relative;
-    overflow: hidden; /* Hide overflow for cleaner appearance */
+    transition: transform 0.5s ease-in-out; /* Smooth slide transition */
+    overflow: hidden; /* Ensure edges remain clean */
+    position: relative; /* Required for pseudo-elements and proper layout */
 }
 
 /* Carousel Items */
 .carousel-item {
-    flex: 0 0 25%;
+    flex: 0 0 25%; /* 4 items per row by default */
     padding: 5px;
     position: relative; 
 }
 
 .carousel-item img {
-    width: 100%; /* Ensures the image takes the full width of its container */
-    height: 100%; /* Fills the container height */
-    object-fit: cover; /* Ensures the image covers the box without distortion */
-    border-radius: 8px; /* Rounds the edges of the image */
-    image-rendering: crisp-edges; /* Improve clarity */
+    width: 100%; /* Fully responsive image */
+    height: 100%; /* Scale image to container */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded image edges */
+    image-rendering: auto; /* Default rendering for clarity */
 }
 
-
-/* Add blur effect using pseudo-elements */
+/* Blur Effect (Pseudo-elements) */
 .carousel-inner::before,
 .carousel-inner::after {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 30px; /* Width of the blur edges */
+    width: 30px; /* Width of gradient */
     background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
     z-index: 1;
-    pointer-events: none; /* Prevent interaction */
-    height: 90%; /* Reduce the height slightly */
+    pointer-events: none; /* Avoid interaction issues */
+    height: 100%; /* Match carousel height */
 }
 
-.carousel-wrapper::before {
+.carousel-inner::before {
     left: 0;
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
 }
 
-.carousel-wrapper::after {
+.carousel-inner::after {
     right: 0;
     background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
 }
 
-
 /* Carousel Navigation Buttons */
-.carousel-wrapper .prev,
-.carousel-wrapper .next {
+.carousel-control-prev,
+.carousel-control-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -74,45 +69,38 @@
     cursor: pointer;
     border-radius: 50%;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    pointer-events: auto;
-    z-index: 10; /* Ensure buttons appear above other elements */
+    z-index: 10; /* Ensure above carousel */
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-    display: block; /* Ensure they are visible */
-}
-
-.carousel-wrapper .prev {
-    left: 10px;
-}
-
-.carousel-wrapper .next {
-    right: 10px;
-}
-
-.carousel-wrapper .prev:hover,
-.carousel-wrapper .next:hover {
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
     background-color: rgba(0, 0, 0, 0.8);
     transform: scale(1.1);
 }
 
-/* Responsive Styling for Carousel */
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
+}
+
+/* Responsive Styling */
 @media (max-width: 768px) {
     .carousel-item {
-        flex: 0 0 100%; /* For single item on mobile */
-        width: 90%; /* Shrinks carousel on smaller screens */
-        margin: auto;
+        flex: 0 0 50%; /* 2 items per row */
     }
 }
 
 @media (max-width: 480px) {
     .carousel-item {
-        flex: 0 0 100%; /* Show 1 item on very small screens */
-        width: 90%; /* Shrinks carousel on smaller screens */
+        flex: 0 0 100%; /* Single item per row on small screens */
+        width: 90%; /* Shrink carousel */
         margin: auto;
     }
 }
+
 
 
 /* Global Styling */
