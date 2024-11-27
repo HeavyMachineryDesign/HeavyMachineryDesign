@@ -12,10 +12,12 @@
 /* Adjust carousel container */
 .carousel-container {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;/* Smooth transition for sliding */
     position: relative; /* To contain the pseudo-elements */
     filter: none; /* Remove blur */
     overflow: visible; /* Keep as-is to handle edge cases */
+    position: relative;
+    overflow: hidden; /* Hide overflow for cleaner appearance */
 }
 
 /* Carousel Items */
@@ -73,7 +75,7 @@
     border-radius: 50%;
     transition: background-color 0.3s ease, transform 0.3s ease;
     pointer-events: auto;
-    z-index: 20; /* Ensure buttons are above pseudo-elements */
+    z-index: 10; /* Ensure buttons appear above other elements */
 }
 
 .carousel-wrapper .prev {
