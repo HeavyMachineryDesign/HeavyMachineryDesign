@@ -35,7 +35,7 @@
 }
 
 .carousel-item img {
-    height: auto; /* Maintain aspect ratio */
+    height: 200; /* Maintain aspect ratio */
     margin: 0 auto; /* Center the image */
     border-radius: 8px; /* Rounded edges for the images */
     image-rendering: auto; /* Default rendering for clarity */
