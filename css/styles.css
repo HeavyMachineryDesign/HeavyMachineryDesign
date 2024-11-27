@@ -1,5 +1,5 @@
 /* Carousel Styling */
-.carousel-wrapper {
+.carousel-inner {
     position: relative; /* Ensure carousel is isolated */
     width: 90%; /* Full width by default */
     margin: 20px auto; /* Center horizontally */
@@ -37,8 +37,8 @@
 
 
 /* Add blur effect using pseudo-elements */
-.carousel-wrapper::before,
-.carousel-wrapper::after {
+.carousel-inner::before,
+.carousel-inner::after {
     content: '';
     position: absolute;
     top: 0;
