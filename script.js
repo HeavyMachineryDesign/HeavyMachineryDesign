@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-
 document.addEventListener('DOMContentLoaded', function() {
     const prevButton = document.querySelector('.carousel-control-prev');
     const nextButton = document.querySelector('.carousel-control-next');
@@ -65,17 +64,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    updateCarousel(); // Initialize the carousel position
-});
-
-
-    nextButton.addEventListener('click', function() {
+    function autoSlide() {
         const items = carouselInner.children;
         if (currentIndex < items.length - 1) {
             currentIndex++;
-            updateCarousel();
+        } else {
+            currentIndex = 0; // Reset to the first item
         }
-    });
+        updateCarousel();
+    }
+
+    // Set an interval to automatically move to the next slide every 3 seconds
+    setInterval(autoSlide, 3000);
 
     updateCarousel(); // Initialize the carousel position
 });
