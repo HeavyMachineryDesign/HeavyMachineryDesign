@@ -25,10 +25,11 @@
 }
 
 .carousel-item img {
-    width: 100%; /* Fully responsive image */
-    height: 100%; /* Scale image to container */
-    object-fit: cover; /* Maintain aspect ratio */
-    border-radius: 8px; /* Rounded image edges */
+    width: 80%; /* Reduce width to 80% of the container */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image */
+    object-fit: cover; /* Prevent distortion */
+    border-radius: 8px; /* Rounded edges for the images */
     image-rendering: auto; /* Default rendering for clarity */
 }
 
@@ -89,16 +90,21 @@
 /* Responsive Styling */
 @media (max-width: 768px) {
     .carousel-item {
-        flex: 0 0 25%; /* 4 items per row */
-        width: 90%; /* Shrink carousel */
+        flex: 0 0 50%; /* 2 items per row */
+    }
+
+    .carousel-item img {
+        width: 70%; /* Smaller images for medium screens */
     }
 }
 
 @media (max-width: 480px) {
     .carousel-item {
         flex: 0 0 100%; /* Single item per row on small screens */
-        width: 90%; /* Shrink carousel */
-        margin: auto;
+    }
+
+    .carousel-item img {
+        width: 60%; /* Even smaller images for very small screens */
     }
 }
 
