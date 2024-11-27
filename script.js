@@ -79,3 +79,47 @@ document.addEventListener('DOMContentLoaded', function() {
 
     updateCarousel(); // Initialize the carousel position
 });
+
+
+                          <script type="text/javascript"> 
+$(document).ready(function () { 
+    //Disable cut copy paste 
+    $('body').bind('cut copy paste', function (e) { 
+        e.preventDefault(); 
+    }); 
+    
+    //Disable mouse right click 
+    $("body").on("contextmenu",function(e){ 
+        return false; 
+    }); 
+}); 
+</script> 
+
+<script type="text/javascript"> 
+$(document).ready(function () { 
+    //Disable full page 
+    $('body').bind('cut copy paste', function (e) { 
+        e.preventDefault(); 
+    }); 
+     
+    //Disable part of page 
+    $('#id').bind('cut copy paste', function (e) { 
+        e.preventDefault(); 
+    }); 
+}); 
+</script> 
+
+<script src="jquery.min.js"></script> 
+<script type="text/javascript"> 
+$(document).ready(function () { 
+    //Disable full page 
+    $("body").on("contextmenu",function(e){ 
+        return false; 
+    }); 
+     
+    //Disable part of page 
+    $("#id").on("contextmenu",function(e){ 
+        return false; 
+    }); 
+}); 
+</script>
