@@ -178,10 +178,11 @@ header h3 {
 }
 
 
-.resize-img {
-    width: 200px; /* resize image */
-    height: auto; /* Maintain aspect ratio */
-  }
+ img {
+            width: 400px; /* Set all images to a width of 400px */
+            height: auto; /* Maintain aspect ratio */
+        }
+
 
 /* Toolbar Styling */
 .toolbar {
