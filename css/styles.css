@@ -179,10 +179,20 @@ header h3 {
 
 
  img {
-            width: 400px; /* Set all images to a width of 400px */
-            height: auto; /* Maintain aspect ratio */
+        width: 350px; /* Set all images to a width of 400px */
+        height: auto; /* Maintain aspect ratio */
         }
 
+.image-container {
+        width: 80%; /* This is the width of the parent container */
+        margin: 0 auto; /* Centers the container */
+    }
+
+    .responsive-img {
+        width: 100%; /* Makes image responsive to container */
+        height: auto;
+        max-width: 100%;
+    }
 
 .responsive-img {
         width: 100%;
