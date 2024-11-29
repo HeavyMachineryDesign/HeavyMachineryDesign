@@ -184,6 +184,12 @@ header h3 {
         }
 
 
+.responsive-img {
+        width: 100%;
+        height: auto;
+        max-width: 100%; /* Prevents the image from being larger than its container */
+    }
+
 /* Toolbar Styling */
 .toolbar {
     display: flex; /* Visible and horizontal for desktop */
