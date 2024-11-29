@@ -159,6 +159,30 @@ header h1 {
     text-align: center;
 }
 
+header h2 {
+    margin: 0;
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+    flex: 1;
+    text-align: center;
+}
+
+header h3 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #fff;
+    flex: 1;
+    text-align: center;
+}
+
+
+.resize-img {
+    width: 200px; /* resize image */
+    height: auto; /* Maintain aspect ratio */
+  }
+
 /* Toolbar Styling */
 .toolbar {
     display: flex; /* Visible and horizontal for desktop */
