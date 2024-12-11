@@ -193,6 +193,38 @@
     </div>
 </section>
 
+    <script>
+    function checkAnswers() {
+        const correctAnswers = {
+            q1: "A",
+            q2: "A",
+            q3: "D",
+            q4: "A",
+            q5: "B",
+            q6: "B",
+            q7: "C"
+        };
+
+        let score = 0;
+        const totalQuestions = Object.keys(correctAnswers).length;
+
+        for (let question in correctAnswers) {
+            const selected = document.querySelector(`input[name="${question}"]:checked`);
+            if (selected && selected.value === correctAnswers[question]) {
+                score++;
+            }
+        }
+
+        // Display the score
+        const result = document.getElementById("result");
+        const scoreDisplay = document.getElementById("score");
+        scoreDisplay.textContent = `You scored ${score} out of ${totalQuestions}!`;
+
+        result.style.display = "block";
+    }
+</script>
+
+
     
 <footer>
         <div class="footer-container">
