@@ -124,31 +124,3 @@ $(document).ready(function () {
 }); 
 </script>
 
-<script>
-    function checkAnswers() {
-        const answers = {
-            q1: 'A',
-            q2: 'A',
-            q3: 'D',
-            q4: 'A',
-            q5: 'B',
-            q6: 'B',
-            q7: 'C'
-        };
-
-        let score = 0;
-        const form = document.getElementById('quizForm');
-
-        // Check each question
-        for (let question in answers) {
-            const selected = form.querySelector(`input[name="${question}"]:checked`);
-            if (selected && selected.value === answers[question]) {
-                score++;
-            }
-        }
-
-        // Display score
-        document.getElementById('score').innerText = `You answered ${score} out of 7 questions correctly.`;
-        document.getElementById('result').style.display = 'block';
-    }
-</script>
