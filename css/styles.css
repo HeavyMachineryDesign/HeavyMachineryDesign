@@ -396,6 +396,88 @@ header h3 {
     }
 }
 
+
+/* Quiz Section Styling */
+#quiz {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.question {
+    background: #ffffff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 5px solid #4caf50;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.question:hover {
+    background: #f1f1f1;
+}
+
+.question p {
+    font-weight: bold;
+    color: #333;
+}
+
+.question input[type="radio"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.question label {
+    cursor: pointer;
+    display: block;
+    padding: 5px;
+    transition: background 0.2s;
+}
+
+.question label:hover {
+    background-color: #e0f7fa;
+    border-radius: 5px;
+}
+
+/* Submit Button Styling */
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Result Display Styling */
+#result {
+    background-color: #dff0d8;
+    color: #3c763d;
+    padding: 15px;
+    margin-top: 20px;
+    border: 1px solid #d6e9c6;
+    border-radius: 5px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#result.show {
+    display: block;
+    opacity: 1;
+}
+
+
+
 footer {
     background-color: #222;
     color: #fff;
@@ -426,3 +508,5 @@ footer {
 .footer-nav a:hover {
     text-decoration: underline;
 }
+
+
