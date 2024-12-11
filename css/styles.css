@@ -1,117 +1,148 @@
- 
-/* Carousel Styling */
+/* ===========================
+   Carousel Styling
+   =========================== */
 .carousel-inner {
-    display: flex; /* Display images horizontally */
-    flex-wrap: nowrap; /* Prevent wrapping to the next line */
-    overflow-x: auto; /* Allow horizontal scrolling for excess images */
-    scroll-snap-type: x mandatory; /* Enable smooth scrolling between items */
+    display: flex;                /* Display images horizontally */
+    flex-wrap: nowrap;            /* Prevent wrapping to the next line */
+    overflow-x: auto;             /* Allow horizontal scrolling for excess images */
+    scroll-snap-type: x mandatory;/* Enable smooth scrolling between items */
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
-    position: relative; /* Ensure carousel is isolated */
-    width: 90%; /* Centered, not full-screen width */
-    margin: 20px auto; /* Center horizontally */
-    overflow: hidden; /* Hide overflow for clean appearance */
-    border-radius: 10px; /* Rounded edges for carousel */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    border: 2px solid rgba(0, 0, 0, 0.1); /* Optional border */
+    position: relative;           /* Ensure carousel is isolated */
+    width: 90%;                   /* Centered, not full-screen width */
+    margin: 20px auto;            /* Center horizontally */
+    overflow: hidden;             /* Hide overflow for clean appearance */
+    border-radius: 12px;          /* Slightly more pronounced rounded edges */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced subtle shadow */
+    border: 1px solid rgba(0, 0, 0, 0.08);     /* Subtle border for definition */
 }
 
+/* Hide scrollbar for a clean look */
 .carousel-inner::-webkit-scrollbar {
-    display: visible; /* Hide scrollbar for a clean look */
+    display: none;
 }
 
-/* Carousel Container */
+/* ===========================
+   Carousel Container
+   =========================== */
 .carousel-container {
     display: flex;
     transition: transform 0.5s ease-in-out; /* Smooth slide transition */
-    overflow: hidden; /* Ensure edges remain clean */
-    position: relative; /* Required for pseudo-elements and proper layout */
+    position: relative;                     /* Required for proper layout */
+    overflow: hidden;                       /* Ensure edges remain clean */
 }
 
-/* Carousel Items */
+/* ===========================
+   Carousel Items
+   =========================== */
 .carousel-item {
-    position: relative; 
-    flex: 0 0 25%; /* 4 items per row (25% of the container) */
-    text-align: center; /* Center content horizontally */
-    padding: 10px;
+    flex: 0 0 25%;               /* 4 items per row (25% width) */
+    text-align: center;          /* Center content horizontally */
+    padding: 10px;               /* Spacing around items */
+    scroll-snap-align: start;    /* Align items for smooth scrolling */
 }
 
 .carousel-item img {
-    height: 200px; /* Maintain aspect ratio */
-    margin: 0 auto; /* Center the image */
-    border-radius: 8px; /* Rounded edges for the images */
-    image-rendering: auto; /* Default rendering for clarity */
-    width: 100%; /* Image fills its container */
-    object-fit: cover; /* Prevent distortion */
-    border-radius: 8px; /* Optional rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    height: 200px;               /* Fixed height for images */
+    width: 100%;                 /* Image fills container */
+    object-fit: cover;           /* Maintain aspect ratio, crop if needed */
+    border-radius: 10px;         /* Consistent rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Depth effect */
 }
 
-/* Blur Effect (Pseudo-elements) */
+/* ===========================
+   Blur Effect (Pseudo-elements)
+   =========================== */
 .carousel-inner::before,
 .carousel-inner::after {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 30px; /* Width of gradient */
-    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    width: 50px;                /* Width of the gradient blur effect */
     z-index: 1;
-    pointer-events: none; /* Avoid interaction issues */
-    height: 100%; /* Match carousel height */
+    pointer-events: none;       /* Allow interactions with carousel items */
+    height: 100%;               /* Full height of the carousel */
 }
 
 .carousel-inner::before {
     left: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 .carousel-inner::after {
     right: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
-/* Carousel Navigation Buttons */
+/* ===========================
+   Carousel Navigation Buttons
+   =========================== */
 .carousel-control-prev,
 .carousel-control-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
     border: none;
-    padding: 10px;
+    padding: 12px;
     cursor: pointer;
     border-radius: 50%;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 10; /* Ensure above carousel */
+    z-index: 2; /* Ensure buttons are above carousel content */
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.7);
     transform: scale(1.1);
 }
 
 .carousel-control-prev {
-    left: 10px;
+    left: 15px;
 }
 
 .carousel-control-next {
-    right: 10px;
+    right: 15px;
 }
 
-/* Responsive Design */
+/* ===========================
+   Responsive Design
+   =========================== */
 @media (max-width: 768px) {
     .carousel-item {
-        flex: 0 0 50%; /* Display 2 images per row for medium screens */
+        flex: 0 0 50%; /* 2 items per row on medium screens */
     }
 }
 
 @media (max-width: 480px) {
     .carousel-item {
-        flex: 0 0 100%; /* Display 1 image per row for small screens */
+        flex: 0 0 100%; /* 1 item per row on small screens */
     }
 }
+
+ /* Blurred background using ::before pseudo-element */
+    body::before {
+      content: "";
+      background-image: url('background.jpg'); /* Replace with your image path or URL */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      
+      /* Blur effect */
+      filter: blur(10px); /* Adjust the blur intensity */
+      
+      /* Cover the whole body */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* Place it behind the content */
+    }
+
+
 
 /* Global Styling */
 html {
