@@ -150,6 +150,30 @@
                 <label><input type="radio" name="q3" value="C"> C) Manual labor</label>
                 <label><input type="radio" name="q3" value="D"> D) Diesel engines</label>
             </div>
+            <div class="question">
+                
+    <p><strong>4. What is the primary function of a bulldozer?</strong></p>
+    <label><input type="radio" name="q4" value="A"> A) Excavating soil</label>
+    <label><input type="radio" name="q4" value="B"> B) Lifting heavy materials</label>
+    <label><input type="radio" name="q4" value="C"> C) Grading and pushing earth</label>
+    <label><input type="radio" name="q4" value="D"> D) Transporting materials</label>
+</div>
+
+<div class="question">
+    <p><strong>5. Which machine is typically used for lifting materials to great heights?</strong></p>
+    <label><input type="radio" name="q5" value="A"> A) Crane</label>
+    <label><input type="radio" name="q5" value="B"> B) Excavator</label>
+    <label><input type="radio" name="q5" value="C"> C) Loader</label>
+    <label><input type="radio" name="q5" value="D"> D) Bulldozer</label>
+</div>
+
+<div class="question">
+    <p><strong>6. What is a key benefit of using hydraulic systems in heavy machinery?</strong></p>
+    <label><input type="radio" name="q6" value="A"> A) They provide higher power and control for lifting and digging</label>
+    <label><input type="radio" name="q6" value="B"> B) They reduce fuel consumption significantly</label>
+    <label><input type="radio" name="q6" value="C"> C) They increase the machine's speed</label>
+    <label><input type="radio" name="q6" value="D"> D) They make the machine lighter and more mobile</label>
+</div>
 
             <button type="button" onclick="checkAnswers()">Submit Quiz</button>
         </form>
@@ -164,8 +188,11 @@
         function checkAnswers() {
             const correctAnswers = {
                 q1: "A",
-                q2: "A",
-                q3: "D"
+    q2: "A",
+    q3: "D",
+    q4: "C",
+    q5: "A",
+    q6: "A"
             };
 
             let score = 0;
