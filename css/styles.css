@@ -509,7 +509,7 @@ button:hover {
 
 /* Images inside the slideshow */
 .mySlides img {
-    height: 50px;               /* Fixed height for images */
+    height: 100px;               /* Fixed height for images */
     width: 100%;                 /* Image fills container */
     object-fit: cover;           /* Maintain aspect ratio, crop if needed */
     border-radius: 10px;         /* Consistent rounded corners */
