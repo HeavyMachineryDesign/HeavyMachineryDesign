@@ -10,24 +10,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Handle Dropdown Toggles
     const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
-    if (dropdownToggles.length > 0) {
-        dropdownToggles.forEach(toggle => {
-            toggle.addEventListener("click", (e) => {
-                e.preventDefault();
-                toggle.parentElement.classList.toggle("active");
-            });
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener("click", (e) => {
+            e.preventDefault();
+            toggle.parentElement.classList.toggle("active");
         });
-    }
+    });
 
     // Back to Top Button Logic
     const backToTopButton = document.querySelector(".back-to-top");
     if (backToTopButton) {
         window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.add("show");
-            } else {
-                backToTopButton.classList.remove("show");
-            }
+            backToTopButton.classList.toggle("show", window.scrollY > 300);
         });
 
         backToTopButton.addEventListener("click", (e) => {
@@ -35,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
     }
+});
 
 
 document.addEventListener('DOMContentLoaded', function() {
