@@ -1,114 +1,100 @@
 /* ===========================
    Carousel Styling
-   =========================== */
+=========================== */
 .carousel-inner {
-    display: flex;                /* Display images horizontally */
-    flex-wrap: nowrap;            /* Prevent wrapping to the next line */
-    overflow-x: auto;             /* Allow horizontal scrolling for excess images */
-    scroll-snap-type: x mandatory;/* Enable smooth scrolling between items */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
-    position: relative;           /* Ensure carousel is isolated */
-    width: 90%;                   /* Centered, not full-screen width */
-    margin: 20px auto;            /* Center horizontally */
-    overflow: hidden;             /* Hide overflow for clean appearance */
-    border-radius: 12px;          /* Slightly more pronounced rounded edges */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced subtle shadow */
-    border: 1px solid rgba(0, 0, 0, 0.08);     /* Subtle border for definition */
+    display: flex; /* Use flexbox to align items in a row */
+    flex-wrap: nowrap; /* Prevents wrapping of items */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Ensures smooth scrolling with snapping */
+    -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on iOS devices */
+    position: relative; /* Positions the carousel within its container */
+    width: 90%; /* Set carousel width to 90% of its parent */
+    margin: 20px auto; /* Centers the carousel and adds vertical margin */
+    overflow: hidden; /* Hides content that overflows */
+    border-radius: 12px; /* Rounds the corners of the carousel */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
+    border: 1px solid rgba(0, 0, 0, 0.08); /* Light border for subtle emphasis */
 }
 
-/* Hide scrollbar for a clean look */
+/* Hide scrollbar */
 .carousel-inner::-webkit-scrollbar {
-    display: none;
+    display: none; /* Removes scrollbar in WebKit browsers */
 }
 
-/* ===========================
-   Carousel Container
-   =========================== */
-.carousel-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out; /* Smooth slide transition */
-    position: relative;                     /* Required for proper layout */
-    overflow: hidden;                       /* Ensure edges remain clean */
-}
-
-/* ===========================
-   Carousel Items
-   =========================== */
+/* Carousel Items */
 .carousel-item {
-    flex: 0 0 25%;               /* 4 items per row (25% width) */
-    text-align: center;          /* Center content horizontally */
-    padding: 10px;               /* Spacing around items */
-    scroll-snap-align: start;    /* Align items for smooth scrolling */
+    flex: 0 0 25%; /* Sets each item to take up 25% of the container */
+    text-align: center; /* Centers the content of each item */
+    padding: 10px; /* Adds spacing inside each item */
+    scroll-snap-align: start; /* Ensures items align at the start when snapping */
 }
 
 .carousel-item img {
-    height: 200px;               /* Fixed height for images */
-    width: 100%;                 /* Image fills container */
-    object-fit: cover;           /* Maintain aspect ratio, crop if needed */
-    border-radius: 10px;         /* Consistent rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Depth effect */
+    height: 200px; /* Fixed height for images */
+    width: 100%; /* Ensures the image fills the item’s width */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-radius: 10px; /* Rounds the image corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for better visual separation */
 }
 
-/* ===========================
-   Blur Effect (Pseudo-elements)
-   =========================== */
+/* Blur Effect (Pseudo-elements) */
 .carousel-inner::before,
 .carousel-inner::after {
-    content: '';
-    position: absolute;
+    content: ''; /* Creates an empty pseudo-element for the blur effect */
+    position: absolute; /* Positions it over the carousel */
     top: 0;
     bottom: 0;
-    width: 50px;                /* Width of the gradient blur effect */
-    z-index: 1;
-    pointer-events: none;       /* Allow interactions with carousel items */
-    height: 100%;               /* Full height of the carousel */
+    width: 50px; /* Controls the width of the blur effect */
+    z-index: 1; /* Ensures it stays above the carousel items */
+    pointer-events: none; /* Prevents interaction with the pseudo-elements */
+    height: 100%; /* Makes the blur cover the entire height of the carousel */
 }
 
 .carousel-inner::before {
     left: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)); /* Left-to-right gradient for blur */
 }
 
 .carousel-inner::after {
     right: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)); /* Right-to-left gradient for blur */
 }
 
 /* ===========================
    Carousel Navigation Buttons
-   =========================== */
+=========================== */
 .carousel-control-prev,
 .carousel-control-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.4);
-    color: #fff;
-    border: none;
-    padding: 12px;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 2; /* Ensure buttons are above carousel content */
+    position: absolute; /* Positions the buttons relative to the carousel */
+    top: 50%; /* Vertically centers the buttons */
+    transform: translateY(-50%); /* Centers the buttons vertically */
+    background-color: rgba(0, 0, 0, 0.4); /* Dark background for buttons */
+    color: #fff; /* White icon color */
+    border: none; /* Removes default button border */
+    padding: 12px; /* Adds padding for click area */
+    cursor: pointer; /* Changes the cursor to pointer on hover */
+    border-radius: 50%; /* Makes the buttons circular */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Adds smooth hover effects */
+    z-index: 2; /* Ensures buttons appear on top of other content */
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+    transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
 .carousel-control-prev {
-    left: 15px;
+    left: 15px; /* Positions the previous button to the left */
 }
 
 .carousel-control-next {
-    right: 15px;
+    right: 15px; /* Positions the next button to the right */
 }
 
 /* ===========================
    Responsive Design
-   =========================== */
+=========================== */
 @media (max-width: 768px) {
     .carousel-item {
         flex: 0 0 50%; /* 2 items per row on medium screens */
@@ -121,481 +107,176 @@
     }
 }
 
- 
-
-
-/* Global Styling */
+/* ===========================
+   Global Styling
+=========================== */
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Smooth scrolling when navigating links */
 }
 
 *, *::before, *::after {
-    box-sizing: border-box;
-}
-body {
-    font-family: 'Poppins', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 2;
-    width: 100%;
-    position: relative; /* Ensure body content is on top of the background */
+    box-sizing: border-box; /* Ensures padding and borders don’t affect element’s dimensions */
 }
 
+body {
+    font-family: 'Poppins', Arial, sans-serif; /* Sets a clean, modern font */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    line-height: 2; /* Increases line height for readability */
+    width: 100%; /* Ensures the body takes full width */
+    position: relative; /* Enables positioning of child elements */
+}
+
+/* Background with blur effect */
 body::before {
-    content: "";
-    background-image: url('Photos/background.jpg'); /* Use your preferred image path */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    
-    /* Blur effect */
-    filter: blur(10px); /* Adjust the blur intensity */
-    
-    /* Cover the whole body */
-    position: absolute;
+    content: ""; /* Creates an empty pseudo-element for the background */
+    background-image: url('Photos/background.jpg'); /* Sets a background image */
+    background-size: cover; /* Ensures the background image covers the entire screen */
+    background-repeat: no-repeat; /* Prevents image repetition */
+    background-position: center; /* Centers the background image */
+    background-attachment: fixed; /* Fixes the background while scrolling */
+    filter: blur(10px); /* Applies a blur effect */
+    position: absolute; /* Positions the pseudo-element */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Place it behind the content */
+    z-index: -1; /* Ensures the background stays behind other content */
 }
 
-/* Section Styling */
-section {
-    scroll-margin-top: 150px; /* Offset for smooth scroll to sections */
-    width: 90%; /* Occupies 90% of the parent width */
-    margin: 20px auto; /* Centers with 20px top/bottom margin */
-}
-
-/* Header Styling */
+/* ===========================
+   Header Styling
+=========================== */
 header {
     background: linear-gradient(90deg, #141e30, #243b55); /* Gradient background */
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Align items to the center */
-    align-items: center; /* Center items vertically */
-    padding: 20px;
-    text-align: center;
+    display: flex; /* Flexbox layout for centering content */
+    justify-content: center; /* Horizontally centers content */
+    align-items: center; /* Vertically centers content */
+    padding: 20px; /* Adds padding for spacing */
+    text-align: center; /* Centers text */
     width: 100%;
     top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensures the header stays on top */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds shadow under the header */
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    font-weight: bold;
-    color: #fff;
-    flex: 1;
-    text-align: center;
+header h1, header h2, header h3 {
+    margin: 0; /* Removes default margin */
+    color: #fff; /* White text color */
+    flex: 1; /* Allows titles to grow and fill available space */
+    text-align: center; /* Ensures text is centered */
 }
 
-header h2 {
-    margin: 0;
-    font-size: 2em;
-    font-weight: bold;
-    color: #fff;
-    flex: 1;
-    text-align: center;
+/* ===========================
+   Image Styling
+=========================== */
+img {
+    width: 350px; /* Fixed width for images */
+    height: auto; /* Maintains aspect ratio */
 }
-
-header h3 {
-    margin: 0;
-    font-size: 1.8em;
-    font-weight: bold;
-    color: #fff;
-    flex: 1;
-    text-align: center;
-}
-
-
- img {
-        width: 350px; /* Set all images to a width of 400px */
-        height: auto; /* Maintain aspect ratio */
-        }
 
 .image-container {
-        width: 80%; /* This is the width of the parent container */
-        margin: 0 auto; /* Centers the container */
-    }
-
-    .responsive-img {
-        width: 100%; /* Makes image responsive to container */
-        height: auto;
-        max-width: 100%;
-    }
+    width: 80%; /* Sets container width to 80% of its parent */
+    margin: 0 auto; /* Centers the image container */
+}
 
 .responsive-img {
-        width: 100%;
-        height: auto;
-        max-width: 100%; /* Prevents the image from being larger than its container */
-    }
+    width: 100%; /* Ensures the image takes up the full container width */
+    height: auto; /* Maintains aspect ratio */
+    max-width: 100%; /* Prevents the image from growing beyond its container */
+}
 
-/* Toolbar Styling */
+/* ===========================
+   Toolbar Styling
+=========================== */
 .toolbar {
-    display: flex; /* Visible and horizontal for desktop */
-    align-items: center;
-    justify-content: center; /* Center menu items */
-    list-style: none;
-    background: linear-gradient(90deg, #141e30, #243b55); /* Corrected background property */
+    display: flex; /* Flexbox layout for toolbar items */
+    align-items: center; /* Vertically centers items */
+    justify-content: center; /* Horizontally centers items */
+    list-style: none; /* Removes bullet points from the list */
+    background: linear-gradient(90deg, #141e30, #243b55); /* Gradient background */
     width: 100%;
     margin: 0;
-    padding: 10px 20px;
+    padding: 10px 20px; /* Adds padding inside toolbar */
 }
 
 .toolbar li {
-    margin: 0 10px;
+    margin: 0 10px; /* Adds horizontal spacing between items */
 }
 
 .toolbar a {
-    text-decoration: none;
-    color: #fcf3cf;
-    font-size: 0.8em;
-    padding: 10px 15px;
-    transition: color 0.3s ease, background-color 0.3s ease;
+    text-decoration: none; /* Removes underline from links */
+    color: #fcf3cf; /* Sets link color */
+    font-size: 0.8em; /* Smaller font size for toolbar links */
+    padding: 10px 15px; /* Adds padding inside links */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
 }
 
 .toolbar a:hover {
-    color: #40E0D0;
-    background-color: #243b55; /* Simpler background for hover */
-    border-radius: 10px;
-    font-weight: bold;
+    color: #40E0D0; /* Changes link color on hover */
+    background-color: #243b55; /* Changes background color on hover */
+    border-radius: 10px; /* Rounds corners of the link */
+    font-weight: bold; /* Makes text bold on hover */
 }
 
-/* Dropdown Styling */
-.dropdown {
-    position: relative; /* Ensures dropdown menu is positioned relative to the parent */
-    display: inline-block;
-}
-
-.dropdown-menu {
-    display: none; /* Hidden by default */
-    position: absolute; /* Dropdown positioned relative to the parent */
-    top: calc(100% + 5px);
-    left: 0;
-    background-color: #333;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    list-style: none;
-    padding: 10px 0;
-    z-index: 1000;
-    min-width: 200px;
-    border-radius: 10px;
-    transition: all 0.3s ease; /* Smooth transition */
-    opacity: 0; /* Start hidden */
-    visibility: hidden; /* Ensure it's hidden */
-}
-
-.dropdown:hover .dropdown-menu,
-.dropdown:focus-within .dropdown-menu {
-    display: block;
-    opacity: 1; /* Show dropdown */
-    visibility: visible;
-}
-
-.dropdown-menu a {
-    display: block;
-    color: #fcf3cf;
-    padding: 10px 20px;
-    white-space: nowrap;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth color transition */
-}
-
-.dropdown-menu a:hover,
-.dropdown-menu a:focus {
-    background-color: #092c42;
-    color: #fff; /* Ensure text color changes for better visibility */
-}
-
-/* Accessibility and Responsiveness */
-@media (max-width: 768px) {
-    .dropdown-menu {
-        position: static;
-        width: 100%; /* Full width on small screens */
-        box-shadow: none; /* Remove shadow */
-    }
-
-    .dropdown-menu a {
-        padding: 15px 20px; /* Increased padding for touch devices */
-        text-align: center; /* Center text */
-    }
-}
-
-.dropdown a:focus {
-    outline: none; /* Remove default focus outline */
-    box-shadow: 0 0 0 2px #fcf3cf; /* Custom focus outline */
-}
-
-
-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        caption {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-/* Back to Top Button */
+/* ===========================
+   Back to Top Button
+=========================== */
 .back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 12px 20px;
-    background: linear-gradient(90deg, #141e30, #243b55);
-    color: white;
-    font-weight: bold;
-    border-radius: 50%;
-    display: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    font-size: 16px;
-    z-index: 1000;
-    text-align: center;
-    line-height: 1.5em;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    position: fixed; /* Positions the button at the bottom right */
+    bottom: 20px; /* Adds margin from the bottom */
+    right: 20px; /* Adds margin from the right */
+    padding: 12px 20px; /* Adds padding inside the button */
+    background: linear-gradient(90deg, #141e30, #243b55); /* Gradient background */
+    color: white; /* White text color */
+    font-weight: bold; /* Makes the text bold */
+    border-radius: 50%; /* Circular button */
+    display: none; /* Initially hides the button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow */
+    opacity: 0; /* Starts with hidden opacity */
+    font-size: 16px; /* Button text size */
+    z-index: 1000; /* Ensures the button is on top */
+    text-align: center; /* Centers text inside the button */
+    line-height: 1.5em; /* Aligns text vertically */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade and scale effects */
 }
 
 .back-to-top.show {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible; /* Ensure visibility is reset */
+    display: block; /* Makes button visible */
+    opacity: 1; /* Fades the button in */
+    transform: translateY(0); /* Resets transform on show */
 }
 
 .back-to-top:hover {
-    transform: scale(1.1);
-    background-color: #555;
+    transform: scale(1.1); /* Slightly zooms in the button on hover */
+    background-color: #555; /* Darkens background on hover */
 }
 
-/* Responsive Styling */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.8em;
-    }
-
-    .toolbar {
-        flex-direction: column;
-        display: none;
-    }
-
-    .toolbar.active {
-        display: flex;
-    }
-
-    .dropdown-menu {
-        position: relative;
-        width: 100%;
-    }
-
-    .dropdown:hover .dropdown-menu {
-        display: none;
-    }
-
-    .dropdown.active .dropdown-menu {
-        display: block;
-    }
-}
-@media (max-width: 480px) {
-    .back-to-top {
-        font-size: 12px;
-        padding: 10px 15px;
-        bottom: 10px;
-        right: 10px;
-    }
-}
-
-
-/* Quiz Section Styling */
-#quiz {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 20px 0;
-}
-
-.question {
-    background: #ffffff;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-left: 5px solid #4caf50;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-}
-
-.question:hover {
-    background: #f1f1f1;
-}
-
-.question p {
-    font-weight: bold;
-    color: #333;
-}
-
-.question input[type="radio"] {
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.question label {
-    cursor: pointer;
-    display: block;
-    padding: 5px;
-    transition: background 0.2s;
-}
-
-.question label:hover {
-    background-color: #e0f7fa;
-    border-radius: 5px;
-}
-
-/* Submit Button Styling */
-button {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button:hover {
-    background-color: #45a049;
-    transform: scale(1.05);
-}
-
-/* Result Display Styling */
-#result {
-    background-color: #dff0d8;
-    color: #3c763d;
-    padding: 15px;
-    margin-top: 20px;
-    border: 1px solid #d6e9c6;
-    border-radius: 5px;
-    display: none;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-#result.show {
-    display: block;
-    opacity: 1;
-}
-
-/* Container for the slideshow */
-.slideshow-container {
-    position: relative;
-    max-width: 1000px;
-    margin: auto;
-    overflow: hidden;
-}
-
-/* Hide all slides by default */
-.mySlides {
-    display: none;
-}
-
-/* Images inside the slideshow */
-.mySlides img {
-    height: 100px;               /* Fixed height for images */
-    width: 100%;                 /* Image fills container */
-    object-fit: cover;           /* Maintain aspect ratio, crop if needed */
-    border-radius: 10px;         /* Consistent rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Depth effect */
-}
-
-
-/* Navigation arrows */
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    padding: 16px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    font-size: 18px;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Dots for navigation */
-.dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.active, .dot:hover {
-    background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-    animation: fadeEffect 1.5s ease;
-}
-
-@keyframes fadeEffect {
-    from { opacity: 0.4; }
-    to { opacity: 1; }
-}
-
-
-
+/* ===========================
+   Footer Styling
+=========================== */
 footer {
-    background-color: #222;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
+    background-color: #222; /* Dark footer background */
+    color: #fff; /* White text color */
+    padding: 20px 0; /* Vertical padding */
+    text-align: center; /* Centers footer text */
 }
 
 .footer-nav ul {
-    list-style: none;
-    padding: 0;
+    list-style: none; /* Removes bullet points */
+    padding: 0; /* Removes padding */
 }
 
 .footer-nav li {
-    display: inline;
-    margin: 0 10px;
+    display: inline; /* Inline display for list items */
+    margin: 0 10px; /* Adds spacing between items */
 }
 
 .footer-nav a {
-    color: #fff;
-    text-decoration: none;
+    color: #fff; /* White link color */
+    text-decoration: none; /* Removes underline from links */
 }
 
 .footer-nav a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underlines links on hover */
 }
-
-
