@@ -509,8 +509,13 @@ button:hover {
 
 /* Images inside the slideshow */
 .mySlides img {
-    width: 100%;
+    height: 50px;               /* Fixed height for images */
+    width: 100%;                 /* Image fills container */
+    object-fit: cover;           /* Maintain aspect ratio, crop if needed */
+    border-radius: 10px;         /* Consistent rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Depth effect */
 }
+
 
 /* Navigation arrows */
 .prev, .next {
