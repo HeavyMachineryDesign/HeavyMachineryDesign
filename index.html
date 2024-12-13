@@ -234,7 +234,7 @@
 
 <section id="slideshow">
       <div class="slideshow-container">
-          <div class="slides-wrapper">
+        <div class="slides-wrapper">
         <div class="mySlides">
             <img src="Photos/Amphibious Excavator.jpg" alt="Slide 1" style="width:100%">
         </div>
@@ -280,30 +280,6 @@
         <div class="mySlides">
             <img src="Photos/highspeed.jpg" alt="Slide 15" style="width:100%">
         </div>
-        <!-- Navigation arrows -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-
-    <br>
-
-    <!-- Dots for navigation -->
-    <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span> 
-        <span class="dot" onclick="currentSlide(2)"></span> 
-        <span class="dot" onclick="currentSlide(3)"></span> 
-        <span class="dot" onclick="currentSlide(4)"></span> 
-        <span class="dot" onclick="currentSlide(5)"></span> 
-        <span class="dot" onclick="currentSlide(6)"></span> 
-        <span class="dot" onclick="currentSlide(7)"></span> 
-        <span class="dot" onclick="currentSlide(8)"></span> 
-        <span class="dot" onclick="currentSlide(9)"></span> 
-        <span class="dot" onclick="currentSlide(10)"></span> 
-        <span class="dot" onclick="currentSlide(11)"></span> 
-        <span class="dot" onclick="currentSlide(12)"></span> 
-        <span class="dot" onclick="currentSlide(13)"></span> 
-        <span class="dot" onclick="currentSlide(14)"></span> 
-        <span class="dot" onclick="currentSlide(15)"></span> 
     </div>
  </section>
 
@@ -342,15 +318,6 @@ document.querySelector('.slideshow-container').addEventListener('mouseout', () =
   autoSlide = setInterval(nextSlide, slideInterval);
 });
 
-// Navigation controls
-document.querySelector('.next').addEventListener('click', nextSlide);
-document.querySelector('.prev').addEventListener('click', () => {
-  currentIndex--;
-  if (currentIndex < 0) {
-    currentIndex = totalSlides - visibleSlides;
-  }
-  updateSlides();
-});
 
 </script>
 
