@@ -317,16 +317,7 @@ const slideInterval = 3000; // Time in milliseconds between slides (3 seconds)
 function nextSlide() {
   currentIndex++;
   if (currentIndex > totalSlides - visibleSlides) {
-    currentIndex = 0;
-  }
-  updateSlides();
-}
-
-// Function to move to the previous slide
-function prevSlide() {
-  currentIndex--;
-  if (currentIndex < 0) {
-    currentIndex = totalSlides - visibleSlides;
+    currentIndex = 0; // Reset to the beginning when reaching the end
   }
   updateSlides();
 }
@@ -351,7 +342,13 @@ document.querySelector('.slideshow-container').addEventListener('mouseout', () =
 
 // Navigation controls
 document.querySelector('.next').addEventListener('click', nextSlide);
-document.querySelector('.prev').addEventListener('click', prevSlide);
+document.querySelector('.prev').addEventListener('click', () => {
+  currentIndex--;
+  if (currentIndex < 0) {
+    currentIndex = totalSlides - visibleSlides;
+  }
+  updateSlides();
+});
 
 </script>
 
