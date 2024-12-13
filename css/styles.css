@@ -495,78 +495,88 @@ button:hover {
 }
 
 
-
 /* Slideshow container */
-    .slideshow-container {
-      position: relative;
-      width: 100%;
-      max-width: 100%;
-      height: 400px;
-      margin: auto;
-      overflow: hidden;
-      background: #000;
-    }
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 400px;
+  margin: auto;
+  overflow: hidden;
+  background: #000;
+  display: flex;       /* Enable flexbox layout */
+}
 
-    /* Individual slides */
-    .mySlides {
-      display: none;
-      width: 30%;
-      height: 100%;
-    }
+/* Slides wrapper to hold multiple slides in a row */
+.slides-wrapper {
+  display: flex;
+  transition: transform 1s ease; /* Smooth transition for sliding effect */
+}
 
-    /* Images inside the slides */
-    .mySlides img {
-      width: auto;
-      height: 300px;
-      object-fit: cover;
-    }
+/* Individual slides */
+.mySlides {
+  flex: 0 0 25%;        /* 25% width for each slide to show 4 images at a time */
+  height: 100%;
+  box-sizing: border-box;
+  padding: 5px;         /* Optional padding between images */
+}
 
-    /* Navigation arrows */
-    .prev, .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      padding: 16px;
-      color: white;
-      font-weight: bold;
-      font-size: 24px;
-      cursor: pointer;
-      background-color: rgba(0, 0, 0, 0.5);
-      user-select: none;
-      transition: background-color 0.3s;
-    }
+/* Images inside the slides */
+.mySlides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* Fit images inside the slide container without distortion */
+  border-radius: 8px;   /* Rounded corners for the images */
+}
 
-    .next {
-      right: 0;
-    }
+/* Navigation arrows */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  user-select: none;
+  transition: background-color 0.3s;
+  z-index: 1;           /* Ensure arrows are above the images */
+}
 
-    .prev:hover, .next:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
+.next {
+  right: 0;
+}
 
-    /* Dots for navigation */
-    .dot {
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      margin: 4px;
-      background-color: #bbb;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
 
-    .dot.active, .dot:hover {
-      background-color: #717171;
-    }
+/* Dots for navigation */
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active, .dot:hover {
+  background-color: #717171;
+}
+
 /* Fading animation */
 .fade {
-    animation: fadeEffect 1.5s ease;
+  animation: fadeEffect 1.5s ease;
 }
 
 @keyframes fadeEffect {
-    from { opacity: 0.4; }
-    to { opacity: 1; }
+  from { opacity: 0.4; }
+  to { opacity: 1; }
 }
 
 
