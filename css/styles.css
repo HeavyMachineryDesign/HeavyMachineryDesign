@@ -498,21 +498,24 @@ button:hover {
 
 /* Container for the slideshow */
 .slideshow-container {
-    position: relative;
-    max-width: 100%;
-    margin: auto;
-    overflow: hidden;
+  position: relative;
+  width: 100%;          /* Full width */
+  height: 400px;        /* Fixed height for the slideshow */
+  margin: auto;
+  overflow: hidden;     /* Hide overflowing content */
+  background: #000;     /* Background color to fill gaps if images don't fully cover */
 }
-
 /* Hide all slides by default */
 .mySlides {
-  display: none;       /* Initially hide all slides */
-  text-align: center;
+ display: none;        /* Initially hide all slides */
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 /* Images inside the slideshow */
 .mySlides img {
     height: 200px;               /* Fixed height for images */
-    width: 100%;                 /* Image fills container */
+    width: 300px;                 /* Image fills container */
     object-fit: cover;           /* Maintain aspect ratio, crop if needed */
     border-radius: 10px;         /* Consistent rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Depth effect */
