@@ -496,12 +496,11 @@ button:hover {
 
 
 /* Slideshow container */
-/* Slideshow container */
 .slideshow-container {
   position: relative;
   width: 100%;
   max-width: 100%;
-  height: 400px;          /* Fixed height for the slideshow container */
+  height: 300px;          /* Fixed height for the slideshow container */
   margin: auto;
   overflow: hidden;
   background: #000;
@@ -515,7 +514,7 @@ button:hover {
 
 /* Individual slides */
 .mySlides {
-  flex: 0 0 25%;          /* Adjust to fit 4 images at a time; use 33.33% for 3 images */
+  flex: 0 0 20%;          /* Adjust to fit 5 images at a time; use 33.33% for 3 images */
   height: 100%;
   box-sizing: border-box;
   padding: 5px;
@@ -538,7 +537,7 @@ button:hover {
 
 /* Navigation arrows */
 .prev, .next {
-  position: absolute;
+  position: relative;
   top: 50%;
   transform: translateY(-50%);
   padding: 16px;
