@@ -307,33 +307,41 @@
  </section>
 
 <script>
-let slideIndex = 1;
-showSlides(slideIndex);
+  let slideIndex = 0;
+  showSlides(slideIndex);
+  autoSlide();
 
-// Next/previous controls
-function plusSlides(n) {
+  function plusSlides(n) {
     showSlides(slideIndex += n);
-}
+  }
 
-// Thumbnail image controls
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
+  function currentSlide(n) {
+    showSlides(slideIndex = n - 1);
+  }
 
-function showSlides(n) {
+  function showSlides(n) {
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
+
+    if (n >= slides.length) { slideIndex = 0; }
+    if (n < 0) { slideIndex = slides.length - 1; }
+
     for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+      slides[i].style.display = "none";
     }
+
     for (let i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
+      dots[i].classList.remove("active");
     }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-}
+
+    slides[slideIndex].style.display = "block";
+    dots[slideIndex].classList.add("active");
+  }
+
+  function autoSlide() {
+    plusSlides(1);
+    setTimeout(autoSlide, 3000);
+  }
 </script>
 
     
