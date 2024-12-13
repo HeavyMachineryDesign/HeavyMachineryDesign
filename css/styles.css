@@ -500,7 +500,7 @@ button:hover {
   position: relative;
   width: 100%;
   max-width: 100%;
-  height: 300px;          /* Fixed height for the slideshow container */
+  height: 200px;          /* Fixed height for the slideshow container */
   margin: auto;
   overflow: hidden;
   background: #000;
