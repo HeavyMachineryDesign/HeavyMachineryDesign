@@ -500,7 +500,7 @@ button:hover {
     .slideshow-container {
       position: relative;
       width: 100%;
-      max-width: 800px;
+      max-width: 100%;
       height: 400px;
       margin: auto;
       overflow: hidden;
@@ -510,14 +510,14 @@ button:hover {
     /* Individual slides */
     .mySlides {
       display: none;
-      width: 100%;
+      width: 30%;
       height: 100%;
     }
 
     /* Images inside the slides */
     .mySlides img {
-      width: 300px;
-      height: 200px;
+      width: auto;
+      height: 300px;
       object-fit: cover;
     }
 
