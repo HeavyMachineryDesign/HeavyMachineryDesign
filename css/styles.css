@@ -525,6 +525,7 @@ button:hover {
   width: 100%;            /* Image fills the entire width of its container */
   height: 100%;           /* Image fills the entire height of its container */
   object-fit: cover;      /* Maintain aspect ratio, cover the entire area */
+   position: center;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
 }
@@ -533,46 +534,6 @@ button:hover {
 .mySlides img:hover {
   transform: scale(1.05);                    /* Slight zoom effect */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Add a shadow on hover */
-}
-
-/* Navigation arrows */
-.prev, .next {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 24px;
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.5);
-  user-select: none;
-  transition: background-color 0.3s;
-  z-index: 1;
-}
-
-.next {
-  right: 0;
-}
-
-.prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Dots for navigation */
-.dot {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  margin: 4px;
-  background-color: #bbb;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.dot.active, .dot:hover {
-  background-color: #717171;
 }
 
 
