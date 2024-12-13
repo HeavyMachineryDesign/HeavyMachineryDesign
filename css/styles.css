@@ -514,18 +514,17 @@ button:hover {
 
 /* Individual slides */
 .mySlides {
-  flex: 0 0 25%;        /* 25% width to show 4 images at a time */
+  flex: 0 0 25%;        /* 25% width to fit 4 images at a time */
   height: 100%;
   box-sizing: border-box;
   padding: 5px;
-  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transform and shadow effect */
 }
 
 /* Image styling with interactive effects */
 .mySlides img {
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* Maintain image proportions */
+  object-fit: cover;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
 }
@@ -575,17 +574,6 @@ button:hover {
 .dot.active, .dot:hover {
   background-color: #717171;
 }
-
-/* Fade animation */
-.fade {
-  animation: fadeEffect 1.5s ease;
-}
-
-@keyframes fadeEffect {
-  from { opacity: 0.4; }
-  to { opacity: 1; }
-}
-
 
 
 footer {
