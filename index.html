@@ -307,27 +307,51 @@
  </section>
 
 <script>
-  let currentIndex = 0;
+ let currentIndex = 0;
 const slidesWrapper = document.querySelector('.slides-wrapper');
 const totalSlides = document.querySelectorAll('.mySlides').length;
 const visibleSlides = 4; // Number of slides visible at a time
+const slideInterval = 3000; // Time in milliseconds between slides (3 seconds)
 
-function plusSlides(n) {
-  currentIndex += n;
-
+// Function to move to the next slide
+function nextSlide() {
+  currentIndex++;
   if (currentIndex > totalSlides - visibleSlides) {
     currentIndex = 0;
-  } else if (currentIndex < 0) {
-    currentIndex = totalSlides - visibleSlides;
   }
-
   updateSlides();
 }
 
+// Function to move to the previous slide
+function prevSlide() {
+  currentIndex--;
+  if (currentIndex < 0) {
+    currentIndex = totalSlides - visibleSlides;
+  }
+  updateSlides();
+}
+
+// Function to update the position of slides
 function updateSlides() {
   const slideWidth = document.querySelector('.mySlides').offsetWidth;
   slidesWrapper.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
 }
+
+// Automatic slideshow
+let autoSlide = setInterval(nextSlide, slideInterval);
+
+// Pause slideshow on hover and resume when not hovering
+document.querySelector('.slideshow-container').addEventListener('mouseover', () => {
+  clearInterval(autoSlide);
+});
+
+document.querySelector('.slideshow-container').addEventListener('mouseout', () => {
+  autoSlide = setInterval(nextSlide, slideInterval);
+});
+
+// Navigation controls
+document.querySelector('.next').addEventListener('click', nextSlide);
+document.querySelector('.prev').addEventListener('click', prevSlide);
 
 </script>
 
