@@ -307,41 +307,28 @@
  </section>
 
 <script>
-  let slideIndex = 0;
-  showSlides(slideIndex);
-  autoSlide();
+  let currentIndex = 0;
+const slidesWrapper = document.querySelector('.slides-wrapper');
+const totalSlides = document.querySelectorAll('.mySlides').length;
+const visibleSlides = 4; // Number of slides visible at a time
 
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
+function plusSlides(n) {
+  currentIndex += n;
+
+  if (currentIndex > totalSlides - visibleSlides) {
+    currentIndex = 0;
+  } else if (currentIndex < 0) {
+    currentIndex = totalSlides - visibleSlides;
   }
 
-  function currentSlide(n) {
-    showSlides(slideIndex = n - 1);
-  }
+  updateSlides();
+}
 
-  function showSlides(n) {
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
+function updateSlides() {
+  const slideWidth = document.querySelector('.mySlides').offsetWidth;
+  slidesWrapper.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+}
 
-    if (n >= slides.length) { slideIndex = 0; }
-    if (n < 0) { slideIndex = slides.length - 1; }
-
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-
-    for (let i = 0; i < dots.length; i++) {
-      dots[i].classList.remove("active");
-    }
-
-    slides[slideIndex].style.display = "block";
-    dots[slideIndex].classList.add("active");
-  }
-
-  function autoSlide() {
-    plusSlides(1);
-    setTimeout(autoSlide, 3000);
-  }
 </script>
 
     
