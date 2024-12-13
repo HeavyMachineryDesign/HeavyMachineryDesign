@@ -504,29 +504,36 @@ button:hover {
   margin: auto;
   overflow: hidden;
   background: #000;
-  display: flex;       /* Enable flexbox layout */
 }
 
 /* Slides wrapper to hold multiple slides in a row */
 .slides-wrapper {
   display: flex;
-  transition: transform 1s ease; /* Smooth transition for sliding effect */
+  transition: transform 1s ease-in-out; /* Smooth transition for sliding effect */
 }
 
 /* Individual slides */
 .mySlides {
-  flex: 0 0 25%;        /* 25% width for each slide to show 4 images at a time */
+  flex: 0 0 25%;        /* 25% width to show 4 images at a time */
   height: 100%;
   box-sizing: border-box;
-  padding: 5px;         /* Optional padding between images */
+  padding: 5px;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transform and shadow effect */
 }
 
-/* Images inside the slides */
+/* Image styling with interactive effects */
 .mySlides img {
   width: 100%;
   height: 100%;
-  object-fit: cover;    /* Fit images inside the slide container without distortion */
-  border-radius: 8px;   /* Rounded corners for the images */
+  object-fit: cover;       /* Maintain image proportions */
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+}
+
+/* Hover effects for images */
+.mySlides img:hover {
+  transform: scale(1.05);                    /* Slight zoom effect */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Add a shadow on hover */
 }
 
 /* Navigation arrows */
@@ -542,7 +549,7 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.5);
   user-select: none;
   transition: background-color 0.3s;
-  z-index: 1;           /* Ensure arrows are above the images */
+  z-index: 1;
 }
 
 .next {
@@ -569,7 +576,7 @@ button:hover {
   background-color: #717171;
 }
 
-/* Fading animation */
+/* Fade animation */
 .fade {
   animation: fadeEffect 1.5s ease;
 }
