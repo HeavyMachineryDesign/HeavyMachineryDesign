@@ -135,3 +135,16 @@
 </script>
 
 <script src="jquery.min.js"></script>
+
+<script>
+    // Simple search functionality
+    document.getElementById('searchInput').addEventListener('keyup', function() {
+        let filter = this.value.toLowerCase();
+        let rows = document.querySelectorAll('#interactiveTable tbody tr');
+
+        rows.forEach(row => {
+            let text = row.textContent.toLowerCase();
+            row.style.display = text.includes(filter) ? '' : 'none';
+        });
+    });
+</script>
