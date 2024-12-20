@@ -1,57 +1,68 @@
+
 /* ===========================
    Carousel Styling
    =========================== */
 .carousel-inner {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    position: relative;
-    width: 90%;
-    margin: 20px auto;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;                /* Display images horizontally */
+    flex-wrap: nowrap;            /* Prevent wrapping to the next line */
+    overflow-x: auto;             /* Allow horizontal scrolling for excess images */
+    scroll-snap-type: x mandatory;/* Enable smooth scrolling between items */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+    position: relative;           /* Ensure carousel is isolated */
+    width: 90%;                   /* Centered, not full-screen width */
+    margin: 20px auto;            /* Center horizontally */
+    overflow: hidden;             /* Hide overflow for clean appearance */
+    border-radius: 12px;          /* Slightly more pronounced rounded edges */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced subtle shadow */
+    border: 1px solid rgba(0, 0, 0, 0.08);     /* Subtle border for definition */
 }
 
+/* Hide scrollbar for a clean look */
 .carousel-inner::-webkit-scrollbar {
     display: none;
 }
 
+/* ===========================
+   Carousel Container
+   =========================== */
 .carousel-container {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    position: relative;
-    overflow: hidden;
+    transition: transform 0.5s ease-in-out; /* Smooth slide transition */
+    position: relative;                     /* Required for proper layout */
+    overflow: hidden;                       /* Ensure edges remain clean */
 }
 
+/* ===========================
+   Carousel Items
+   =========================== */
 .carousel-item {
-    flex: 0 0 25%;
-    text-align: center;
-    padding: 10px;
-    scroll-snap-align: start;
+    flex: 0 0 25%;               /* 4 items per row (25% width) */
+    text-align: center;          /* Center content horizontally */
+    padding: 10px;               /* Spacing around items */
+    scroll-snap-align: start;    /* Align items for smooth scrolling */
 }
 
 .carousel-item img {
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 200px;               /* Fixed height for images */
+    width: 100%;                 /* Image fills container */
+    object-fit: cover;           /* Maintain aspect ratio, crop if needed */
+    border-radius: 10px;         /* Consistent rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Depth effect */
 }
 
+/* ===========================
+   Blur Effect (Pseudo-elements)
+   =========================== */
 .carousel-inner::before,
 .carousel-inner::after {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 50px;
+    width: 50px;                /* Width of the gradient blur effect */
     z-index: 1;
-    pointer-events: none;
-    height: 100%;
+    pointer-events: none;       /* Allow interactions with carousel items */
+    height: 100%;               /* Full height of the carousel */
 }
 
 .carousel-inner::before {
@@ -64,6 +75,9 @@
     background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
+/* ===========================
+   Carousel Navigation Buttons
+   =========================== */
 .carousel-control-prev,
 .carousel-control-next {
     position: absolute;
@@ -76,7 +90,7 @@
     cursor: pointer;
     border-radius: 50%;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 2;
+    z-index: 2; /* Ensure buttons are above carousel content */
 }
 
 .carousel-control-prev:hover,
@@ -94,10 +108,229 @@
 }
 
 /* ===========================
-   General Table Styles
+   Responsive Design
    =========================== */
+@media (max-width: 768px) {
+    .carousel-item {
+        flex: 0 0 50%; /* 2 items per row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item {
+        flex: 0 0 100%; /* 1 item per row on small screens */
+    }
+}
+
+ 
+
+
+/* Global Styling */
+html {
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 2;
+    width: 100%;
+    position: relative; /* Ensure body content is on top of the background */
+}
+
+body::before {
+    content: "";
+    background-image: url('Photos/background.jpg'); /* Use your preferred image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    
+    /* Blur effect */
+    filter: blur(10px); /* Adjust the blur intensity */
+    
+    /* Cover the whole body */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place it behind the content */
+}
+
+/* Section Styling */
+section {
+    scroll-margin-top: 150px; /* Offset for smooth scroll to sections */
+    width: 90%; /* Occupies 90% of the parent width */
+    margin: 20px auto; /* Centers with 20px top/bottom margin */
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(90deg, #141e30, #243b55); /* Gradient background */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Align items to the center */
+    align-items: center; /* Center items vertically */
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #fff;
+    flex: 1;
+    text-align: center;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+    flex: 1;
+    text-align: center;
+}
+
+header h3 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #fff;
+    flex: 1;
+    text-align: center;
+}
+
+
+ img {
+        width: 350px; /* Set all images to a width of 400px */
+        height: auto; /* Maintain aspect ratio */
+        }
+
+.image-container {
+        width: 80%; /* This is the width of the parent container */
+        margin: 0 auto; /* Centers the container */
+    }
+
+    .responsive-img {
+        width: 100%; /* Makes image responsive to container */
+        height: auto;
+        max-width: 100%;
+    }
+
+.responsive-img {
+        width: 100%;
+        height: auto;
+        max-width: 100%; /* Prevents the image from being larger than its container */
+    }
+
+/* Toolbar Styling */
+.toolbar {
+    display: flex; /* Visible and horizontal for desktop */
+    align-items: center;
+    justify-content: center; /* Center menu items */
+    list-style: none;
+    background: linear-gradient(90deg, #141e30, #243b55); /* Corrected background property */
+    width: 100%;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+.toolbar li {
+    margin: 0 10px;
+}
+
+.toolbar a {
+    text-decoration: none;
+    color: #fcf3cf;
+    font-size: 0.8em;
+    padding: 10px 15px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.toolbar a:hover {
+    color: #40E0D0;
+    background-color: #243b55; /* Simpler background for hover */
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* Dropdown Styling */
+.dropdown {
+    position: relative; /* Ensures dropdown menu is positioned relative to the parent */
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute; /* Dropdown positioned relative to the parent */
+    top: calc(100% + 5px);
+    left: 0;
+    background-color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 0;
+    z-index: 1000;
+    min-width: 200px;
+    border-radius: 10px;
+    transition: all 0.3s ease; /* Smooth transition */
+    opacity: 0; /* Start hidden */
+    visibility: hidden; /* Ensure it's hidden */
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+    display: block;
+    opacity: 1; /* Show dropdown */
+    visibility: visible;
+}
+
+.dropdown-menu a {
+    display: block;
+    color: #fcf3cf;
+    padding: 10px 20px;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth color transition */
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
+    background-color: #092c42;
+    color: #fff; /* Ensure text color changes for better visibility */
+}
+
+/* Accessibility and Responsiveness */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        width: 100%; /* Full width on small screens */
+        box-shadow: none; /* Remove shadow */
+    }
+
+    .dropdown-menu a {
+        padding: 15px 20px; /* Increased padding for touch devices */
+        text-align: center; /* Center text */
+    }
+}
+
+.dropdown a:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 2px #fcf3cf; /* Custom focus outline */
+}
+
+
+/* General table styles */
 table {
-    width: 80%;
+    width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
     font-family: Arial, sans-serif;
@@ -108,8 +341,9 @@ table {
     overflow: hidden;
 }
 
+/* Header row styles */
 thead th {
-    background-color: linear-gradient(90deg, #141e30, #243b55);
+    background-color: #4CAF50;
     color: white;
     padding: 16px;
     cursor: pointer;
@@ -117,37 +351,50 @@ thead th {
     letter-spacing: 1px;
 }
 
+/* Hover effect for headers */
 thead th:hover {
-    color: #40E0D0;
-    background-color: #243b55;
-    border-radius: 10px;
-    font-weight: bold;
+    background-color: #45a049;
+    transition: background-color 0.3s ease;
 }
 
+/* Row styles */
 tbody tr {
     background-color: #f9f9f9;
     transition: background-color 0.3s ease;
 }
 
+/* Alternating row colors */
 tbody tr:nth-child(even) {
     background-color: #f1f1f1;
 }
 
+/* Hover effect for rows */
 tbody tr:hover {
     background-color: #d4edda;
     transform: scale(1.01);
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+/* Cell styles */
 th, td {
     padding: 14px 20px;
     border-bottom: 1px solid #ddd;
-    text-align: center;
-    vertical-align: middle;
 }
 
+/* Last row border removal */
 tbody tr:last-child td {
     border-bottom: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+    
+    th, td {
+        padding: 10px;
+    }
 }
 
 /* Search input styles */
@@ -162,10 +409,31 @@ input[type="text"] {
     transition: box-shadow 0.3s ease;
 }
 
+/* Search input focus effect */
 input[type="text"]:focus {
     outline: none;
     box-shadow: 0 2px 20px rgba(0, 150, 136, 0.4);
 }
+
+/* Scrollable table for small screens */
+.table-container {
+    overflow-x: auto;
+}
+
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+  }
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
 /* Back to Top Button */
 .back-to-top {
@@ -178,6 +446,7 @@ input[type="text"]:focus {
     font-weight: bold;
     border-radius: 50%;
     display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     opacity: 0;
     font-size: 16px;
     z-index: 1000;
@@ -190,13 +459,51 @@ input[type="text"]:focus {
     display: block;
     opacity: 1;
     transform: translateY(0);
-    visibility: visible;
+    visibility: visible; /* Ensure visibility is reset */
 }
 
 .back-to-top:hover {
     transform: scale(1.1);
     background-color: #555;
 }
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .toolbar {
+        flex-direction: column;
+        display: none;
+    }
+
+    .toolbar.active {
+        display: flex;
+    }
+
+    .dropdown-menu {
+        position: relative;
+        width: 100%;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+}
+@media (max-width: 480px) {
+    .back-to-top {
+        font-size: 12px;
+        padding: 10px 15px;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
 
 /* Quiz Section Styling */
 #quiz {
@@ -218,6 +525,11 @@ input[type="text"]:focus {
 
 .question:hover {
     background: #f1f1f1;
+}
+
+.question p {
+    font-weight: bold;
+    color: #333;
 }
 
 .question input[type="radio"] {
@@ -270,4 +582,78 @@ button:hover {
 #result.show {
     display: block;
     opacity: 1;
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 200px;          /* Fixed height for the slideshow container */
+  margin: auto;
+  overflow: hidden;
+  background: #000;
+}
+
+/* Slides wrapper to hold multiple slides in a row */
+.slides-wrapper {
+  display: flex;
+  transition: transform 1s ease-in-out; /* Smooth transition for sliding effect */
+}
+
+/* Individual slides */
+.mySlides {
+  flex: 0 0 20%;          /* Adjust to fit 5 images at a time; use 33.33% for 3 images */
+  height: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+/* Image styling to ensure all images are the same size */
+.mySlides img {
+  width: 100%;            /* Image fills the entire width of its container */
+  height: 100%;           /* Image fills the entire height of its container */
+  object-fit: cover;      /* Maintain aspect ratio, cover the entire area */
+   position: center;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+}
+
+/* Hover effects for images */
+.mySlides img:hover {
+  transform: scale(1.05);                    /* Slight zoom effect */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Add a shadow on hover */
+}
+
+
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
 }
