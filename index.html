@@ -129,6 +129,39 @@
 <p>Heavy machinery is designed to operate in extreme conditions, where materials with exceptional strength, durability, and resistance to wear and corrosion are critical. The materials used in these machines are carefully selected based on their mechanical properties, alloy compositions, regional standards, and specific applications. This guide provides an in-depth look at the specifications, compositions, regional standards, and applications of various materials used in heavy machinery. </p>
     <p><a href="materials.html">(Click Here)</a></p>
 </section>
+">
+        <h2>Latest News</h2>
+        <p>Loading news...</p>
+    </div>
+
+    <script>
+        const apiKey = 'YOUR_API_KEY'; // Replace with your NewsAPI key
+        const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+
+        async function fetchNews() {
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                const newsContainer = document.getElementById('news-container');
+                newsContainer.innerHTML = '<h2>Latest News</h2>'; // Clear loading text
+                
+                data.articles.forEach(article => {
+                    const newsItem = `
+                        <div class="news-item">
+                            <h3>${article.title}</h3>
+                            <p>${article.description || ''}</p>
+                            <a href="${article.url}" target="_blank">Read More</a>
+                        </div>`;
+                    newsContainer.innerHTML += newsItem;
+                });
+            } catch (error) {
+                console.error('Error fetching news:', error);
+                document.getElementById('news-container').innerHTML = '<p>Failed to load news.</p>';
+            }
+        }
+
+        fetchNews();
+    </script>
 
 <section id="quiz">
     <h2>Check what do you know:</h2>
