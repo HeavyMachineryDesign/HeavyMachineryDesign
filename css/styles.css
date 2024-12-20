@@ -327,7 +327,26 @@ header h3 {
     box-shadow: 0 0 0 2px #fcf3cf; /* Custom focus outline */
 }
 
-
+        .news-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .news-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .news-item:last-child {
+            border-bottom: none;
+        }
+        .news-item a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+   
 /* General table styles */
 table {
     width: 100%;
