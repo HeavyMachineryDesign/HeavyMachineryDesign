@@ -156,29 +156,92 @@
         <section>
             <h2>Innovation Timeline of Heavy Machineries</h2>
         </section>
-        <div class="search-container">
-            <input type="text" id="searchBar" placeholder="Search machinery, manufacturer, or year..." onkeyup="searchTimeline()">
-        </div>
+       <div class="search-container">
+    <input type="text" id="searchBar" placeholder="Search machinery, manufacturer, or year..." onkeyup="searchTimeline()">
+</div>
 
-        <div class="timeline" id="timeline">
-            <div class="timeline-header">
-                <div>Machinery Name</div>
-                <div>Year of Innovation</div>
-                <div>Manufacturer</div>
-                <div>Company</div>
-                <div>Country</div>
-            </div>
-        </div>
+<div class="timeline" id="timeline">
+    <div class="timeline-header">
+        <div>Machinery Name</div>
+        <div>Year of Innovation</div>
+        <div>Manufacturer</div>
+        <div>Company</div>
+        <div>Country</div>
+    </div>
+</div>
 
-        <div class="overlay" id="overlay" onclick="hidePopup()"></div>
-        <div class="info-popup" id="infoPopup">
-            <h3 id="popupTitle">Title</h3>
-            <p id="popupYear">Year</p>
-            <p id="popupCountry">Country</p>
-            <p id="popupInnovator">Manufacturer</p>
-            <p id="popupDetails">Details</p>
-            <button onclick="hidePopup()">Close</button>
-        </div>
+<div class="overlay" id="overlay" onclick="hidePopup()"></div>
+<div class="info-popup" id="infoPopup">
+    <h3 id="popupTitle">Title</h3>
+    <p id="popupYear">Year</p>
+    <p id="popupCountry">Country</p>
+    <p id="popupInnovator">Innovator</p>
+    <p id="popupDetails">Details</p>
+    <button onclick="hidePopup()">Close</button>
+</div>
+
+ 
+
+<script>
+    const timelineData = [
+        { title: 'Steam-Powered Excavator', year: 1839, manufacturer: 'William Otis', company: 'Otis Elevator Company', country: 'United States', details: 'Revolutionized earthmoving with the first practical steam-powered excavator.' },
+        { title: 'Caterpillar Tractor', year: 1904, manufacturer: 'Benjamin Holt', company: 'Caterpillar Inc.', country: 'United States', details: 'Laid the groundwork for modern tracked machinery.' },
+        { title: 'Bulldozer', year: 1923, manufacturer: 'James Cummings and J. Earl McLeod', company: 'Cummings and McLeod', country: 'United States', details: 'Adapted from a tractor, the first bulldozer was used for pushing soil.' },
+        { title: 'Tower Crane', year: 1949, manufacturer: 'Hans Liebherr', company: 'Liebherr Group', country: 'Germany', details: 'First mobile tower crane, revolutionizing construction.' },
+        { title: 'Hydraulic Excavator', year: 1951, manufacturer: 'Poclain (André Poclain)', company: 'Poclain', country: 'France', details: 'Marked the transition to modern hydraulic systems with the fully hydraulic TU excavator.' },
+        { title: 'Skid-Steer Loader', year: 1957, manufacturer: 'Cyril and Louis Keller', company: 'Keller Brothers', country: 'United States', details: 'Compact and versatile machine introduced by the Keller brothers.' },
+        { title: 'Articulated Dump Truck', year: 1966, manufacturer: 'Volvo BM', company: 'Volvo Group', country: 'United Kingdom', details: 'Introduced articulated steering for heavy-duty hauling.' },
+        { title: 'Tunnel Boring Machine', year: 1983, manufacturer: 'The Robbins Company', company: 'The Robbins Company', country: 'United States', details: 'Enabled efficient and precise underground tunnel construction.' },
+        { title: 'Autonomous Haul Trucks', year: 2013, manufacturer: 'Rio Tinto', company: 'Rio Tinto', country: 'Australia', details: 'First large-scale implementation of driverless haul trucks in mining.' },
+        { title: 'Electric Compact Loader', year: 2020, manufacturer: 'Volvo CE', company: 'Volvo Construction Equipment', country: 'Sweden', details: 'Introduced eco-friendly, battery-powered loaders for sustainable operations.' }
+    ];
+
+    function renderTimeline() {
+        const timeline = document.getElementById('timeline');
+        timelineData.sort((a, b) => a.year - b.year).forEach((event, index) => {
+            const row = document.createElement('div');
+            row.classList.add('timeline-row');
+            row.style.animationDelay = `${index * 0.3}s`;
+            row.onclick = () => showPopup(event);
+            row.innerHTML = `
+                <div>${event.title}</div>
+                <div>${event.year}</div>
+                <div>${event.manufacturer}</div>
+                <div>${event.company}</div>
+                <div>${event.country}</div>
+            `;
+            timeline.appendChild(row);
+        });
+    }
+
+    function searchTimeline() {
+        const query = document.getElementById('searchBar').value.toLowerCase();
+        const rows = document.querySelectorAll('.timeline-row');
+        rows.forEach(row => {
+            const text = row.textContent.toLowerCase();
+            row.style.display = text.includes(query) ? 'flex' : 'none';
+        });
+    }
+
+    function showPopup(event) {
+        document.getElementById('popupTitle').textContent = event.title;
+        document.getElementById('popupYear').textContent = `Year: ${event.year}`;
+        document.getElementById('popupCountry').textContent = `Country: ${event.country}`;
+        document.getElementById('popupInnovator').textContent = `Manufacturer: ${event.manufacturer}`;
+        document.getElementById('popupDetails').textContent = event.details;
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('infoPopup').style.display = 'block';
+    }
+
+    function hidePopup() {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('infoPopup').style.display = 'none';
+    }
+
+    renderTimeline();
+</script>
+
+
 
         <section>
             <h2>A Brief List of Heavy Machineries and Manufacturers</h2>
