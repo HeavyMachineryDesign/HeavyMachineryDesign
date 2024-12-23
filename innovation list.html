@@ -7,7 +7,6 @@
     <title>Innovation History and Examples</title>
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        /* Internal CSS for demo, move to external stylesheet */
        
         .search-container {
             margin: 20px auto;
@@ -25,7 +24,6 @@
         .timeline {
             margin: 20px auto;
             max-width: 900px;
-            position: relative;
             overflow-y: auto;
             max-height: 70vh;
         }
@@ -46,19 +44,19 @@
             font-weight: bold;
         }
 
-      .timeline-row {
-    display: flex; /* Ensures rows remain visible when animation is complete */
-    justify-content: space-between;
-    align-items: center;
-    background-color: #e8eaf6;
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-    opacity: 0;
-    transform: translateY(20px);
-    animation: slideUp 1s ease-in-out forwards;
-}
+        .timeline-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #e8eaf6;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 1s ease-in-out forwards;
+        }
 
         .timeline-row:nth-child(odd) {
             background-color: #ffecb3;
@@ -74,24 +72,24 @@
         }
 
         .timeline-row {
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
 
-.timeline-row[style*="display: none"] {
-    opacity: 0;
-    transform: translateY(20px);
-}
+        .timeline-row[style*="display: none"] {
+            opacity: 0;
+            transform: translateY(20px);
+        }
 
-    @keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
         .info-popup {
             display: none;
@@ -143,8 +141,6 @@
                 width: 90%;
             }
         }
-
-
     </style>
 </head>
 
@@ -158,7 +154,7 @@
 
     <main>
         <section>
-                <h1>Innovation Timeline of Heavy Machineries:</h1>
+            <h2>Innovation Timeline of Heavy Machineries</h2>
         </section>
         <div class="search-container">
             <input type="text" id="searchBar" placeholder="Search machinery, manufacturer, or year..." onkeyup="searchTimeline()">
@@ -179,56 +175,17 @@
             <h3 id="popupTitle">Title</h3>
             <p id="popupYear">Year</p>
             <p id="popupCountry">Country</p>
-            <p id="popupInnovator">Innovator</p>
+            <p id="popupInnovator">Manufacturer</p>
             <p id="popupDetails">Details</p>
             <button onclick="hidePopup()">Close</button>
         </div>
 
-<script>
-    const timelineData = [
-        { title: 'Steam-Powered Excavator', year: 1839, manufacturer: 'William Otis', company: 'Otis Elevator Company', country: 'United States', details: 'Revolutionized earthmoving with the first practical steam-powered excavator.' },
-        { title: 'Caterpillar Tractor', year: 1904, manufacturer: 'Benjamin Holt', company: 'Caterpillar Inc.', country: 'United States', details: 'Laid the groundwork for modern tracked machinery.' },
-        { title: 'Bulldozer', year: 1923, manufacturer: 'James Cummings and J. Earl McLeod', company: 'Cummings and McLeod', country: 'United States', details: 'Adapted from a tractor, the first bulldozer was used for pushing soil.' },
-        // Add more data as needed
-    ];
-
-    function renderTimeline() {
-        const timeline = document.getElementById('timeline');
-        timelineData.sort((a, b) => a.year - b.year).forEach((event, index) => {
-            const row = document.createElement('div');
-            row.classList.add('timeline-row');
-            row.style.animationDelay = `${index * 0.3}s`; // Staggered animation
-            row.innerHTML = `
-                <div>${event.title}</div>
-                <div>${event.year}</div>
-                <div>${event.manufacturer}</div>
-                <div>${event.company}</div>
-                <div>${event.country}</div>
-            `;
-            timeline.appendChild(row);
-        });
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        renderTimeline();
-    });
-
-    // Search functionality
-    function searchTimeline() {
-        const query = document.getElementById('searchBar').value.toLowerCase();
-        const rows = document.querySelectorAll('.timeline-row');
-        rows.forEach(row => {
-            const text = row.textContent.toLowerCase();
-            row.style.display = text.includes(query) ? 'flex' : 'none';
-        });
-    }
-</script>
-
+        <section>
+            <h2>A Brief List of Heavy Machineries and Manufacturers</h2>
         
         <section>
-        <h1>A brief list of Heavy Machineries and Manufacturers:</h1>
+  
 
-    <p>A brief list of Heavy Machineries and Manufacturers:</p>
     <table>
         <thead>
             <tr>
@@ -531,28 +488,63 @@
     </table>
     <p>Note: Costs vary based on specifications, customization, and market conditions.</p>
   </section>  
-<footer>
-        <div class="footer-container">
-            <p>&copy; 2024 Heavy Machinery Design. All rights reserved.</p>
-            
-        </div>
-    </footer> 
-<!-- Back to Top Button -->
-<a href="#top" class="back-to-top">Back to Top</a>
+  </main>
 
-<script>
-   // Select the Back to Top button
-   const backToTopButton = document.querySelector('.back-to-top');
+    <footer>
+        <p>&copy; 2024 Heavy Machinery Design. All rights reserved.</p>
+    </footer>
 
-   // Show or hide the button based on scroll position
-   window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-         backToTopButton.classList.add('show');
-      } else {
-         backToTopButton.classList.remove('show');
-      }
-   });
-</script>
-    
+    <a href="#top" class="back-to-top">⬆</a>
+
+    <script>
+        const timelineData = [
+            { title: 'Steam-Powered Excavator', year: 1839, manufacturer: 'William Otis', company: 'Otis Elevator Company', country: 'United States', details: 'Revolutionized earthmoving with the first practical steam-powered excavator.' },
+            { title: 'Caterpillar Tractor', year: 1904, manufacturer: 'Benjamin Holt', company: 'Caterpillar Inc.', country: 'United States', details: 'Laid the groundwork for modern tracked machinery.' },
+            { title: 'Bulldozer', year: 1923, manufacturer: 'James Cummings and J. Earl McLeod', company: 'Cummings and McLeod', country: 'United States', details: 'Adapted from a tractor, the first bulldozer was used for pushing soil.' },
+        ];
+
+        function renderTimeline() {
+            const timeline = document.getElementById('timeline');
+            timelineData.sort((a, b) => a.year - b.year).forEach((event, index) => {
+                const row = document.createElement('div');
+                row.classList.add('timeline-row');
+                row.style.animationDelay = `${index * 0.3}s`;
+                row.innerHTML = `
+                    <div>${event.title}</div>
+                    <div>${event.year}</div>
+                    <div>${event.manufacturer}</div>
+                    <div>${event.company}</div>
+                    <div>${event.country}</div>
+                `;
+                timeline.appendChild(row);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', renderTimeline);
+
+        function searchTimeline() {
+            const query = document.getElementById('searchBar').value.toLowerCase();
+            const rows = document.querySelectorAll('.timeline-row');
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(query) ? 'flex' : 'none';
+            });
+        }
+
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+    </script>
 </body>
+
 </html>
+
+
+
+
+
