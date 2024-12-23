@@ -6,18 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Innovation History and Examples</title>
     <link rel="stylesheet" href="css/styles.css">
-</head>
-
-<body id="top">
-    <header>
-        <div class="header-container">
-          
-        <h1>Innovation History and Examples</h1>
- </div>
-                  <p><a href="index.html" class="home-icon">🏠</a></p>
-    </header>
-</body>
     <style>
+        /* Internal CSS for demo, move to external stylesheet */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background: #3949ab;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header .home-icon {
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+        }
 
         .search-container {
             margin: 20px auto;
@@ -136,7 +151,8 @@
         }
 
         @media (max-width: 768px) {
-            .timeline-header div, .timeline-row div {
+            .timeline-header div,
+            .timeline-row div {
                 font-size: 12px;
             }
 
@@ -144,96 +160,72 @@
                 width: 90%;
             }
         }
+
+        footer {
+            background: #3949ab;
+            color: white;
+            text-align: center;
+            padding: 15px 10px;
+            margin-top: 20px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background: #3949ab;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .back-to-top.show {
+            display: block;
+        }
     </style>
 </head>
-<body>
 
+<body id="top">
+    <header>
+        <div class="header-container">
+            <h1>Innovation History and Examples</h1>
+            <p><a href="index.html" class="home-icon">🏠</a></p>
+        </div>
+    </header>
 
-<div class="search-container">
-    <input type="text" id="searchBar" placeholder="Search machinery, manufacturer, or year..." onkeyup="searchTimeline()">
-</div>
+    <main>
+        <section>
+                <h1>Innovation Timeline of Heavy Machineries:</h1>
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Search machinery, manufacturer, or year..." onkeyup="searchTimeline()">
+        </div>
 
-<div class="timeline" id="timeline">
-    <div class="timeline-header">
-        <div>Machinery Name</div>
-        <div>Year of Innovation</div>
-        <div>Manufacturer</div>
-        <div>Company</div>
-        <div>Country</div>
-    </div>
-</div>
+        <div class="timeline" id="timeline">
+            <div class="timeline-header">
+                <div>Machinery Name</div>
+                <div>Year of Innovation</div>
+                <div>Manufacturer</div>
+                <div>Company</div>
+                <div>Country</div>
+            </div>
+        </div>
 
-<div class="overlay" id="overlay" onclick="hidePopup()"></div>
-<div class="info-popup" id="infoPopup">
-    <h3 id="popupTitle">Title</h3>
-    <p id="popupYear">Year</p>
-    <p id="popupCountry">Country</p>
-    <p id="popupInnovator">Innovator</p>
-    <p id="popupDetails">Details</p>
-    <button onclick="hidePopup()">Close</button>
-</div>
-
- 
-
-<script>
-    const timelineData = [
-        { title: 'Steam-Powered Excavator', year: 1839, manufacturer: 'William Otis', company: 'Otis Elevator Company', country: 'United States', details: 'Revolutionized earthmoving with the first practical steam-powered excavator.' },
-        { title: 'Caterpillar Tractor', year: 1904, manufacturer: 'Benjamin Holt', company: 'Caterpillar Inc.', country: 'United States', details: 'Laid the groundwork for modern tracked machinery.' },
-        { title: 'Bulldozer', year: 1923, manufacturer: 'James Cummings and J. Earl McLeod', company: 'Cummings and McLeod', country: 'United States', details: 'Adapted from a tractor, the first bulldozer was used for pushing soil.' },
-        { title: 'Tower Crane', year: 1949, manufacturer: 'Hans Liebherr', company: 'Liebherr Group', country: 'Germany', details: 'First mobile tower crane, revolutionizing construction.' },
-        { title: 'Hydraulic Excavator', year: 1951, manufacturer: 'Poclain (André Poclain)', company: 'Poclain', country: 'France', details: 'Marked the transition to modern hydraulic systems with the fully hydraulic TU excavator.' },
-        { title: 'Skid-Steer Loader', year: 1957, manufacturer: 'Cyril and Louis Keller', company: 'Keller Brothers', country: 'United States', details: 'Compact and versatile machine introduced by the Keller brothers.' },
-        { title: 'Articulated Dump Truck', year: 1966, manufacturer: 'Volvo BM', company: 'Volvo Group', country: 'United Kingdom', details: 'Introduced articulated steering for heavy-duty hauling.' },
-        { title: 'Tunnel Boring Machine', year: 1983, manufacturer: 'The Robbins Company', company: 'The Robbins Company', country: 'United States', details: 'Enabled efficient and precise underground tunnel construction.' },
-        { title: 'Autonomous Haul Trucks', year: 2013, manufacturer: 'Rio Tinto', company: 'Rio Tinto', country: 'Australia', details: 'First large-scale implementation of driverless haul trucks in mining.' },
-        { title: 'Electric Compact Loader', year: 2020, manufacturer: 'Volvo CE', company: 'Volvo Construction Equipment', country: 'Sweden', details: 'Introduced eco-friendly, battery-powered loaders for sustainable operations.' }
-    ];
-
-    function renderTimeline() {
-        const timeline = document.getElementById('timeline');
-        timelineData.sort((a, b) => a.year - b.year).forEach((event, index) => {
-            const row = document.createElement('div');
-            row.classList.add('timeline-row');
-            row.style.animationDelay = `${index * 0.3}s`;
-            row.onclick = () => showPopup(event);
-            row.innerHTML = `
-                <div>${event.title}</div>
-                <div>${event.year}</div>
-                <div>${event.manufacturer}</div>
-                <div>${event.company}</div>
-                <div>${event.country}</div>
-            `;
-            timeline.appendChild(row);
-        });
-    }
-
-    function searchTimeline() {
-        const query = document.getElementById('searchBar').value.toLowerCase();
-        const rows = document.querySelectorAll('.timeline-row');
-        rows.forEach(row => {
-            const text = row.textContent.toLowerCase();
-            row.style.display = text.includes(query) ? 'flex' : 'none';
-        });
-    }
-
-    function showPopup(event) {
-        document.getElementById('popupTitle').textContent = event.title;
-        document.getElementById('popupYear').textContent = `Year: ${event.year}`;
-        document.getElementById('popupCountry').textContent = `Country: ${event.country}`;
-        document.getElementById('popupInnovator').textContent = `Manufacturer: ${event.manufacturer}`;
-        document.getElementById('popupDetails').textContent = event.details;
-        document.getElementById('overlay').style.display = 'block';
-        document.getElementById('infoPopup').style.display = 'block';
-    }
-
-    function hidePopup() {
-        document.getElementById('overlay').style.display = 'none';
-        document.getElementById('infoPopup').style.display = 'none';
-    }
-
-    renderTimeline();
-</script>
-
+        <div class="overlay" id="overlay" onclick="hidePopup()"></div>
+        <div class="info-popup" id="infoPopup">
+            <h3 id="popupTitle">Title</h3>
+            <p id="popupYear">Year</p>
+            <p id="popupCountry">Country</p>
+            <p id="popupInnovator">Innovator</p>
+            <p id="popupDetails">Details</p>
+            <button onclick="hidePopup()">Close</button>
+        </div>
+</section>
+        <section>
+        <h1>A brief list of Heavy Machineries and Manufacturers:</h1>
 
     <p>A brief list of Heavy Machineries and Manufacturers:</p>
     <table>
@@ -537,7 +529,7 @@
         </tbody>
     </table>
     <p>Note: Costs vary based on specifications, customization, and market conditions.</p>
-    
+  </section>  
 <footer>
         <div class="footer-container">
             <p>&copy; 2024 Heavy Machinery Design. All rights reserved.</p>
