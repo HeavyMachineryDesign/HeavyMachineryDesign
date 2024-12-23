@@ -46,20 +46,19 @@
             font-weight: bold;
         }
 
-        .timeline-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #e8eaf6;
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-            position: relative;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: slideUp 1s ease-in-out forwards;
-        }
+      .timeline-row {
+    display: flex; /* Ensures rows remain visible when animation is complete */
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e8eaf6;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 1s ease-in-out forwards;
+}
 
         .timeline-row:nth-child(odd) {
             background-color: #ffecb3;
@@ -74,16 +73,25 @@
             text-align: center;
         }
 
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        .timeline-row {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.timeline-row[style*="display: none"] {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+    @keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
         .info-popup {
             display: none;
@@ -136,31 +144,7 @@
             }
         }
 
-        footer {
-            background: #3949ab;
-            color: white;
-            text-align: center;
-            padding: 15px 10px;
-            margin-top: 20px;
-        }
 
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: none;
-            background: #3949ab;
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 18px;
-        }
-
-        .back-to-top.show {
-            display: block;
-        }
     </style>
 </head>
 
@@ -200,6 +184,47 @@
             <button onclick="hidePopup()">Close</button>
         </div>
 
+<script>
+    const timelineData = [
+        { title: 'Steam-Powered Excavator', year: 1839, manufacturer: 'William Otis', company: 'Otis Elevator Company', country: 'United States', details: 'Revolutionized earthmoving with the first practical steam-powered excavator.' },
+        { title: 'Caterpillar Tractor', year: 1904, manufacturer: 'Benjamin Holt', company: 'Caterpillar Inc.', country: 'United States', details: 'Laid the groundwork for modern tracked machinery.' },
+        { title: 'Bulldozer', year: 1923, manufacturer: 'James Cummings and J. Earl McLeod', company: 'Cummings and McLeod', country: 'United States', details: 'Adapted from a tractor, the first bulldozer was used for pushing soil.' },
+        // Add more data as needed
+    ];
+
+    function renderTimeline() {
+        const timeline = document.getElementById('timeline');
+        timelineData.sort((a, b) => a.year - b.year).forEach((event, index) => {
+            const row = document.createElement('div');
+            row.classList.add('timeline-row');
+            row.style.animationDelay = `${index * 0.3}s`; // Staggered animation
+            row.innerHTML = `
+                <div>${event.title}</div>
+                <div>${event.year}</div>
+                <div>${event.manufacturer}</div>
+                <div>${event.company}</div>
+                <div>${event.country}</div>
+            `;
+            timeline.appendChild(row);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        renderTimeline();
+    });
+
+    // Search functionality
+    function searchTimeline() {
+        const query = document.getElementById('searchBar').value.toLowerCase();
+        const rows = document.querySelectorAll('.timeline-row');
+        rows.forEach(row => {
+            const text = row.textContent.toLowerCase();
+            row.style.display = text.includes(query) ? 'flex' : 'none';
+        });
+    }
+</script>
+
+        
         <section>
         <h1>A brief list of Heavy Machineries and Manufacturers:</h1>
 
